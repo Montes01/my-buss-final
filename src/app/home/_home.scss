@@ -26,3 +26,34 @@
     padding: 5px;
   }
 }
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-home {
+  height: 80vh;
+}
+
+.slider-image {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  animation: slide 20s infinite linear alternate both; 
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+   transform: translateX(-100vw * 3);
+  }
+}
+
+
+
