@@ -1,7 +1,9 @@
+import Button from "@/system-design/atoms/Button";
+
 export default function Home() {
   return (
     <main className="">
-        HOLA MUNDO
+        <Button content="diavlo" />
     </main>
   );
 }

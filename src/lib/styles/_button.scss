@@ -1,0 +1,14 @@
+@import "../style-helpers/colors";
+@import "../style-helpers/mixins";
+$radius-base: 10px;
+
+.button {
+  background-color: $primary;
+  @include interactive;
+  padding: 7px 15px;
+  border-radius: $radius-base   ;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}

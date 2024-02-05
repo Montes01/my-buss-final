@@ -1,9 +1,10 @@
+import Button from "@/system-design/atoms/Button";
 export default function Home() {
 
 
   return (
     <>
-      <p>home</p>
+      <Button content="this is a button"/>
     </>    
   )
 }

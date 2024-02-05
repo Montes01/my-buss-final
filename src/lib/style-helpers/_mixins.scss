@@ -1,0 +1,10 @@
+@mixin interactive() {
+  cursor: pointer;
+  transition: transform .1s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:disabled {
+    opacity: 0.8;
+  }
+}
