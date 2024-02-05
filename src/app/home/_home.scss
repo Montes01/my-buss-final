@@ -1,7 +1,28 @@
 .home-header {
-  display: flex;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-buttons {
   justify-content: center;
+  display: flex;
   gap: 12px;
+}
+
+.logo {
+  flex: 1;
+  flex-basis: 0;
+}
+
+.dark-button-wrapper {
+  flex: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: end;
+  .dark-button {
+    width: auto;
+    padding: 5px;
+  }
 }

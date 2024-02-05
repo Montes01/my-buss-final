@@ -15,7 +15,7 @@ type props = {
 export default function RootLayout({ children }: props) {
   return (
     <html lang="es">
-      <body className={`${inter.className}`}>{children}</body>
+      <body className={`${inter.className} dark-mode`}>{children}</body>
     </html>
   );
 }

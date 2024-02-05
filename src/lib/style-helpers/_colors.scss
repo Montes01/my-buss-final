@@ -1,1 +1,5 @@
+@import "./mixins";
 $primary: #32a856;
+body.dark-mode {
+  $primary: blue
+}
