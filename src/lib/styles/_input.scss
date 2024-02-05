@@ -7,7 +7,7 @@
   justify-content: center;
   gap: 12px;
   .input {
-    padding: 5px;
+    padding: 5px 8px;
     border-radius: $radius-base;
     border: 1px solid;
     @include interactive {

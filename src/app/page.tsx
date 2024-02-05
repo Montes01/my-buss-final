@@ -6,6 +6,7 @@ export default function Home() {
     <main className="">
         <Button content="diavlo" />
         <Input label="ejemplo" />
+        <Input type="radio" label="hola"/>
     </main>
   );
 }
