@@ -4,8 +4,9 @@
 
 
 .button {
-  background-color: $primary;
   @include interactive;
+  @include center;
+  background-color: $primary;
   border-radius: $radius-base;
   width: 90px;
   height: 30px;
