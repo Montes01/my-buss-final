@@ -11,13 +11,15 @@ export default function HomeLayout({ children }: Props) {
         <>
             <header className="home-header">
                 <picture className="logo">
-                    <img src="/Images/logo.png" alt="Logo de la empresa" />
+                    <NavButton to="/home">
+                        <img src="/Images/logo.png" alt="Logo de la empresa" />
+                    </NavButton>
                 </picture>
                 <section className="header-buttons">
-                    <NavButton content="Inicio" className="button" to="/home" />
-                    <NavButton content="Ingresa" className="button" to="/home/login" />
-                    <NavButton content="Registro" className="button" />
-                    <NavButton content="Nosotros" className="button" />
+                    <NavButton children="Inicio" className="button" to="/home" />
+                    <NavButton children="Ingresa" className="button" to="/home/login" />
+                    <NavButton children="Registro" className="button" />
+                    <NavButton children="Nosotros" className="button" />
                 </section>
                 <section className="dark-button-wrapper">
                     <Button content="🌙" className="dark-button" />

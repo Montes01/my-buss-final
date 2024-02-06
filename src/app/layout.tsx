@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import "@/lib/style-helpers/_colors.scss"
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,6 +16,9 @@ type props = {
 export default function RootLayout({ children }: props) {
   return (
     <html lang="es">
+      <Head>
+        <link rel="icon" href="/Images/logo.png" />
+      </Head>
       <body className={`${inter.className} dark-mode`}>{children}</body>
     </html>
   );
