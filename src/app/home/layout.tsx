@@ -1,5 +1,7 @@
+import { Services } from "@/lib/constants/constants"
 import Button from "@/system-design/atoms/Button"
 import NavButton from "@/system-design/atoms/NavButton"
+import ServiceCard from "@/system-design/molecules/ServiceCard"
 
 interface Props {
     children: React.ReactNode
@@ -34,10 +36,8 @@ export default function HomeLayout({ children }: Props) {
                     <img className="slider-image" src="/Images/bus5.jpeg" />
                     <img className="slider-image" src="/Images/bus6.jpeg" />
                 </section>
-                <section className="slider-content">
 
-                    {children}
-                </section>
+                {children}
 
             </main>
         </>
