@@ -1,8 +1,8 @@
 import { PRINCIPAL_MESSAGE, Services } from "@/lib/constants/constants";
 import { IconBrandAndroid, IconMap } from "@tabler/icons-react"
-import "./_home.scss";
 import NavButton from "@/system-design/atoms/NavButton";
 import ServiceCard from "@/system-design/molecules/ServiceCard";
+import Footer from "./shared/footer";
 export default function Home() {
 
 
@@ -34,16 +34,7 @@ export default function Home() {
           />
         ))}
       </section>
-      <footer className="footer">
-        <p className="text-center px-2">
-          <strong> &copy; 2023</strong> My Buss. Todos los derechos reservados.
-        </p>
-        <footer className="footer-buttons">
-          <NavButton to="/" className="" children="Inicio" />
-          <NavButton to="/Servicios" className="" children="Servicios" />
-          <NavButton to="/Contacto" className="" children="Contacto" />
-        </footer>
-      </footer>
+      <Footer />
     </>
   )
 }

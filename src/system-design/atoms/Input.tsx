@@ -6,11 +6,11 @@ interface Props {
   type?: keyof typeof inputTypes
   name?: string
 }
-export default function Input({ label, after, type, name }: Props) {
+export default function Input({ label, after, type, name, className }: Props) {
   return (
     <label className="input-wrapper">
       {!after && label}
-      <input name={name} className="input" type={type ?? "text"} />
+      <input name={name} className={"input " + className} type={type ?? "text"} />
       {after && label}
     </label>
   )

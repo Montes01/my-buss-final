@@ -1,0 +1,41 @@
+ @import "../../../lib/style-helpers/colors";
+ @import "../../../lib/style-helpers/measurement";
+
+ .login-form {
+
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   justify-content: center;
+   gap: 1rem;
+
+
+
+ }
+
+ .login-content {
+   padding: 3rem 1.5rem;
+   background-color: $base-color;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   border-radius: $radius-base;
+ }
+
+ .slider-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .login-form_title {
+   font-size: 2rem;
+   margin-bottom: 1rem;
+ }
+
+ .form-input {
+   width: 250px;
+ }
