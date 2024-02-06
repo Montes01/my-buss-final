@@ -35,21 +35,15 @@ export default function Home() {
         ))}
       </section>
       <footer className="footer">
-      <p className="text-center px-2">
-        <strong> &copy; 2023</strong> My Buss. Todos los derechos reservados.
-      </p>
-      <footer className="footer-buttons">
-          <NavButton to="/" className="">
-            Inicio
-          </NavButton>
-          <NavButton to="/Servicios" className="">
-            Servicios
-          </NavButton>
-          <NavButton to="/Contacto" className="">
-            Contacto
-          </NavButton>
+        <p className="text-center px-2">
+          <strong> &copy; 2023</strong> My Buss. Todos los derechos reservados.
+        </p>
+        <footer className="footer-buttons">
+          <NavButton to="/" className="" children="Inicio" />
+          <NavButton to="/Servicios" className="" children="Servicios" />
+          <NavButton to="/Contacto" className="" children="Contacto" />
+        </footer>
       </footer>
-    </footer>
     </>
   )
 }
