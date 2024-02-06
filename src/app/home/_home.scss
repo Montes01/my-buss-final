@@ -8,6 +8,7 @@
   display: flex;
   padding: 0 15px;
   align-items: center;
+  position: sticky;
 }
 
 .header-buttons {
@@ -20,6 +21,7 @@
   flex: 1;
   flex-basis: 0;
   width: 100px;
+
   img {
     @include interactive;
     height: 50px;
@@ -84,17 +86,45 @@
 
 
 .home-content {
-  padding: 20px 15px;
+  padding: 20px*2.5 15px*2.5;
   display: flex;
   flex-direction: column;
   border: 1px solid $primary;
   gap: 20px;
   background-color: $base-color;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
   border-radius: $radius-base;
 
   .principal-message {
-    max-width: 50ch;
+    max-width: 40ch;
     text-overflow: ellipsis;
-    text-align: pretty;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .01px;
+  }
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  .main-button {
+    strong {
+      color: $base-color;
+    }
+
+    width: 50%;
+    height: 70px;
+    background-color: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 }
