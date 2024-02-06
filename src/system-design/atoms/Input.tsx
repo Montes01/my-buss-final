@@ -1,4 +1,4 @@
-import { inputTypes } from "@/lib/constants/constants"
+import { inputTypes } from "@/lib/constants/declarations"
 interface Props {
   className?: string
   label?: string
