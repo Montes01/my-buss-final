@@ -1,6 +1,8 @@
 import { ServiceCard, UserCard } from "./declarations"
 
-export const PRINCIPAL_MESSAGE = "Bienvenido a My Buss, la mejor aplicación para consultar el estado de las rutas de bus en armenia";
+export const PROJECT_NAME = "MyBuss";
+
+export const PRINCIPAL_MESSAGE = `Descubre y planifica tus rutas con nosotros. Con nuestra plataforma innovadora podras exporar nuevos destinos, encontrar las mejores rutas y personalizar tu experiencia de viaje. ¡Viaja con comodidad y eficiencia en ${PROJECT_NAME}!`;
 
 export const Services: ServiceCard[] = [
   {

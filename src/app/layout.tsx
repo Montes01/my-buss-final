@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Monofett, Crushed } from "next/font/google";
 import "./globals.scss";
 import "@/lib/style-helpers/_colors.scss"
 import Head from "next/head";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   title: "Inicio",

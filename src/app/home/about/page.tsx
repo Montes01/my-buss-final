@@ -1,5 +1,5 @@
 import { users } from "@/lib/constants/constants";
-import Header from "../shared/Header";
+import Header from "../../shared/Header";
 import UserCard from "@/system-design/molecules/UserCard";
 import "./_about.scss";
 import Footer from "../shared/Footer";

@@ -1,28 +1,30 @@
-import { PRINCIPAL_MESSAGE, Services } from "@/lib/constants/constants";
+import { PRINCIPAL_MESSAGE, PROJECT_NAME, Services } from "@/lib/constants/constants";
 import { IconBrandAndroid, IconMap } from "@tabler/icons-react"
 import NavButton from "@/system-design/atoms/NavButton";
 import ServiceCard from "@/system-design/molecules/ServiceCard";
-import Footer from "../shared/Footer";
+import Footer from "./shared/Footer";
+import Button from "@/system-design/atoms/Button";
 export default function Home() {
 
 
   return (
     <>
-      <section className="slider-content">
-        <section className="home-content">
-          <p className="principal-message">{PRINCIPAL_MESSAGE}</p>
-          <section className="main-buttons">
-            <NavButton to="/App" className="button main-button">
-              <IconBrandAndroid color="white" />
-              <strong>Descarga nuestra aplicación</strong>
-            </NavButton>
-            <NavButton to="/home" className="button main-button">
-              <IconMap color="white" />
-              <strong>conoce nuestras rutas</strong>
-            </NavButton>
+      <main className="main-home">
+
+        <section className="home-main">
+          <section className="home-text">
+
+            <section className="text-wrapper">
+              
+              <h1>Bienvenido a <br /> <span> {PROJECT_NAME}</span></h1>
+              <p className="home-message">{PRINCIPAL_MESSAGE}</p>
+              <Button content="Conoce mas" />
+            </section>
+
           </section>
         </section>
-      </section>
+
+      </main>
       <section className="info-part">
         {Services.map(({ description, image, href, title }, index) => (
           <ServiceCard
