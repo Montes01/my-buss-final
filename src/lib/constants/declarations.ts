@@ -11,3 +11,9 @@ export enum inputTypes {
   password = "password",
   radio = "radio"
 }
+export type UserCard = {
+  image: string;
+  name:string;
+  role: string;
+  description: string;
+};

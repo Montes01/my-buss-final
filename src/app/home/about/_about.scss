@@ -1,0 +1,71 @@
+.main-about {
+  //flex flex-col items-center gap-20 px-12 py-20 w-full flex-grow
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 3rem 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+.main-info-section {
+  //flex flex-col gap-12 items-center
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-title {
+  //text-6xl font-bold
+  font-size: 3.75rem;
+  font-weight: 700;
+}
+
+.about-text {
+  //text-2xl
+  font-size: 1.25rem;
+}
+
+.integrants {
+  //flex flex-wrap gap-12 justify-center
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+
+}
+
+.user {
+  //flex flex-col backdrop-brightness-125 items-start justify-between w-96 p-5 h-52 relative rounded-xl border
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: brightness(1.25);
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 24rem;
+  padding: 1.25rem;
+  height: 13rem;
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid #000;
+  .user-info {
+    //flex flex-col gap-5
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+  }
+  .user-image{
+    //rounded-full absolute top-5 right-5 w-12 h-12 object-cover 
+    border-radius: 50%;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    
+  }
+}
