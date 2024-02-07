@@ -16,7 +16,7 @@ export default function Home() {
 
             <section className="text-wrapper">
               
-              <h1>Bienvenido a <br /> <span> {PROJECT_NAME}</span></h1>
+              <h1>Bienvenido a <br />{PROJECT_NAME.split("",2)}<span>{PROJECT_NAME.split("").slice(2)}</span></h1>
               <p className="home-message">{PRINCIPAL_MESSAGE}</p>
               <Button content="Conoce mas" />
             </section>
@@ -25,6 +25,9 @@ export default function Home() {
         </section>
 
       </main>
+      <section className="carousel">
+        <h1>this is carousel</h1>
+      </section>
       <section className="info-part">
         {Services.map(({ description, image, href, title }, index) => (
           <ServiceCard

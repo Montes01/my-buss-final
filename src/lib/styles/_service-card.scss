@@ -1,4 +1,4 @@
-
+@import "../style-helpers/colors";
 .service-card{
     //flex items-center sm:flex-row flex-col w-[40rem] sm:hover:scale-105 transition-transform justify-between text-inherit bg-maximum p-5 rounded-xl h-80 gap-5
     display: flex;
@@ -9,10 +9,13 @@
     height: 17rem;
     padding: 1.25rem;
     gap: 1.25rem;
-    background-color: #d5d5d5;
+    background-color: transparent;
+    backdrop-filter: brightness(1.25);
     border-radius: 1rem;
     transition: transform 0.3s ease;
-    color: inherit;
+    * {
+      color: black; 
+    }
     &:hover {
         transform: scale(1.05);
     }    

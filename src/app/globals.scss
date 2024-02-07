@@ -13,7 +13,7 @@
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 span {
   color: $base-color;
@@ -27,7 +27,19 @@ span {
   padding: 0 15px;
   align-items: center;
   position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 1;
   max-height: 120px;
+  animation-name: unnappear;
+  animation-timeline: scroll();
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes unnappear {
+  to {
+    opacity: 0.8;
+  }
 }
 
 .header-buttons {
