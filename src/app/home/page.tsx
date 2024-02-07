@@ -2,7 +2,7 @@ import { PRINCIPAL_MESSAGE, Services } from "@/lib/constants/constants";
 import { IconBrandAndroid, IconMap } from "@tabler/icons-react"
 import NavButton from "@/system-design/atoms/NavButton";
 import ServiceCard from "@/system-design/molecules/ServiceCard";
-import Footer from "./shared/Footer";
+import Footer from "../shared/Footer";
 export default function Home() {
 
 

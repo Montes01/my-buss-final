@@ -1,5 +1,6 @@
 .main-about {
-  //flex flex-col items-center gap-20 px-12 py-20 w-full flex-grow
+  //sutil gradient to whit from gray
+  background: linear-gradient(90deg, #f3f4f6 50%, #fff );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,9 +32,17 @@
 .integrants {
   //flex flex-wrap gap-12 justify-center
   display: flex;
+  padding: 3rem 1.25rem;
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
+
+}
+.our-team-text {
+  margin: 15px;
+  //text-4xl font-bold
+  font-size: 2.5rem;
+  font-weight: 700;
 
 }
 

@@ -2,45 +2,6 @@
 @import "../../lib/style-helpers/colors";
 @import "../../lib/style-helpers/measurement";
 
-.home-header {
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  padding: 0 15px;
-  align-items: center;
-  position: sticky;
-  max-height: 120px;
-}
-
-.header-buttons {
-  justify-content: center;
-  display: flex;
-  gap: 12px;
-}
-
-.logo {
-  flex: 1;
-  flex-basis: 0;
-  width: 100px;
-
-  img {
-    @include interactive ;
-    height: 50px;
-  }
-}
-
-.dark-button-wrapper {
-  flex: 1;
-  flex-basis: 0;
-  display: flex;
-  justify-content: end;
-
-  .dark-button {
-    width: auto;
-    padding: 5px;
-  }
-}
-
 .slider {
   width: 100%;
   height: 100%;
@@ -142,28 +103,3 @@
   padding: 5rem 1.25rem;
 }
 
-.footer {
-  //flex flex-col py-12 w-full items-center justify-center gap-12 bg-maximum text-inherit
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 1.25rem;
-  gap: 3rem;
-  background-color: #d5d5d5;
-  color: inherit;
-  @include center;
-
-  .footer-buttons {
-    display: flex;
-    gap: 12px;
-
-    a {
-      @include interactive;
-      padding: 5px;
-      color: inherit;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
