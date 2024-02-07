@@ -10,7 +10,7 @@ export default function UserCard({ description, image, name, role }: Props) {
       <p>{description}</p>
       <Image
         className="user-image"
-        src={image}
+        src={`/Images/${image}.png`}
         alt={`image about ${name}`}
         width={500}
         height={500}

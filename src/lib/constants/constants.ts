@@ -1,4 +1,4 @@
-import {ServiceCard, UserCard} from "./declarations"
+import { ServiceCard, UserCard } from "./declarations"
 
 export const PRINCIPAL_MESSAGE = "Bienvenido a My Buss, la mejor aplicación para consultar el estado de las rutas de bus en armenia";
 
@@ -39,27 +39,33 @@ export const Services: ServiceCard[] = [
 
 export const users: UserCard[] = [
   {
-    image: "",
+    image: "samuel-montes",
     name: "Samuel Montes",
-    role: "Product Owner",
-    description: "Samuel is the Product Owner of the project.",
+    role: "Desarrollador Backend / Product Owner",
+    description: "Samuel es el Product Owner del proyecto.",
   },
   {
-    image: "",
+    image: "juan-gallego",
     name: "Sebastian Gallego",
-    role: "Docs",
-    description: "Sebastian is who do the documentation of the project.",
+    role: "Documentación",
+    description: "Sebastian es quien realiza la documentación del proyecto.",
   },
   {
-    image: "",
+    image: "juan-esteban",
     name: "Juan Esteban",
-    role: "Backend Developer",
-    description: "Juan is who do the backend of the project.",
+    role: "Bases de Datos / Documentación",
+    description: "Juan es quien realiza el backend del proyecto.",
   },
   {
-    image: "",
+    image: "maicol-garcia",
     name: "Maicol Garcia",
-    role: "Frontend Developer",
-    description: "Maicol is who do the frontend of the project.",
+    role: "Desarrollador Frontend",
+    description: "Maicol es quien realiza el frontend del proyecto.",
+  },
+  {
+    image: "bayron-galeano",
+    name: "Bayron Galeano",
+    role: "Documentación",
+    description: "Bayron es quien realiza la documentación del proyecto.",
   },
 ];
