@@ -19,7 +19,7 @@ export default function HomeLayout({ children }: Props) {
         <section className="header-buttons">
           <NavButton children="Inicio" className="button" to="/home" />
           <NavButton children="Ingresa" className="button" to="/home/login" />
-          <NavButton children="Registro" className="button" />
+          <NavButton children="Registro" className="button" to="/home/register" />
           <NavButton children="Nosotros" className="button" />
         </section>
         <section className="dark-button-wrapper">

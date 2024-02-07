@@ -1,0 +1,55 @@
+@import "../../../lib/style-helpers/colors";
+@import "../../../lib/style-helpers/measurement";
+
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.register-content {
+  padding: 3rem 1.5rem;
+  background-color: $base-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: $radius-base;
+}
+
+.register-form {
+  display: flex;
+  gap: 1rem;
+  width: 500px;
+  flex: 1;
+  padding:  1rem 0;
+  overflow-x: hidden;
+}
+
+.register-camps {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+  .continue-button {
+    margin: 0 20px 0 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+  }
+  .input-wrapper {
+    width: 100%;
+    justify-content: end;
+    text-align: end;
+    .form-input {
+      width: 60%;
+    }
+  }
+
+}

@@ -24,7 +24,7 @@
   width: 100px;
 
   img {
-    @include interactive;
+    @include interactive ;
     height: 50px;
   }
 }

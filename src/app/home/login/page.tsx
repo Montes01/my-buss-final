@@ -2,7 +2,7 @@
 import Button from "@/system-design/atoms/Button"
 import Input from "@/system-design/atoms/Input"
 import "./_login.scss";
-import Footer from "../shared/footer";
+import Footer from "../shared/Footer";
 
 export default function Login() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,7 +25,7 @@ export default function Login() {
           >
             <Input name="username" className="form-input" label="Nombre de usuario" />
             <Input name="password" className="form-input" label="Contraseña" type="password" />
-            <Button content="Ingresar" />
+            <Button submit content="Ingresar" />
           </form>
         </section>
       </section>
