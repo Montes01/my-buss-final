@@ -1,6 +1,7 @@
 import Button from "@/system-design/atoms/Button"
 import "./_home.scss";
 import NavButton from "@/system-design/atoms/NavButton"
+import Footer from "./shared/Footer";
 
 interface Props {
   children: React.ReactNode
@@ -37,6 +38,7 @@ export default function HomeLayout({ children }: Props) {
         </section>
 
         {children}
+        <Footer/>
 
       </main>
     </>

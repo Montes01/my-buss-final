@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
 }
 
 .register-content {
@@ -30,15 +30,14 @@
 }
 
 .register-camps {
+  display: none;
   min-width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   align-items: end;
   gap: 1rem;
   .continue-button {
     margin: 0 20px 0 0;
-    position: absolute;
     bottom: 0;
     right: 0;
 
@@ -47,9 +46,28 @@
     width: 100%;
     justify-content: end;
     text-align: end;
+    flex-direction: column;
+    align-items: start;
     .form-input {
-      width: 60%;
+      width: 100%;
     }
   }
 
+}
+.register-camps.active {
+  display: flex;
+}
+
+.movement-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .back-button {
+    margin: 0 20px 0 0;
+  }
+  .continue-button {
+    margin: 0 0 0 20px;
+  }
 }

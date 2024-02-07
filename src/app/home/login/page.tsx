@@ -29,7 +29,6 @@ export default function Login() {
           </form>
         </section>
       </section>
-      <Footer />
     </>
   )
 }
