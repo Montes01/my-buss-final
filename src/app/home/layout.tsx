@@ -10,10 +10,9 @@ export default function HomeLayout({ children }: Props) {
   return (
 
     <>
-    <Header/>
-        {children}
-
-        <Footer/>
+      <Header />
+      {children}
+      <Footer />
     </>
   )
 }

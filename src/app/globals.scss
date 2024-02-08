@@ -34,6 +34,7 @@ span {
   animation-name: unnappear;
   animation-timeline: scroll();
   transition: all 0.5s ease-in-out;
+
 }
 
 @keyframes unnappear {
@@ -45,7 +46,14 @@ span {
 .header-buttons {
   justify-content: center;
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 20px;
+  .header-button {
+    padding: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .logo {

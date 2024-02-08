@@ -6,7 +6,7 @@
 .button {
   @include interactive;
   @include center;
-  background-color: none;
+  background-color: $primary;
   border-radius: $radius-base;
   width: 100px;
   height: 40px;
