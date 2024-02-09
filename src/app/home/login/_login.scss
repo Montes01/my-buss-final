@@ -2,15 +2,11 @@
  @import "../../../lib/style-helpers/measurement";
 
  .login-form {
-
    display: flex;
    flex-direction: column;
    align-items: end;
    justify-content: center;
    gap: 1rem;
-
-
-
  }
 
  .login-content {
@@ -24,12 +20,7 @@
    border-radius: $radius-base;
  }
 
- .slider-content {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
- }
+
 
  .login-form_title {
    font-size: 2rem;

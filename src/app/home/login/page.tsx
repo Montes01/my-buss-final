@@ -13,8 +13,7 @@ export default function Login() {
     console.log(data.get('password'))
   }
   return (
-    <>
-      <section className="slider-content">
+    <main>
         <section className="login-content">
 
           <h3 className="login-form_title">Bienvenido de nuevo</h3>
@@ -28,7 +27,6 @@ export default function Login() {
             <Button submit content="Ingresar" />
           </form>
         </section>
-      </section>
-    </>
+    </main>
   )
 }

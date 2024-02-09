@@ -2,15 +2,6 @@
 @import "../../lib/style-helpers/colors";
 @import "../../lib/style-helpers/measurement";
 
-.slider {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  overflow: hidden;
-}
-
 .main-home {
   position: relative;
   height: 90vh;
@@ -58,13 +49,14 @@
     }
     h1 {
       text-align: center;
-      text-shadow: 2px 2px 0px white;
+      text-shadow: 2px 2px 0px black;
       color: $base-color;
       font-size: 4.75rem;
       font-weight: bolder;
       letter-spacing: 0;
       
       span {
+        text-shadow: 2px 2px 0px white;
         color: $primary;
       }
     }
