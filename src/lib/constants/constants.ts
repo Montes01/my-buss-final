@@ -71,3 +71,12 @@ export const users: UserCard[] = [
     description: "Bayron es quien realiza la documentación del proyecto.",
   },
 ];
+
+export const SLIDER_MESSAGES = [
+  "¡Viaja con comodidad y eficiencia!",
+  "¡Descubre nuevos destinos!",
+  "¡Personaliza tu experiencia de viaje!",
+  "¡Encuentra las mejores rutas!",
+  "¡Explora nuevos destinos!",
+  "¡Planifica tus rutas con nosotros!",
+];

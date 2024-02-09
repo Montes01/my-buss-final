@@ -1,11 +1,15 @@
 "use client"
-import { PRINCIPAL_MESSAGE, PROJECT_NAME, Services } from "@/lib/constants/constants";
+import { PRINCIPAL_MESSAGE, PROJECT_NAME, SLIDER_MESSAGES, Services } from "@/lib/constants/constants";
 import ServiceCard from "@/system-design/molecules/ServiceCard";
 import Button from "@/system-design/atoms/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Home() {
 
   const [selectedImage, setSelectedImage] = useState(1);
+  const [message, setMessage] = useState(SLIDER_MESSAGES[selectedImage]);
+  useEffect(() => {
+    setMessage(SLIDER_MESSAGES[selectedImage]);
+  }, [selectedImage]);
   const handleBackImage = () => {
     if (selectedImage === 1) {
       setSelectedImage(6);
@@ -41,6 +45,7 @@ export default function Home() {
       </main>
       <section className="carousel">
         <section className="home-slider">
+          <h2 className="slider-message">{message}</h2>
           <ul className="items">
             <picture className="slider-image">
               <img src={`/Images/bus${selectedImage === 1 ? 6 : selectedImage - 1}.jpeg`} alt="" />
