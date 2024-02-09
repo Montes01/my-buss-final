@@ -148,17 +148,26 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    .slider-message {
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      text-align: center;
+      max-width: 50ch;
+    }
+
 
     .items {
+      
       position: relative;
-      gap: .0rem;
+      // gap: .0rem;
       display: flex;
       align-items: center;
       width: fit-content  ;
       height: fit-content;
       .slider-image {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 250px;
         animation: appear-from-left 0.5s ease-in-out;
         
         &:first-child {
@@ -170,8 +179,8 @@
         opacity: 0.5;
         &.selected {
           z-index: 1;
-          width: 300px;
-          height: 300px;
+          width: 350px;
+          height: 350px;
           transform: scale(1);
           opacity: 1;
         }
@@ -188,9 +197,8 @@
   }
   .slider-buttons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
     align-items: center;
+    gap: 1rem;
     .slider-button {
       width: 30px;
       height: 30px;

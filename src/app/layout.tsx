@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Monofett, Crushed } from "next/font/google";
+import { Inter, Aclonica, Aleo } from "next/font/google";
 import "./globals.scss";
 import "@/lib/style-helpers/_colors.scss"
 import Head from "next/head";
-const inter = Inter({
-  subsets: ["latin"]
+const inter = Aleo({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
