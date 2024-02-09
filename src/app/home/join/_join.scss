@@ -1,0 +1,43 @@
+@import "../../../lib/style-helpers/measurement";
+@import "../../../lib/style-helpers/colors";
+
+.join-home {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 5rem 0;
+    background-image: url("/Images/bus3.jpeg");
+
+    * {
+        color: $base-color;
+    }
+
+    .form-sections {
+        border-radius: $radius-base;
+        backdrop-filter: brightness(0.25) blur(3px);
+        display: flex;
+        width: 80%;
+
+        .change-join-type {
+            background-color: $primary;
+            padding: 5rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            border-radius: inherit;
+            .change-join-button {
+                background-color: $dark-color;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+    }
+}
