@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
   const [selectedImage, setSelectedImage] = useState(1);
-  const [message, setMessage] = useState(SLIDER_MESSAGES[selectedImage]);
+  const [message, setMessage] = useState(SLIDER_MESSAGES[selectedImage-1]);
   useEffect(() => {
-    setMessage(SLIDER_MESSAGES[selectedImage]);
+    setMessage(SLIDER_MESSAGES[selectedImage-1]);
   }, [selectedImage]);
   const handleBackImage = () => {
     if (selectedImage === 1) {
