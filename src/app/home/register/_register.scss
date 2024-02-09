@@ -1,16 +1,9 @@
 @import "../../../lib/style-helpers/colors";
-@import "../../../lib/style-helpers/measurement";
+  @import "../../../lib/style-helpers/measurement";
 
-.slider-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-}
 
 .register-content {
-  padding: 3rem 1.5rem;
+  padding: 5rem 1.5rem;
   background-color: $base-color;
   display: flex;
   flex-direction: column;

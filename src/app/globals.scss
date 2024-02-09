@@ -1,5 +1,6 @@
 @import "../lib/styles/button";
 @import "../lib/styles/input";
+@import "../lib/styles/carousel";
 @import "../lib/style-helpers/colors";
 
 *,
@@ -20,6 +21,7 @@ span {
 }
 
 .home-header {
+  z-index: 100;
   background-color: $dark-color;
   width: 100%;
   height: 10vh;
@@ -29,7 +31,6 @@ span {
   position: sticky;
   top: 0;
   right: 0;
-  z-index: 1;
   max-height: 120px;
   animation-name: unnappear;
   animation-timeline: scroll();

@@ -1,17 +1,17 @@
 'use client'
 interface Props {
-  content: string
+  content: React.ReactNode
   disabled?: boolean
   className?: string
   submit?: boolean
   action?: () => void
 }
 
-export default function Button({ content, disabled, className, submit, action }: Props) {
+export default function Button({ content: children, disabled, className, submit, action }: Props) {
 
   return (
     <button onClick={action} type={submit ? "submit" : "button"} className={"button " + className} disabled={disabled}>
-      {content}
+      {children}
     </button>
   )
 }

@@ -1,4 +1,3 @@
-"use client"
 import { PRINCIPAL_MESSAGE, PROJECT_NAME, SLIDER_MESSAGES, Services } from "@/lib/constants/constants";
 import ServiceCard from "@/system-design/molecules/ServiceCard";
 import Button from "@/system-design/atoms/Button";

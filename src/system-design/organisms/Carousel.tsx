@@ -1,3 +1,4 @@
+'use client'
 import { SLIDER_MESSAGES } from "@/lib/constants/constants";
 import { useState, useEffect } from "react";
 import Button from "../atoms/Button";
