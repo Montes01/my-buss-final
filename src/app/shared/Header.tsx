@@ -13,7 +13,7 @@ export default function Header() {
         <NavButton children="Inicio" className="header-button" to="/home" />
         <NavButton children="Ingresa" className="header-button" to="/home/join/login" />
         <NavButton children="Registro" className="header-button" to="/home/join/register" />
-        <NavButton children="Nosotros" className="header-button" to="/about" />
+        <NavButton children="Nosotros" className="header-button" to="/home/about" />
       </section>
       <section className="dark-button-wrapper">
         <Button content="🌙" className="dark-button" />
