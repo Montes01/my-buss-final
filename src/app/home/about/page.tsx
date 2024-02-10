@@ -6,7 +6,6 @@ import Footer from "../shared/Footer";
 export default function About() {
   return (
     <>
-      <Header />
       <main className="main-about">
         <section className="main-info-section">
           <h2 className="about-title">Sobre nosotros</h2>
@@ -27,7 +26,6 @@ export default function About() {
           ))}
         </section>
       </main>
-      <Footer />
     </>
   );
 }

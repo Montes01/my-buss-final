@@ -1,10 +1,11 @@
-@import "../../../lib/style-helpers/colors";
-  @import "../../../lib/style-helpers/measurement";
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
 
 
 .register-content {
   padding: 5rem 1.5rem;
-  background-color: $base-color;
+  width: 70%;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +19,7 @@
   gap: 1rem;
   width: 500px;
   flex: 1;
-  padding:  1rem 0;
+  padding: 1rem 0;
   overflow-x: hidden;
 }
 
@@ -29,24 +30,32 @@
   flex-direction: column;
   align-items: end;
   gap: 1rem;
+
   .continue-button {
     margin: 0 20px 0 0;
     bottom: 0;
     right: 0;
 
   }
+
   .input-wrapper {
     width: 100%;
     justify-content: end;
     text-align: end;
     flex-direction: column;
     align-items: start;
+
     .form-input {
       width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      border-radius: 0;
     }
   }
 
 }
+
 .register-camps.active {
   display: flex;
 }
@@ -57,9 +66,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+
   .back-button {
     margin: 0 20px 0 0;
   }
+
   .continue-button {
     margin: 0 0 0 20px;
   }

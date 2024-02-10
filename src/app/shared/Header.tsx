@@ -11,8 +11,8 @@ export default function Header() {
       </picture>
       <section className="header-buttons">
         <NavButton children="Inicio" className="header-button" to="/home" />
-        <NavButton children="Ingresa" className="header-button" to="/home/login" />
-        <NavButton children="Registro" className="header-button" to="/home/register" />
+        <NavButton children="Ingresa" className="header-button" to="/home/join/login" />
+        <NavButton children="Registro" className="header-button" to="/home/join/register" />
         <NavButton children="Nosotros" className="header-button" to="/about" />
       </section>
       <section className="dark-button-wrapper">

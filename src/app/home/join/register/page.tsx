@@ -41,7 +41,6 @@ export default function Register() {
 
 
   return (
-    <section className="slider-content">
       <section className="register-content">
 
         <h3 className="register-form_title">Bienvenido</h3>
@@ -78,8 +77,6 @@ export default function Register() {
           </section>
         </form>
       </section>
-    </section>
-
 
   )
 

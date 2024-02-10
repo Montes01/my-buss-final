@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
     const [isLogin, setIsLogin] = useState(false)
     useEffect(() => {
         setIsLogin(location.pathname.includes(`/join/login`))
-    }, [])
+    })
 
     return (
         <main className="join-home">
@@ -21,7 +21,7 @@ export default function Layout({ children }: Props) {
                     <p>{isLogin
                         ? "Si aun no tienes una cuenta, por favor registrate aqui!"
                         : "Si ya tienes una cuenta, ingresa aqui "}</p>
-                    <NavButton className="button change-join-button" to={isLogin ? "/join/register" : "/join/login"} children="Registrate" />
+                    <NavButton className="button change-join-button" to={isLogin ? "/home/join/register" : "/home/join/login"} children={isLogin? "Registrate": "Ingresa"} />
                 </section>
                 {children}
             </section>
