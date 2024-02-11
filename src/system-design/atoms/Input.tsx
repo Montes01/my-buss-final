@@ -5,12 +5,13 @@ interface Props {
   after?: boolean
   type?: keyof typeof inputTypes
   name?: string
+  required?: boolean
 }
-export default function Input({ label, after, type, name, className }: Props) {
+export default function Input({ label, after, type, name, className, required }: Props) {
   return (
     <label className="input-wrapper">
       {!after && label}
-      <input name={name} className={"input " + className} type={type ?? "text"} />
+      <input name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
       {after && label}
     </label>
   )
