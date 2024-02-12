@@ -9,7 +9,6 @@ import { usePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
 import { parseUser } from "@/lib/constants/utils";
-import useStore from "@/lib/context/context";
 export default function Login() {
     const [isLoading, setIsLoading] = useState(false)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,9 +23,10 @@ export default function Login() {
             let decoded = decode(token);
             console.log(decoded)
             try {
+                localStorage.clear()
                 let userParsed = parseUser(decoded)
-                useStore.setState({ user: userParsed })
-
+                localStorage.setItem('user', JSON.stringify(userParsed))
+                window.location.href = "/dashboard"
             } catch (err) {
                 console.error(err)
             }
