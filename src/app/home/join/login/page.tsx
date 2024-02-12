@@ -41,9 +41,9 @@ export default function Login() {
         >
             <h3 className="login-form_title">Inicia Sesión</h3>
             <section className="login-ways">
-                <Button className="login-google login-way" content={<IconBrandGoogle color="white" />} />
-                <Button className="login-github login-way" content={<IconBrandGithub color="white" />} />
-                <Button className="login-github login-way" content={<IconBrandFacebook color="white" />} />
+                <Button className="login-google login-way" content={IconBrandGoogle} />
+                <Button className="login-github login-way" content={IconBrandGithub} />
+                <Button className="login-github login-way" content={IconBrandFacebook} />
             </section>
             <section className="camps">
                 <Input required name="dni" className="form-input" label="Documento" />
