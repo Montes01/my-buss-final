@@ -1,6 +1,6 @@
-import Header from "../shared/Header";
+import Header from "./shared/Header";
 import "./_home.scss";
-import Footer from "./shared/Footer";
+import Footer from "../shared/Footer";
 
 interface Props {
   children: React.ReactNode
