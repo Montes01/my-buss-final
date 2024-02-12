@@ -1,3 +1,4 @@
+'use client'
 import Footer from "../shared/Footer"
 import Header from "./shared/Header"
 import "./dashboard.scss";

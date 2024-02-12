@@ -1,6 +1,7 @@
 import Logo from "@/system-design/molecules/Logo";
 import NavButton from "@/system-design/atoms/NavButton";
 import Button from "@/system-design/atoms/Button";
+import {  IconLogout } from "@tabler/icons-react";
 export default function Header() {
 
     return (
@@ -10,7 +11,7 @@ export default function Header() {
                 <NavButton children="Inicio" className="header-button" to="/dashboard" />
                 <NavButton children="Perfil" className="header-button" to="/dashboard/profile" />
                 <NavButton children="Configuración" className="header-button" to="/dashboard/settings" />
-                <Button content="cerrar sesion" />
+                <Button content={IconLogout} className="logout-button" />
             </section>
         </header>
     )

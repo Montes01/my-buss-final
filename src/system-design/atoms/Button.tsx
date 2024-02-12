@@ -13,7 +13,7 @@ export default function Button({ content: Content, disabled, className, submit, 
 
   return (
     <button onClick={action} type={submit ? "submit" : "button"} className={"button " + className} disabled={disabled}>
-      {typeof Content === "string" ? Content : <Content />}
+      {typeof Content === "string" ? Content : <Content color="white"/>}
     </button>
   )
 }
