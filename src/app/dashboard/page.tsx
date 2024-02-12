@@ -15,8 +15,8 @@ export default function dashboard() {
     
     }, [])
     return (
-        <>
+        <main className="main-dashboard">
             Bienvenido  {user?.nombre}
-        </>
+        </main>
     )
 }
