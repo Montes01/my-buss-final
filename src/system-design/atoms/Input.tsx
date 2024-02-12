@@ -10,9 +10,9 @@ interface Props {
 export default function Input({ label, after, type, name, className, required }: Props) {
   return (
     <label className="input-wrapper">
-      {!after && label}
+      {!after && <>{label}{required ? " *" : ""}</>}
       <input name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
-      {after && label}
+      {after && <>{label}{required ? " *" : ""}</>}
     </label>
   )
 }

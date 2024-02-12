@@ -5,16 +5,21 @@ import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/ico
 import Input from "@/system-design/atoms/Input";
 import { SERVER_URL } from "@/lib/constants/constants";
 import { usePost } from "@/lib/hooks/fetchHook"
+import Spinner from "@/system-design/atoms/Spinner";
+import { useState } from "react";
 
 export default function Login() {
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setIsLoading(true)
         const data = new FormData(e.currentTarget)
         const Documento = data.get('dni')!
         const Contraseña = data.get('password')!
         const res = await usePost(SERVER_URL + '/Usuario/Ingresar', { Documento, Contraseña })
         console.log(res)
+        setIsLoading(false)
     }
     return (
         <form
@@ -31,7 +36,10 @@ export default function Login() {
             <section className="camps">
                 <Input required name="dni" className="form-input" label="Documento" />
                 <Input required name="password" className="form-input" label="Contraseña" type="password" />
-                <Button submit content="Ingresar" className=" login-button" />
+                <section className="final-step">
+                    <Button submit content="Ingresar" className=" login-button" />
+                    {isLoading && <Spinner />}
+                </section>
             </section>
         </form>
     )

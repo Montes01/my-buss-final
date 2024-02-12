@@ -42,5 +42,11 @@
                 border-radius: 0;
             }
         }
+
+        .final-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }

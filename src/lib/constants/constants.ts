@@ -2,7 +2,7 @@ import { ServiceCard, UserCard } from "./declarations"
 
 export const PROJECT_NAME = "MyBuss";
 
-export const SERVER_URL = "https://localhost:7151";
+export const SERVER_URL = process.env.SERVER_URL ?? "https://localhost:7151";
 
 export const PRINCIPAL_MESSAGE = `Descubre y planifica tus rutas con nosotros. Con nuestra plataforma innovadora podras exporar nuevos destinos, encontrar las mejores rutas y personalizar tu experiencia de viaje. ¡Viaja con comodidad y eficiencia en ${PROJECT_NAME}!`;
 
