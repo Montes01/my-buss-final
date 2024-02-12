@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^2.47.0",
+    "@types/jsonwebtoken": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken-promisified": "^1.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

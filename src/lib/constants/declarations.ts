@@ -17,3 +17,14 @@ export type UserCard = {
   role: string;
   description: string;
 };
+export type user = {
+  foto?: string;
+  nombre: string;
+  apellido?: string;
+  edad: number;
+  telefono?: string;
+  contraseña?: string;
+  correo: string;
+  documento: string;
+  rol: string;
+};

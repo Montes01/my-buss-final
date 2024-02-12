@@ -18,6 +18,7 @@ export default function About() {
         <section className="integrants">
           {users.map(({ name, description, image, role }) => (
             <UserCard
+              key={name}
               description={description}
               name={name}
               image={image}

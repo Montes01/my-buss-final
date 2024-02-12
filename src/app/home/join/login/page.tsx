@@ -1,5 +1,6 @@
 'use client'
 import "./_login.scss";
+import { decode } from "jsonwebtoken";
 import Button from "@/system-design/atoms/Button";
 import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/icons-react";
 import Input from "@/system-design/atoms/Input";
@@ -7,10 +8,10 @@ import { SERVER_URL } from "@/lib/constants/constants";
 import { usePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
-
+import { parseUser } from "@/lib/constants/utils";
+import useStore from "@/lib/context/context";
 export default function Login() {
     const [isLoading, setIsLoading] = useState(false)
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsLoading(true)
@@ -18,7 +19,18 @@ export default function Login() {
         const Documento = data.get('dni')!
         const Contraseña = data.get('password')!
         const res = await usePost(SERVER_URL + '/Usuario/Ingresar', { Documento, Contraseña })
-        console.log(res)
+        if (res.message === "OK") {
+            let token = String(res.data); // Convert res.data to a string
+            let decoded = decode(token);
+            console.log(decoded)
+            try {
+                let userParsed = parseUser(decoded)
+                useStore.setState({ user: userParsed })
+
+            } catch (err) {
+                console.error(err)
+            }
+        }
         setIsLoading(false)
     }
     return (
