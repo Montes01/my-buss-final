@@ -15,9 +15,9 @@
     animation-name: unnappear;
     animation-timeline: scroll();
     transition: all 0.5s ease-in-out;
-    .logout-button {
+    .header-button {
         width: fit-content;
-        padding: 5px;
+        padding: 5px 12px;
     }
 
 }
