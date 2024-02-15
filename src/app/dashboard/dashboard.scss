@@ -34,18 +34,4 @@
     gap: 20px;
     padding: 20px;
     background-color: $base-color;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0.9;
-    &:hover {
-        opacity: 1;
-    }
-    border-radius: $radius-base;
-    .principal-message {
-        max-width: 40ch;
-        text-overflow: ellipsis;
-        font-size: 20px;
-        font-weight: 700;
-        text-align: center;
-        letter-spacing: .01px;
-    }
 }
