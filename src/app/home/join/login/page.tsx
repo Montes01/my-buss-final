@@ -4,12 +4,13 @@ import { decode } from "jsonwebtoken";
 import Button from "@/system-design/atoms/Button";
 import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/icons-react";
 import Input from "@/system-design/atoms/Input";
-import { SERVER_URL } from "@/lib/constants/constants";
+import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
 import { usePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
 import { parseUser } from "@/lib/constants/utils";
 import ChangeJoin from "../shared/ChanngeJoin";
+
 export default function Login() {
     const [isLoading, setIsLoading] = useState(false)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +19,8 @@ export default function Login() {
         const data = new FormData(e.currentTarget)
         const Documento = data.get('dni')!
         const Contraseña = data.get('password')!
-        const res = await usePost(SERVER_URL + '/Usuario/Ingresar', { Documento, Contraseña })
+        const {LOGIN} = ENDPOINTS.USER
+        const res = await usePost(SERVER_URL + LOGIN, { Documento, Contraseña })
         if (res.message === "OK") {
             let token = String(res.data); // Convert res.data to a string
             let decoded = decode(token);

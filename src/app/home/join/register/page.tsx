@@ -5,6 +5,7 @@ import "./_register.scss";
 import Button from "@/system-design/atoms/Button";
 import { usePost } from "@/lib/hooks/fetchHook";
 import { SERVER_URL } from "@/lib/constants/constants";
+import { ENDPOINTS } from "@/lib/constants/constants";
 import ChangeJoin from "../shared/ChanngeJoin";
 export default function Register() {
   const firstRef = useRef<HTMLDivElement>(null)
@@ -34,8 +35,8 @@ export default function Register() {
     } else {
       setMessage('')
     }
-    console.log({ Documento, Correo, Nombre, Apellido, Edad, Telefono, Contraseña })
-    const res = await usePost(SERVER_URL + '/Usuario/Registrar', { Documento, Correo, Nombre, Apellido, Edad, Telefono, Contraseña, Rol })
+    const { REGISTER } = ENDPOINTS.USER
+    const res = await usePost(SERVER_URL + REGISTER, { Documento, Correo, Nombre, Apellido, Edad, Telefono, Contraseña, Rol })
     if (res.message === "OK") {
       handleContinue(1)
       setMessage('Usuario registrado con éxito')
