@@ -39,13 +39,13 @@ export default function Carousel() {
                 <h2 className="slider-message">{message}</h2>
                 <ul className="items">
                     <picture className="slider-image">
-                        <img src={`/Images/bus${selectedImage === 1 ? 6 : selectedImage - 1}.jpeg`} alt="" />
+                        <img src={`/Images/Bus-${selectedImage === 1 ? 6 : selectedImage - 1}.png`} alt="" />
                     </picture>
                     <picture className="slider-image selected">
-                        <img src={`/Images/bus${selectedImage}.jpeg`} alt="" />
+                        <img src={`/Images/Bus-${selectedImage}.png`} alt="" />
                     </picture>
                     <picture className="slider-image">
-                        <img src={`/Images/bus${selectedImage === 6 ? 1 : selectedImage + 1}.jpeg`} alt="" />
+                        <img src={`/Images/Bus-${selectedImage === 6 ? 1 : selectedImage + 1}.png`} alt="" />
                     </picture>
                 </ul>
                 <section className="slider-buttons">
