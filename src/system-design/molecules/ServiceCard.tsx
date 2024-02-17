@@ -8,10 +8,10 @@ export default function ServiceCard({ image, description, title, href, }: Props)
             href={href}
             className="service-card"
         >
-            <img src={image} alt={title} />
-            <div className="flex flex-col gap-7">
-                <h3 className="text-xl font-bold">{title}</h3>
-                <p>{description}</p>
+            <img className="service-card_image" src={image} alt={title} />
+            <div className="service-card_text">
+                <h3 className="service-card_title">{title}</h3>
+                <p className="service-card_info">{description}</p>
             </div>
         </Link>
     );
