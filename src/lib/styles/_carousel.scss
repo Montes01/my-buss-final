@@ -1,83 +1,94 @@
+@import "../style-helpers/measurement";
+@import "../style-helpers/colors";
 .carousel {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    padding: 5rem 0;
-    .home-slider {
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      .slider-message {
-        font-size: 2rem;
-        text-transform: uppercase;
-        font-weight: 900;
-        text-align: center;
-        max-width: 50ch;
-      }
-  
-  
-      .items {
-        
-        position: relative;
-        // gap: .0rem;
-        display: flex;
-        align-items: center;
-        width: fit-content  ;
-        height: fit-content;
-        .slider-image {
-          width: 150px;
-          height: 250px;
-          animation: appear-from-left 0.5s ease-in-out;
-          
-          &:first-child {
-            transform: translateX(100px);
-          }
-          &:last-child {
-            transform: translateX(-100px);
-          }
-          opacity: 0.5;
-          &.selected {
-            z-index: 1;
-            width: 350px;
-            height: 350px;
-            transform: scale(1);
-            opacity: 1;
-          }
-          img {
-            border-radius: $radius-base;
-            width: 100%;
-            object-position: center;
-            height: 100%;
-            object-fit: cover;
-          }
-          
-        }
-      }
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 5rem;
+  background-color: $base-color ;
+  position: relative;
+
+  .home-slider {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    .slider-message {
+      font-size: 2rem;
+      text-transform: capitalize;
+      font-weight: 900;
+      text-align: center;
+      max-width: 50ch;
     }
-    .slider-buttons {
+
+
+    .items {
+      padding: 15px 0;
+
+      position: relative;
+      // gap: .0rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      .slider-button {
-        width: 30px;
-        height: 30px;
-        transition: background-color 0.3s ease-in-out;
-        &:hover {
-          background-color: $secondary;
+      width: fit-content;
+      height: 100%;
+
+      .slider-image {
+        opacity: 0.5;
+        width: 300px;
+        height: 180px;
+
+        * {
+          border-radius: $radius-base;
+          filter: drop-shadow(0px 5px 3px rgba(0, 0, 0));
         }
+
+
+        &:first-child {
+          transform: translateX(10px);
+          margin-top: 25px;
+        }
+
+
+        &:last-child {
+          transform: translateX(-10px);
+          margin-top: 25px;
+        }
+
+        &.selected {
+          z-index: 1;
+          opacity: 1;
+          margin-bottom: 25px;
+          transform: scale(1.1);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
       }
     }
   }
-  
-  @keyframes appear-from-left {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-    
+
+  .slider-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    width: fit-content;
+    padding: 0px 13px;
   }
-  
+
+  .left {
+    left: 10px;
+  }
+
+  .right {
+    right: 10px;
+  }
+
+}

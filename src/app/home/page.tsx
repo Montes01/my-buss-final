@@ -23,17 +23,23 @@ export default function Home() {
         </section>
 
       </main>
-      <Carousel/>
-      <section className="info-part">
-        {Services.map(({ description, image, href, title }, index) => (
-          <ServiceCard
-            key={index}
-            description={description}
-            image={image}
-            href={href}
-            title={title}
-          />
-        ))}
+      <Carousel />
+      <section className="services">
+        <div className="services_text">
+          <h3 className="services-title">servicios</h3>
+          <strong> Descubre Nuestro Sistema de Transporte</strong>
+        </div>
+        <section className="info-part">
+          {Services.map(({ description, image, href, title }, index) => (
+            <ServiceCard
+              key={index}
+              description={description}
+              image={image}
+              href={href}
+              title={title}
+            />
+          ))}
+        </section>
       </section>
     </>
   )
