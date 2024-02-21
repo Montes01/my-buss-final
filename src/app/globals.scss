@@ -4,6 +4,7 @@
 @import "../lib/styles/route-card";
 @import "../lib/styles/logo";
 @import "../lib/style-helpers/colors";
+@import "../lib/styles/company-card";
 
 
 *,
@@ -38,13 +39,14 @@ span {
   max-height: 120px;
   animation-name: unnappear;
   animation-timeline: scroll();
-  transition: all 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  backdrop-filter: blur(10px) brightness(0.5);
 
 }
 
 @keyframes unnappear {
   to {
-    opacity: 0.8;
+    background-color: rgba($dark-color, .4) ;
   }
 }
 

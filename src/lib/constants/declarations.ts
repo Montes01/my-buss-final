@@ -13,7 +13,7 @@ export enum inputTypes {
 }
 export type UserCard = {
   image: string;
-  name:string;
+  name: string;
   role: string;
   description: string;
 };
@@ -27,4 +27,15 @@ export type user = {
   correo: string;
   documento: string;
   rol: string;
+};
+
+export type company = {
+  idEmpresa?: string;
+  nombre: string;
+  ubicacion?: string;
+  telefono?: string;
+  correo_electronico?: string;
+  imagen?: string;
+  contraseña?: string;
+
 };

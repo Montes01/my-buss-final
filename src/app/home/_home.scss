@@ -180,3 +180,45 @@
   flex: 1;
   flex-basis: 0;
 }
+
+
+.companies-part {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  background: url("/Images/companies-bg.jpg") no-repeat center center/cover;
+
+  .companies-text {
+    * {
+      color: $base-color;
+    }
+    flex: 1;
+    padding: 4rem 2rem; 
+    height: 100%; 
+    background: linear-gradient(to right, rgba($primary, 0.7) 50%, transparent);
+    @include center {
+      flex-direction: column;
+      gap: 2rem;
+    };
+    .companies-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 50px $base-color;
+      text-align: center;
+    }
+    .companies-pharagraph{
+      font-size: 1.25rem;
+      font-weight: 300;
+      text-align: center;
+      max-width: 50ch;
+    }
+  }
+
+  .companies-content {
+    width: 60%;
+
+  }
+
+}

@@ -1,4 +1,7 @@
 import { type user } from "./declarations"
+
+import { decode } from "jsonwebtoken";
+
 export function parseUser(user: any): user {
     //validate camps
     if (user.Nombre === undefined) throw new Error("nombre is required")
@@ -20,4 +23,9 @@ export function parseUser(user: any): user {
         rol: user.Rol,
         edad: user.Edad,
     }
+}
+export function readToken(token: string): user {
+    const user = decode(token)
+    if (user === null) throw new Error("invalid token")
+    return parseUser(user)
 }

@@ -17,6 +17,9 @@ export const ENDPOINTS = {
     ADD: "Bus/Agregar",
     LIST: "Bus/Listar",
   },
+  COMPANY: {
+    LIST: "Empresa/Listar",
+  }
 
 
 };

@@ -1,18 +1,24 @@
 'use client'
 
-import { user } from "@/lib/constants/declarations"
-import { useEffect, useState } from "react"
+import { readToken } from "@/lib/constants/utils"
+import userActions from "@/lib/context/hooks/userActions"
+import { useEffect } from "react"
 
 export default function dashboard() {
-    const [user, setUser] = useState<user | null>(null)
+    const { useGetUser, useLogin } = userActions()
+    let user = useGetUser
     useEffect(() => {
-        let user = localStorage.getItem('user')
-        if (user) {
-            setUser(JSON.parse(user))
+        const token = localStorage.getItem('token')
+        if (token) {
+            try {
+                const userFromToken = readToken(token)
+                useLogin(userFromToken)
+            } catch (error) {
+                console.log(error)
+            }
         } else {
-            window.location.href = '/home/join/login'
+            window.location.href = '/home'
         }
-    
     }, [])
     return (
         <main className="main-dashboard">

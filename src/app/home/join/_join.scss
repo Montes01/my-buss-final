@@ -5,8 +5,11 @@
     width: 100%;
     display: grid;
     place-items: center;
-  height: 90vh;
-    background-image: url("/Images/bus3.jpeg");
+    height: 90vh;
+    background-image: url("/Images/Bus-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     * {
         color: $base-color;

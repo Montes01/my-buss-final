@@ -1,10 +1,11 @@
-import { useAppDispatch } from "./index";
+import { useAppDispatch, useAppSelector } from "./index";
 import { login, logout } from "../slices/userSlice";
 
 import { user } from "@/lib/constants/declarations";
 export default function userActions() {
     const dispatch = useAppDispatch();
-    const loginAction = (user: user) => dispatch(login(user));
-    const logoutAction = () => dispatch(logout());
-    return { loginAction, logoutAction };
+    const useLogin = (user: user) => dispatch(login(user));
+    const useLogout = () => dispatch(logout());
+    const useGetUser = useAppSelector((state) => state.user.user);
+    return { useLogin, useLogout, useGetUser };
 }

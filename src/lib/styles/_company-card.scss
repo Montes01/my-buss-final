@@ -1,0 +1,44 @@
+@import "../style-helpers/colors";
+.company-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 8px;
+    height: 100px;
+    gap: 20px;
+    .company-image {
+        width: auto;
+        height: 100%;
+        filter: drop-shadow(0px 0px 3px rgba($base-color, 0.9));
+    }
+
+
+    .company-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+
+
+        .company-name {
+            font-size: 23px;
+            color: $base-color;
+            letter-spacing: 5px;
+        }
+        .ver-rutas-button {
+            width: 90px;
+            height: 40px;
+            background-color: $base-color;
+            color: $primary;
+            border: 1px solid $primary;
+            &:hover {
+                background-color: $primary;
+                color: $base-color;
+            }
+        }
+    }
+}

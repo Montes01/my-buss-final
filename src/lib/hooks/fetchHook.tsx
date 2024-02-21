@@ -16,3 +16,13 @@ export async function usePost(url: string, data: object) {
    
 }
 
+export async function useGet(url: string) {
+    try {
+        const res = await fetch(url);
+        const res_1 = await res.json();
+        return res_1;
+    } catch (err) {
+        return err;
+    }
+}
+

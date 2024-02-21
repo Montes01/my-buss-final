@@ -1,6 +1,5 @@
 'use client'
 import "./_login.scss";
-import { decode } from "jsonwebtoken";
 import Button from "@/system-design/atoms/Button";
 import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/icons-react";
 import Input from "@/system-design/atoms/Input";
@@ -8,7 +7,6 @@ import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
 import { usePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
-import { parseUser } from "@/lib/constants/utils";
 import ChangeJoin from "../shared/ChanngeJoin";
 
 export default function Login() {
@@ -19,16 +17,13 @@ export default function Login() {
         const data = new FormData(e.currentTarget)
         const Documento = data.get('dni')!
         const Contraseña = data.get('password')!
-        const {LOGIN} = ENDPOINTS.USER
+        const { LOGIN } = ENDPOINTS.USER
         const res = await usePost(SERVER_URL + LOGIN, { Documento, Contraseña })
         if (res.message === "OK") {
-            let token = String(res.data); // Convert res.data to a string
-            let decoded = decode(token);
-            console.log(decoded)
+            let token = String(res.data);
             try {
                 localStorage.clear()
-                let userParsed = parseUser(decoded)
-                localStorage.setItem('user', JSON.stringify(userParsed))
+                localStorage.setItem('token', token)
                 window.location.href = "/dashboard"
             } catch (err) {
                 console.error(err)
@@ -38,7 +33,7 @@ export default function Login() {
     }
     return (
         <>
-        <ChangeJoin isLogin />
+            <ChangeJoin isLogin />
             <form
                 onSubmit={handleSubmit}
                 action=""
