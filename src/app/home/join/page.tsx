@@ -1,7 +1,15 @@
 'use client'
 
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
+
 export default function Login() {
-  window.location.href = '/home/join/login'
+  const router = useRouter()
+  useEffect(() => {
+    router.push("/join/login")
+  }, [])
+
+
   return (
     <></>
   )

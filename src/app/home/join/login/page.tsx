@@ -8,8 +8,10 @@ import { UsePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
 import ChangeJoin from "../shared/ChanngeJoin";
+import { useRouter } from "next/router";
 
 export default function Login() {
+    const router = useRouter()
     const [isLoading, setIsLoading] = useState(false)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -24,7 +26,8 @@ export default function Login() {
             try {
                 localStorage.clear()
                 localStorage.setItem('token', token)
-                window.location.href = "/dashboard"
+                router.push('/dashboard')
+                
             } catch (err) {
                 console.error(err)
             }
