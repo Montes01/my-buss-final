@@ -42,13 +42,13 @@ export const Services: ServiceCard[] = [
   {
     title: "Sitios de Interés",
     description: "Descubre los lugares más emblemáticos y sitios turísticos de la ciudad.",
-    image: "/Images/Gadget-3.png",
+    image: "/Images/Gadget-4.png",
     href: "/horarios-ciudad",
   },
   {
     title: "Asistencia al Viajero",
     description: "Servicio de asistencia y soporte en caso de incidencias durante el viaje.",
-    image: "/Images/Gadget-4.png",
+    image: "/Images/Gadget-3.png",
     href: "/horarios-ciudad",
   },
 ];

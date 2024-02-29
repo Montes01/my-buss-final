@@ -201,23 +201,26 @@
     @include center {
       flex-direction: column;
       gap: 2rem;
+      align-items: start
     };
     .companies-title {
       font-size: 2.5rem;
       font-weight: 900;
       text-shadow: 1px 1px 50px $base-color;
       text-align: center;
+      width: 60%;
     }
     .companies-pharagraph{
       font-size: 1.25rem;
       font-weight: 300;
       text-align: center;
       max-width: 50ch;
+      width: 60%;
     }
   }
 
   .companies-content {
-    width: 60%;
+    width: 50%;
 
   }
 
