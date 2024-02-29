@@ -4,7 +4,7 @@ import ServiceCard from "@/system-design/molecules/ServiceCard";
 import Button from "@/system-design/atoms/Button";
 import Carousel from "@/system-design/organisms/Carousel";
 import { useEffect, useState } from "react";
-import { useGet } from "@/lib/hooks/fetchHook"
+import { UseGet } from "@/lib/hooks/fetchHook"
 import { company } from "@/lib/constants/declarations";
 import CompanyCard from "@/system-design/molecules/CompanyCard";
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    useGet(SERVER_URL + ENDPOINTS.COMPANY.LIST).then(res => {
+    UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST).then(res => {
       setCompanies(res.data)
     })
   }, [])

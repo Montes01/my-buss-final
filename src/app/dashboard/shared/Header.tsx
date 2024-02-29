@@ -11,8 +11,8 @@ export default function Header() {
         <header className="dashboard-header">
             <Logo to="/dashboard" className="dashboard-logo" />
             <section className="header-buttons">
-                <NavButton children="Inicio" className="header-button" to="/dashboard" />
-                <NavButton children="Configuración" className="header-button" to="/dashboard/settings" />
+                <NavButton content="Inicio" className="header-button" to="/dashboard" />
+                <NavButton content="Configuración" className="header-button" to="/dashboard/settings" />
                 {/* if image fails put another src */}
                 <Button content={IconUser} className="header-button" />
                 <Button action={handleLogoutClick} content={IconLogout} className="header-button" />

@@ -11,7 +11,7 @@ export default function ChangeJoin({ isLogin }: Props) {
                 : "Si ya tienes una cuenta, ingresa aqui "}</p>
             <NavButton className="button change-join-button"
                 to={isLogin ? "/home/join/register" : "/home/join/login"}
-                children={isLogin ? "Registrate" : "Ingresa"} />
+                content={isLogin ? "Registrate" : "Ingresa"} />
         </section>
     )
 }

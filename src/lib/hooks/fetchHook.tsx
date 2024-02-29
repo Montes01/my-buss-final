@@ -1,5 +1,5 @@
 
-export async function usePost(url: string, data: object) {
+export async function UsePost(url: string, data: object) {
     try {
         const res = await fetch(url, {
             method: 'POST',
@@ -16,7 +16,7 @@ export async function usePost(url: string, data: object) {
    
 }
 
-export async function useGet(url: string) {
+export async function UseGet(url: string) {
     try {
         const res = await fetch(url);
         const res_1 = await res.json();

@@ -4,15 +4,15 @@ import { readToken } from "@/lib/constants/utils"
 import userActions from "@/lib/context/hooks/userActions"
 import { useEffect } from "react"
 
-export default function dashboard() {
-    const { useGetUser, useLogin } = userActions()
+export default function Dashboard() {
+    const { useGetUser, UseLogin } = userActions()
     let user = useGetUser
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
             try {
                 const userFromToken = readToken(token)
-                useLogin(userFromToken)
+                UseLogin(userFromToken)
             } catch (error) {
                 console.log(error)
             }

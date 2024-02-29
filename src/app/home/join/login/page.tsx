@@ -4,7 +4,7 @@ import Button from "@/system-design/atoms/Button";
 import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/icons-react";
 import Input from "@/system-design/atoms/Input";
 import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
-import { usePost } from "@/lib/hooks/fetchHook"
+import { UsePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
 import { useState } from "react";
 import ChangeJoin from "../shared/ChanngeJoin";
@@ -18,7 +18,7 @@ export default function Login() {
         const Documento = data.get('dni')!
         const Contraseña = data.get('password')!
         const { LOGIN } = ENDPOINTS.USER
-        const res = await usePost(SERVER_URL + LOGIN, { Documento, Contraseña })
+        const res = await UsePost(SERVER_URL + LOGIN, { Documento, Contraseña })
         if (res.message === "OK") {
             let token = String(res.data);
             try {
