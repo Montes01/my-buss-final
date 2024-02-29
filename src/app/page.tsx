@@ -1,13 +1,16 @@
-'use client'
+"use client"
+import { useEffect } from "react";
 
 export default function Home() {
-  window.location.href = '/home'
+  const redirectToHome = () => {
+    window.location.href = '/home';
+  };
+  useEffect(() => {
+    redirectToHome();
+  }, []);
+
   return (
     <>
-      
-    
-    
-    
     </>
   );
 }
