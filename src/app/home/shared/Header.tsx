@@ -2,6 +2,7 @@ import Button from "@/system-design/atoms/Button";
 import NavButton from "@/system-design/atoms/NavButton";
 import Logo from "@/system-design/molecules/Logo";
 
+import "./Header.scss"
 export default function Header() {
   return (
     <header className="home-header">

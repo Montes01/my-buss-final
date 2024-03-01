@@ -1,14 +1,13 @@
 'use client'
+import { Provider } from "react-redux"
+import { store } from "@/lib/context/store"
+import Header from "@/app/shared/Header/Header"
 import Footer from "../shared/Footer/Footer"
-import Header from "../shared/Header/Header"
-import "./dashboard.scss";
-import { store } from "@/lib/context/store";import { Provider } from "react-redux";
-
 interface Props {
     children: React.ReactNode
 }
+export default function Profile({ children }: Props) {
 
-export default function Layout({ children }: Props) {
 
     return (
         <Provider store={store}>

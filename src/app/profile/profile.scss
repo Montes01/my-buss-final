@@ -1,0 +1,86 @@
+@import "../../lib/style-helpers/colors";
+@import "../../lib/style-helpers/measurement";
+
+.main-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base;
+    background-color: rgba(darken($primary, 25%), .85);
+    position: relative;
+
+    .profile-title {
+        color: $base-color;
+    }
+
+    .profile-text {
+        color: $base-color;
+    }
+
+    .image-name {
+
+        &::after {
+            background-color: $primary;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            z-index: 1;
+            top: 0;
+            inset: 0;
+            border-radius: $radius-base;
+        }
+
+
+
+        position: relative;
+        padding: $padding-base;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        border-radius: 10px;
+
+        * {
+            z-index: 2;
+        }
+
+        .username-display {
+            color: white;
+
+            font-size: 1.5rem;
+        }
+
+        .edit-profile {
+            position: absolute;
+            right: $padding-base;
+            bottom: $padding-base;
+
+        }
+
+    }
+}
+
+.profile-camps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base * 2;
+    background-color: rgba(lighten($primary, 10%), .2);
+
+
+    .input-wrapper {
+        color: white;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        input {
+            background-color: rgba(lighten($primary, 10%), .2);
+            color: white;
+            border: none;
+            padding: $padding-base;
+            border-radius: $radius-base;
+            width: 100%;
+        }
+    }
+}

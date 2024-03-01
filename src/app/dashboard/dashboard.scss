@@ -1,33 +1,3 @@
-@import "../../lib/style-helpers/colors";
-@import "../../lib/style-helpers/measurement";
-.dashboard-header {
-    z-index: 100;
-    background-color: $dark-color;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    padding: 0 15px;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    right: 0;
-    max-height: 120px;
-    animation-name: unnappear;
-    animation-timeline: scroll();
-    transition: all 0.5s ease-in-out;
-    .header-button {
-        width: fit-content;
-        padding: 5px 12px;
-    }
-
-}
-
-@keyframes unnapear {
-    to {
-        opacity: 0.8;
-    }
-}
-
 .main-dashboard {
     display: flex;
     flex-direction: column;
