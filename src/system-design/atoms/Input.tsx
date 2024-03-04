@@ -6,12 +6,14 @@ interface Props {
   type?: keyof typeof inputTypes
   name?: string
   required?: boolean
+  defaultValue?: string
+  readonly?: boolean
 }
-export default function Input({ label, after, type, name, className, required }: Props) {
+export default function Input({ label, after, type, name, className, required, defaultValue, readonly }: Props) {
   return (
     <label className="input-wrapper">
       {!after && <>{label}{required ? " *" : ""}</>}
-      <input name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
+      <input readOnly={readonly} defaultValue={defaultValue} name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
       {after && <>{label}{required ? " *" : ""}</>}
     </label>
   )

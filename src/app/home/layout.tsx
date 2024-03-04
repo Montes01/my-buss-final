@@ -1,7 +1,7 @@
 'use client'
 import "./_home.scss";
 import Header from "./shared/Header";
-import Footer from "../shared/Footer";
+import Footer from "../shared/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "@/lib/context/store";
 interface Props {

@@ -5,8 +5,8 @@ import userActions from "@/lib/context/hooks/userActions"
 import { useEffect } from "react"
 
 export default function Dashboard() {
-    const { useGetUser, UseLogin } = userActions()
-    let user = useGetUser
+    const { UseGetUser, UseLogin } = userActions()
+    let user = UseGetUser
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {

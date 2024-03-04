@@ -6,6 +6,6 @@ export default function UserActions() {
     const dispatch = useAppDispatch();
     const UseLogin = (user: user) => dispatch(login(user));
     const UseLogout = () => dispatch(logout());
-    const useGetUser = useAppSelector((state) => state.user.user);
-    return { UseLogin, UseLogout, useGetUser };
+    const UseGetUser = useAppSelector((state) => state.user);
+    return { UseLogin, UseLogout, UseGetUser };
 }

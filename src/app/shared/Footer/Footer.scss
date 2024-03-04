@@ -1,0 +1,25 @@
+@import "../../../lib/style-helpers/mixins";
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.25rem;
+    gap: 3rem;
+    background-color: #d5d5d5;
+    color: inherit;
+    @include center;
+  
+    .footer-buttons {
+      display: flex;
+      gap: 12px;
+  
+      a {
+        @include interactive;
+        padding: 5px;
+        color: inherit;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }

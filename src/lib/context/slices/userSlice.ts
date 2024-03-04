@@ -2,9 +2,8 @@ import { user } from "@/lib/constants/declarations";
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: { user: user | null } = {
-    user: null
-}
+const initialState: user = {} as user
+
 
 
 const userSlice = createSlice({
@@ -12,13 +11,9 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         login: (_, action: PayloadAction<user>) => {
-            return {
-                user: action.payload
-            }
+            return action.payload
         },
-        logout: () => {
-            return { user: null }
-        },
+        logout: () => { }
     },
 });
 

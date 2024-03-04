@@ -1,0 +1,177 @@
+@import "../../lib/style-helpers/colors";
+@import "../../lib/style-helpers/measurement";
+
+.main-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base;
+    background-color: rgba(darken($primary, 25%), .85);
+    position: relative;
+
+    .profile-title {
+        color: $base-color;
+    }
+
+    .profile-text {
+        color: $base-color;
+    }
+
+    .image-name {
+
+        &::after {
+            background-color: $primary;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            z-index: 1;
+            top: 0;
+            inset: 0;
+            border-radius: $radius-base;
+        }
+
+
+
+        position: relative;
+        padding: $padding-base;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        border-radius: 10px;
+
+        * {
+            z-index: 2;
+        }
+
+        .username-display {
+            color: white;
+
+            font-size: 1.5rem;
+        }
+
+        .edit-profile {
+            position: absolute;
+            right: $padding-base;
+            bottom: $padding-base;
+
+        }
+
+    }
+}
+
+.profile-camps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base * 2;
+    background-color: rgba(darken($primary, 35%), .2);
+    border-radius: $radius-base;
+
+    .input-wrapper {
+        color: white;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-size: 1.5rem;
+        font: 900;
+
+        input {
+            font-size: 1rem;
+            border: none;
+            color: white;
+            padding: $padding-base - 10;
+            border-radius: 0;
+            width: 100%;
+            background-color: transparent;
+
+            //read only
+            border-bottom: 1px solid $base-color;
+
+            &:read-only {
+                border-bottom: 1px solid transparent;
+
+            }
+        }
+    }
+}
+
+.delete-account {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base;
+    background-color: rgba(darken($primary, 35%), .2);
+    border-radius: $radius-base;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &::after {
+        background-color: $base-color;
+        border-radius: $radius-base;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        z-index: 1;
+        top: 0;
+        inset: 0;
+        border-radius: $radius-base;
+
+    }
+
+
+    .delete-account-button {
+        background-color: rgba(darken($primary, 25%), .85);
+        color: white;
+        padding: $padding-base - 10;
+        border-radius: $radius-base;
+        font-size: 1rem;
+        font-weight: 900;
+        width: fit-content;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($primary, 10%);
+        }
+    }
+
+}
+
+dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    &:not([open]) {
+        display: none;
+    }
+
+
+
+    border: none;
+    border-radius: $radius-base;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $padding-base;
+    background-color: rgba(darken($primary, 35%), .2);
+    border-radius: $radius-base;
+    justify-content: center; // Center the dialog vertically
+
+    .dialog-buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
