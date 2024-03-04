@@ -1,7 +1,7 @@
 import { UseAppDispatch, UseAppSelector } from "./index";
 import { setCompany, removeCompany } from "../slices/companySlice";
 import { company } from "@/lib/constants/declarations";
-export default function companyActions() {
+export default function CompanyActions() {
     const dispatch = UseAppDispatch();
     const UseSetCompany = (company: company) => dispatch(setCompany(company));
     const UseRemoveCompany = () => dispatch(removeCompany());
