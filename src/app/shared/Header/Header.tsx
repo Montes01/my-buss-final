@@ -2,7 +2,7 @@ import Logo from "@/system-design/molecules/Logo";
 import NavButton from "@/system-design/atoms/NavButton";
 import Button from "@/system-design/atoms/Button";
 import { IconLogout, IconUser } from "@tabler/icons-react";
-import "./Header.scss"
+import "./header.scss"
 export default function Header() {
     const handleLogoutClick = () => {
         localStorage.clear()
