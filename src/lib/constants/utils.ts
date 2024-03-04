@@ -1,4 +1,4 @@
-import { type user } from "./declarations"
+import { type company, type user } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 
@@ -28,4 +28,20 @@ export function readToken(token: string): user {
     const user = decode(token)
     if (user === null) throw new Error("invalid token")
     return parseUser(user)
+}
+export const parseCompany = (company: any): company => {
+    if (company.IdEmpresa === undefined) throw new Error("idEmpresa is required")
+    if (company.Nombre === undefined) throw new Error("nombre is required")
+    if (company.Correo_electronico === undefined) throw new Error("correo_electronico is required")
+    if (company.Imagen === undefined) throw new Error("imagen is required")
+    if (company.Telefono === undefined) throw new Error("telefono is required")
+    if (company.Ubicacion === undefined) throw new Error("ubicacion is required")
+    return {
+        idEmpresa: company.IdEmpresa,
+        nombre: company.Nombre,
+        correo_electronico: company.Correo_electronico,
+        imagen: company.Imagen,
+        telefono: company.Telefono,
+        ubicacion: company.Ubicacion,
+    }
 }

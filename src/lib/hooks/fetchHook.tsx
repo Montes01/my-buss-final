@@ -1,10 +1,11 @@
 
-export async function UsePost(url: string, data: object) {
+export async function UsePost(url: string, data: object, headers: object = {}) {
     try {
         const res = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                ...headers
             },
             body: JSON.stringify(data)
         });

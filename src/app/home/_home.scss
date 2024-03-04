@@ -73,9 +73,32 @@
       text-shadow: 1px 1px 5px black;
     }
 
-    button {
-      width: 150px;
-      background-color: $primary;
+    .home-options {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        width: 200px;
+        padding: 0 20px;
+        background-color: $primary;
+      }
+
+      .to-job {
+        display: flex;
+        gap: 5px;
+        color: white;
+        font-size: 15px;
+        align-items: center;
+
+        .job-link {
+          font-weight: 900;
+          font-size: 17px;
+        }
+      }
     }
   }
 }
@@ -109,6 +132,7 @@
     letter-spacing: .01px;
   }
 }
+
 
 .main-buttons {
   display: flex;
@@ -194,15 +218,20 @@
     * {
       color: $base-color;
     }
+
     flex: 1;
-    padding: 4rem 2rem; 
-    height: 100%; 
+    padding: 4rem 2rem;
+    height: 100%;
     background: linear-gradient(to right, rgba($primary, 0.7) 50%, transparent);
+
     @include center {
       flex-direction: column;
       gap: 2rem;
       align-items: start
-    };
+    }
+
+    ;
+
     .companies-title {
       font-size: 2.5rem;
       font-weight: 900;
@@ -210,7 +239,8 @@
       text-align: center;
       width: 60%;
     }
-    .companies-pharagraph{
+
+    .companies-pharagraph {
       font-size: 1.25rem;
       font-weight: 300;
       text-align: center;

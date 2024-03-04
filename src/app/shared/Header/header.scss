@@ -25,6 +25,10 @@
         gap: 20px;
         align-items: center;     
         justify-content: space-between;
+        .header-button {
+            width: fit-content;
+            padding: 10px 20px;
+        }
     }
 
 }

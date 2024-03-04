@@ -9,7 +9,8 @@ export enum inputTypes {
   number = "number",
   email = "email",
   password = "password",
-  radio = "radio"
+  radio = "radio",
+  tel = "tel",
 }
 export type UserCard = {
   image: string;

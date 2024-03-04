@@ -2,7 +2,8 @@ import { ServiceCard, UserCard } from "./declarations"
 
 export const PROJECT_NAME = "MyBuss";
 
-export const SERVER_URL = "https://mybuss.azurewebsites.net/" //?? process.env.SERVER_URL ?? "https://localhost:7151/";
+export const SERVER_URL = "https://mybuss.azurewebsites.net/" //?? process.env.SERVER_URL ?? ;
+// export const SERVER_URL = "https://localhost:7151/"
 
 export const ENDPOINTS = {
   USER: {
@@ -12,6 +13,7 @@ export const ENDPOINTS = {
   ROUTE: {
     ADD: "Ruta/Agregar",
     LIST: "Ruta/Listar",
+    LIST_BY_COMPANY: "Ruta/ListaPorEmpresa",
   },
   BUS: {
     ADD: "Bus/Agregar",
@@ -19,6 +21,8 @@ export const ENDPOINTS = {
   },
   COMPANY: {
     LIST: "Empresa/Listar",
+    ADD: "Empresa/Registrar",
+    LOGIN: "Empresa/Ingresar",
   }
 
 
