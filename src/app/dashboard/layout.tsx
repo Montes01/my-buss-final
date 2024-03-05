@@ -12,9 +12,9 @@ export default function Layout({ children }: Props) {
 
     return (
         <Provider store={store}>
-            <Header />
+            {/* <Header /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
         </Provider>
     )
 

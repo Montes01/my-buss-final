@@ -34,11 +34,11 @@ export default function Company() {
         <section className="routes-wrapper">
             <h1>Rutas de {company?.nombre}</h1>
             <section className="routes">
-                {
+                {/* {
                     routes.map((route: any) => (
                         <RouteCard Number={route.numeroR} key={route.NumeroR} />
                     ))
-                }
+                } */}
             </section>
         </section>
 

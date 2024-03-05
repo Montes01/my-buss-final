@@ -1,4 +1,5 @@
 import companyActions from "@/lib/context/hooks/companyActions"
+import Button from "@/system-design/atoms/Button"
 import NavButton from "@/system-design/atoms/NavButton"
 
 export default function Aside() {
@@ -11,8 +12,11 @@ export default function Aside() {
             </section>
             <section className="options">
                     <NavButton to="/company" content="Rutas" className="dashboard-option"/>
-                    <NavButton to="/company/add-route" content="Agregar Ruta" className="dashboard-option"/>
+                    <NavButton to="/company/add" content="Añadir ruta" className="dashboard-option"/>
+                    <NavButton to="/company/profile" content="Editar perfil" className="dashboard-option"/>
             </section>
+
+            <Button content="Cerrar sesion" className="logout-button" />
         </aside>
 
 

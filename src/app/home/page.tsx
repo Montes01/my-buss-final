@@ -78,7 +78,7 @@ export default function Home() {
             return (
               <CompanyCard
                 nombre={el.nombre}
-                imagen={undefined}
+                imagen={el.imagen}
                 key={el.idEmpresa}
                 correo_electronico={el.correo_electronico}
                 ubicacion={el.ubicacion}

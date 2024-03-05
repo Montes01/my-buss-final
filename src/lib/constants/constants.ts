@@ -12,7 +12,7 @@ export const ENDPOINTS = {
   },
   ROUTE: {
     ADD: "Ruta/Agregar",
-    LIST: "Ruta/Listar",
+    LIST: "Ruta/Lista",
     LIST_BY_COMPANY: "Ruta/ListaPorEmpresa",
   },
   BUS: {

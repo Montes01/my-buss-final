@@ -1,6 +1,233 @@
-.main-dashboard {
+.dashboard-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
+    align-items: center;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-button {
+    margin-left: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .header-button:hover {
+    background-color: #777;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .welcome-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    margin-top: 50px;
+  }
+  
+  .welcome-content {
+    width: 80%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .welcome-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .welcome-text {
+    font-family: cursive;
+    font-size: 1rem;
+  }
+  
+  .Bienvenido {
+    font-size: 2.5rem;
+    background-color: #191a1b;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  .small-text {
+    margin-top: 10px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logos img {
+    width: 30px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .animated-image {
+    border-radius: 15px;
+    animation: floatAnimation 2s infinite ease-in-out;
+  }
+  
+  .smaller-image {
+    width: 60%;
+    max-height: 50vh;
+  }
+  
+  @keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  /* Agrega estos estilos a tu archivo Dashboard.css */
+  
+  .company-card {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .company-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .company-info {
+    width: 60%; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  .company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .company-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .company-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .company-description {
+    margin: 20px 0;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .company-details {
+    margin-bottom: 20px;
+  }
+  
+  .company-details p {
+    margin-bottom: 10px;
+  }
+  
+  .company-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .interactive-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .interactive-button:hover {
+    background-color: #218838;
+  }
+  
+  .company-image {
+    width: 40%; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  .company-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  
+  .interactive-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .interactive-button:hover {
+    background-color: #218838;
+  }
+  
+  .Cooburquin{
+    width: 15%;
+  }

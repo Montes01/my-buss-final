@@ -6,7 +6,7 @@ export default function CompanyCard({ nombre, imagen}: company) {
 
     return (
         <article className="company-card">
-            <Image className="company-image" width={250} height={250} src={imagen ?? "/Images/Company-error.png"} alt="" />
+            <img className="company-image" width={250} height={250} src={imagen ?? "/Images/Company-error.png"} alt="" />
 
             <section className="company-content">
                 <h3 className="company-name">{nombre}</h3>
