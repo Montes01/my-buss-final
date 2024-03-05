@@ -40,3 +40,11 @@ export type company = {
   contraseña?: string;
 
 };
+
+export type route = {
+  numeroR: string;
+  fkIdEmpresa: string;
+  estado: string;
+  inicio: string;
+  fin: string;
+};
