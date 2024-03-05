@@ -43,8 +43,8 @@ export type company = {
 
 export type route = {
   numeroR: string;
-  fkIdEmpresa: string;
-  estado: string;
+  fkIdEmpresa?: string;
+  estado: boolean;
   inicio: string;
   fin: string;
 };
