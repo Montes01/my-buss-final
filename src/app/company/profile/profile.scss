@@ -1,0 +1,109 @@
+/*
+           <main className="profile-edit-main">
+                <h2 className="title">Edita tu perfil de empresa</h2>
+                <form className="profile-edit-form">
+                    <section className="form-sections">
+                        <section className="form-section">
+                            <Input defaultValue={company.nombre} className="profile-input" label="Nombre" type="text" />
+                            <Input defaultValue={company.correo_electronico} className="profile-input" label="Correo" type="email" />
+                            <Input defaultValue={company.telefono} className="profile-input" label="Telefono" type="tel" />
+                        </section>
+                        <section className="photo-section">
+                            <img src={company?.imagen ? company.imagen : "/Images/user.png"} alt="" />
+                            <Button action={undefined} content="Cambiar foto" className="change-photo" />
+                        </section>
+                    </section>
+                </form>
+                <Button content="Confirmar" />
+            </main>
+*/
+@import "../../../lib/style-helpers/colors";
+@import "../../../lib/style-helpers/measurement";
+
+.profile-edit-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 40px;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    .title {
+        font-size: 2em;
+    }
+
+    .profile-edit-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: 70%;
+        justify-content: center;
+
+        .form-sections {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100%;
+
+            .form-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                height: 100%;
+                width: 40%;
+
+                .input-wrapper {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: start;
+                }
+
+                .profile-input {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: $radius-base;
+                    border: none;
+                    background-color: darken($base-color, 10%);
+                }
+            }
+
+            .photo-section {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                position: relative;
+
+                img {
+                    width: 80%;
+                    aspect-ratio: 1/1;
+                    border-radius: $radius-base;
+                }
+
+                .change-photo {
+                    position: relative;
+                    width: fit-content;
+                    padding: 10px 20px;
+                    input {
+                        position: absolute;
+                        top: 0;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        z-index: 20;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+}

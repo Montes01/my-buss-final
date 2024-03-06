@@ -45,17 +45,18 @@ export const parseCompany = (company: any): company => {
         ubicacion: company.Ubicacion,
     }
 }
-export const parseroute = (route: any): route => {
-    if (route.NumeroR === undefined) throw new Error("numeroR is required")
-    if (route.FkIdEmpresa === undefined) throw new Error("fkIdEmpresa is required")
-    if (route.Estado === undefined) throw new Error("estado is required")
-    if (route.Inicio === undefined) throw new Error("inicio is required")
-    if (route.Fin === undefined) throw new Error("fin is required")
-    return {
-        numeroR: route.NumeroR,
-        fkIdEmpresa: route.FkIdEmpresa,
-        estado: route.Estado,
-        inicio: route.Inicio,
-        fin: route.Fin,
+
+
+
+export const isCompanyAuthenticated = (callback: Function) => {
+    const token = localStorage.getItem("company-token")
+
+    if (token) {
+        const company = decode(token)
+        if (company) {
+            callback(parseCompany(company))
+        }
+    } else {
+        callback(null)
     }
 }

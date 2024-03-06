@@ -11,6 +11,7 @@ export enum inputTypes {
   password = "password",
   radio = "radio",
   tel = "tel",
+  file = "file",
 }
 export type UserCard = {
   image: string;
@@ -40,11 +41,17 @@ export type company = {
   contraseña?: string;
 
 };
-
+/*
+        public int NumeroR { get; set; } = numeroR;
+        public string InicioR { get; set; } = inicioR;
+        public string FinR { get; set; } = finR;
+        public bool EstadoR { get; set; } = estadoR;
+        public int FkIdEmpresa { get; set; } = fkIdEmpresa;
+*/
 export type route = {
-  numeroR: string;
-  fkIdEmpresa?: string;
-  estado: boolean;
-  inicio: string;
-  fin: string;
+  numeroR: number;
+  inicioR: string;
+  finR: string;
+  estadoR: boolean;
+  fkIdEmpresa?: number;
 };

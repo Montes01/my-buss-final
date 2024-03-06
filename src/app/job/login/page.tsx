@@ -5,9 +5,16 @@ import "./login.scss";
 import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
 import { UsePost } from "@/lib/hooks/fetchHook";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Login() {
     const router = useRouter()
+    useEffect(() => {
+        if (localStorage.getItem("company-token")) {
+            router.push("/company")
+        }
+    }, [])
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const url = SERVER_URL + ENDPOINTS.COMPANY.LOGIN
@@ -17,7 +24,7 @@ export default function Login() {
         const body = { Correo, Contraseña }
         UsePost(url, body).then(res => {
             if (res.message === "OK") {
-                localStorage.setItem("token", res.data)
+                localStorage.setItem("company-token", res.data)
                 router.push("/company")
             } else {
                 console.error("Error al iniciar sesion ", res)

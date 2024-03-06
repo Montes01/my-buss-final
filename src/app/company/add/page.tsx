@@ -21,7 +21,7 @@ export default function Add() {
     return (
         <>
             <main className="add-route-main">
-                <h2>Agrega una ruta</h2>
+                <h2 className="title">Agrega una ruta</h2>
                 <form className="add-route-form">
                     <section className="form-sections">
                         <section className="form-section">

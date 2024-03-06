@@ -1,0 +1,86 @@
+@import "../style-helpers/mixins";
+@import "../style-helpers/measurement";
+@import "../style-helpers/colors";
+/*
+        <article className="route-item">
+            <section className="route-state">
+                <strong className="route-number">Ruta {numeroR}</strong>
+                <p className="route-status">{estadoR ? "🟢 Activa" : "🔴 Inactiva"}</p>
+            </section>
+            <section className="route-dates">
+                <p>Inicio: {inicioR}</p>
+                <p>Fin: {finR}</p>
+            </section>
+            <section className="controls">
+                <button className="edit-button">Editar</button>
+                <button className="delete-button">Eliminar</button>
+            </section>
+        </article>
+*/
+
+.route-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: $radius-base;
+    background-color: darken($base-color, 10%);
+    height: 100px;
+
+    .route-state {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .route-number {
+            font-size: 1.5em;
+        }
+
+        .route-status {
+            font-size: 1em;
+        }
+    }
+
+    .route-dates {
+        display: flex;
+        align-self: end;
+        justify-content: space-between;
+        width: 40%;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            font-size: 1em;
+
+            span {
+                font-weight: 700;
+                color: black;
+            }
+        }
+    }
+
+    .controls {
+        display: flex;
+        gap: 20px;
+        align-self: end;
+
+        .edit-button,
+        .delete-button {
+            background-color: transparent;
+            border: none;
+            filter: invert(1);
+            width: 25px;
+            height: 25px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
+}
