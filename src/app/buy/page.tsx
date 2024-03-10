@@ -24,7 +24,7 @@ export default async function Buy() {
                         <label className="input-wrapper">
                             Empresa
                             <select name="" id="" className="company">
-                                {empresas && empresas.map(empresa => <option value={empresa.ID_Empresa}>{empresa.Nombre}</option>)}
+                                {empresas && empresas.map(empresa => <option key={empresa.ID_Empresa} value={empresa.ID_Empresa}>{empresa.Nombre}</option>)}
                             </select>
                         </label>
                         <Input type="date" label="Fecha de salida" />
