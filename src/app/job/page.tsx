@@ -10,30 +10,30 @@ import NavButton from "@/system-design/atoms/NavButton";
 export default function Company() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const url = SERVER_URL + ENDPOINTS.COMPANY.ADD
-        const data = new FormData(e.currentTarget)
+        // const url = SERVER_URL + ENDPOINTS.COMPANY.ADD
+        // const data = new FormData(e.currentTarget)
 
-        const IdEmpresa = crypto.randomUUID()
-        const Nombre = data.get("name")
-        const Ubicacion = data.get("address")
-        const Telefono = data.get("phone")
-        const Correo_electronico = data.get("email")
-        const Contraseña = data.get("password")
-        const Imagen = ""
+        // const IdEmpresa = crypto.randomUUID()
+        // const Nombre = data.get("name")
+        // const Ubicacion = data.get("address")
+        // const Telefono = data.get("phone")
+        // const Correo_electronico = data.get("email")
+        // const Contraseña = data.get("password")
+        // const Imagen = ""
 
-        const passwordConfirm = data.get("password-confirm")
-        if (Contraseña !== passwordConfirm) {
-            alert("Las contraseñas no coinciden")
-            return
-        }
-        const body = { IdEmpresa, Nombre, Ubicacion, Telefono, Correo_electronico, Contraseña, Imagen }
-        UsePost(url, body).then(res => {
-            if (res.ok) {
-                alert("Empresa registrada")
-            } else {
-                alert("Error al registrar la empresa")
-            }
-        })
+        // const passwordConfirm = data.get("password-confirm")
+        // if (Contraseña !== passwordConfirm) {
+        //     alert("Las contraseñas no coinciden")
+        //     return
+        // }
+        // const body = { IdEmpresa, Nombre, Ubicacion, Telefono, Correo_electronico, Contraseña, Imagen }
+        // UsePost(url, body).then(res => {
+        //     if (res.ok) {
+        //         alert("Empresa registrada")
+        //     } else {
+        //         alert("Error al registrar la empresa")
+        //     }
+        // })
 
     }
 
