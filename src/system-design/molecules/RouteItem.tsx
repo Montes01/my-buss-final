@@ -1,18 +1,13 @@
-import { route } from "@/lib/constants/declarations";
+import { Ruta } from "@/lib/constants/declarations";
 import Button from "../atoms/Button";
 import { IconEdit, IconTrash } from "@tabler/icons-react"
-export default function RouteItem({ estadoR, finR, inicioR, numeroR }: route) {
+export default function RouteItem({ ID_Ruta }: Ruta) {
 
 
     return (
         <article className="route-item">
             <section className="route-state">
-                <strong className="route-number">Ruta {numeroR}</strong>
-                <p className="route-status">{estadoR ? "🟢 Activa" : "🔴 Inactiva"}</p>
-            </section>
-            <section className="route-dates">
-                <p>Inicio: <span> {inicioR}</span></p>
-                <p>Fin: <span>{finR}</span></p>
+                <strong className="route-number">Ruta {ID_Ruta}</strong>
             </section>
             <section className="controls">
                 <Button content={IconEdit} className="edit-button" />

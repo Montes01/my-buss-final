@@ -12,6 +12,8 @@ export enum inputTypes {
   radio = "radio",
   tel = "tel",
   file = "file",
+  "date-time-local" = "date-time-local",
+  date = "date"
 }
 export type UserCard = {
   image: string;
@@ -19,39 +21,89 @@ export type UserCard = {
   role: string;
   description: string;
 };
-export type user = {
-  foto?: string;
-  nombre: string;
-  apellido?: string;
-  edad: number;
-  telefono?: string;
-  contraseña?: string;
-  correo: string;
-  documento: string;
-  rol: string;
-};
+// Modelo de Usuario
+export interface Usuario {
+  ID_Usuario: number;
+  Nombre: string;
+  Rol?: string;
+  CorreoElectronico: string;
+  Contraseña?: string;
+  FotoPerfil?: string;
+  Dirección?: string;
+  Teléfono: string;
+}
 
-export type company = {
-  idEmpresa?: string;
-  nombre: string;
-  ubicacion?: string;
-  telefono?: string;
-  correo_electronico?: string;
-  imagen?: string;
-  contraseña?: string;
+// Modelo de Empresa
+export interface Empresa {
+  ID_Empresa: number;
+  Nombre: string;
+  CorreoElectronico: string;
+  Contraseña: string;
+  Logo?: string;
+  Dirección?: string;
+  Teléfono: string;
+}
 
-};
-/*
-        public int NumeroR { get; set; } = numeroR;
-        public string InicioR { get; set; } = inicioR;
-        public string FinR { get; set; } = finR;
-        public bool EstadoR { get; set; } = estadoR;
-        public int FkIdEmpresa { get; set; } = fkIdEmpresa;
-*/
-export type route = {
-  numeroR: number;
-  inicioR: string;
-  finR: string;
-  estadoR: boolean;
-  fkIdEmpresa?: number;
-};
+// Modelo de Ruta
+export interface Ruta {
+  ID_Ruta: number;
+  ID_Empresa: number;
+  Nombre: string;
+  Tipo?: string;
+  Descripción?: string;
+  Horario?: string;
+  Tarifa: number;
+}
+
+// Modelo de Paradero
+export interface Paradero {
+  ID_Paradero: number;
+  Nombre: string;
+  Ubicación?: any; // Tipo de datos geográficos (puede variar según la implementación)
+  Descripción?: string;
+  Foto?: string;
+}
+
+// Modelo de Bus
+export interface Bus {
+  ID_Bus: number;
+  ID_Empresa: number;
+  Placa: string;
+  Modelo?: string;
+  Capacidad?: number;
+  Estado?: string;
+}
+
+// Modelo de Conductor
+export interface Conductor {
+  ID_Conductor: number;
+  ID_Usuario: number;
+  ID_Bus: number;
+  LicenciaConducción?: string;
+  FechaContrato?: Date;
+  HorarioTrabajo?: string;
+}
+
+// Modelo de Ticket
+export interface Ticket {
+  ID_Ticket: number;
+  ID_Usuario: number;
+  ID_Empresa: number;
+  FechaCompra: Date;
+  Precio: number;
+  TipoPago?: string;
+  Estado?: string;
+}
+
+// Modelo de Ruta_Paradero
+export interface Ruta_Paradero {
+  ID_Ruta: number;
+  ID_Paradero: number;
+  Orden: number;
+}
+
+export interface Response {
+  Message: string;
+  Data: any;
+}
+

@@ -1,0 +1,61 @@
+
+@import "../../../../lib/style-helpers/measurement";
+@import "../../../../lib/style-helpers/colors";
+
+.single-stop-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: $padding-base*2;
+    background-color: $base-color;
+    position: relative;
+
+    h3 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .stop-location {
+        width: 70%;
+        height: 300px;
+        object-fit: cover;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+        border-radius: $radius-base;
+    }
+
+    .routes {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        .route-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+
+            .route {
+                &:nth-child(2n) {
+                    background-color: rgba(darken($primary, 15%), .85);
+
+                    * {
+                        color: white;
+                    }
+                }
+
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                align-items: center;
+                padding: $padding-base;
+                border-radius: $radius-base;
+                background-color: rgba(darken($base-color, 25%), .85);
+                width: 80%;
+            }
+        }
+    }
+
+}
