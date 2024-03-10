@@ -11,7 +11,7 @@ import ChangeJoin from "../shared/ChanngeJoin";
 import { useRouter } from "next/navigation";
 import { loginMock } from "@/lib/constants/mocks";
 import { Response } from "@/lib/constants/declarations";
-
+import { redirect } from "next/navigation";
 export default function Login() {
     const router = useRouter()
     const [error, setError] = useState("")
@@ -27,7 +27,7 @@ export default function Login() {
 
         loginMock(Correo as string, Contraseña as string).then((res: any) => {
             localStorage.setItem('user-token', res?.Data?.token)
-            location.href = "/home"
+            redirect('/home')
         }).catch((err: Response) => {
             setError(err.Message)
         })
