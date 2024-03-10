@@ -17,19 +17,19 @@ export default function Login() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const url = SERVER_URL + ENDPOINTS.COMPANY.LOGIN
-        const data = new FormData(e.currentTarget)
-        const Correo = data.get("email")
-        const Contraseña = data.get("password")
-        const body = { Correo, Contraseña }
-        UsePost(url, body).then(res => {
-            if (res.message === "OK") {
-                localStorage.setItem("company-token", res.data)
-                router.push("/company")
-            } else {
-                console.error("Error al iniciar sesion ", res)
-            }
-        })
+        // const url = SERVER_URL + ENDPOINTS.COMPANY.LOGIN
+        // const data = new FormData(e.currentTarget)
+        // const Correo = data.get("email")
+        // const Contraseña = data.get("password")
+        // const body = { Correo, Contraseña }
+        // UsePost(url, body).then(res => {
+        //     if (res.message === "OK") {
+        //         localStorage.setItem("company-token", res.data)
+        //         router.push("/company")
+        //     } else {
+        //         console.error("Error al iniciar sesion ", res)
+        //     }
+        // })
 
     }
     return (

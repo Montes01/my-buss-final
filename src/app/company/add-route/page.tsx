@@ -21,7 +21,7 @@ export default function AddRoute() {
         const body = { NumeroR, InicioR, FinR, EstadoR, FkIdEmpresa: company.ID_Empresa }
         UsePost(url, body, headers).then(res => {
             console.log(res)
-            if (res.message === "OK") {
+            if (res.Message === "OK") {
                 alert("Ruta registrada")
             } else {
                 alert("Error al registrar la ruta")
