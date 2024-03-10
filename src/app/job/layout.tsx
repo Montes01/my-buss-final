@@ -1,3 +1,4 @@
+"use client"
 import Header from "../home/shared/Header"
 import Footer from "../shared/Footer/Footer"
 
