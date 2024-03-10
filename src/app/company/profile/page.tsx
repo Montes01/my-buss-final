@@ -16,12 +16,12 @@ export default function ProfileEdit() {
                 <form className="profile-edit-form">
                     <section className="form-sections">
                         <section className="form-section">
-                            <Input defaultValue={company.nombre} className="profile-input" label="Nombre" type="text" />
-                            <Input defaultValue={company.correo_electronico} className="profile-input" label="Correo" type="email" />
-                            <Input defaultValue={company.telefono} className="profile-input" label="Telefono" type="tel" />
+                            <Input defaultValue={company.Nombre} className="profile-input" label="Nombre" type="text" />
+                            <Input defaultValue={company.CorreoElectronico} className="profile-input" label="Correo" type="email" />
+                            <Input defaultValue={company.Teléfono} className="profile-input" label="Telefono" type="tel" />
                         </section>
                         <section className="photo-section">
-                            <img src={company?.imagen ? company.imagen : "/Images/user.png"} alt="" />
+                            <img src={company?.Logo ? company.Logo : "/Images/user.png"} alt="" />
                             <label className="change-photo button" >
                                 Cambiar imagen
                                 <input type="file"accept="image/*" />
