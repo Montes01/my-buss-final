@@ -11,7 +11,6 @@ import ChangeJoin from "../shared/ChanngeJoin";
 import { useRouter } from "next/navigation";
 import { loginMock } from "@/lib/constants/mocks";
 import { Response } from "@/lib/constants/declarations";
-import { redirect } from "next/navigation";
 export default function Login() {
     const router = useRouter()
     const [error, setError] = useState("")
@@ -23,14 +22,14 @@ export default function Login() {
         const data = new FormData(e.currentTarget)
         const Correo = data.get('email')!
         const Contraseña = data.get('password')!
-
-
-        loginMock(Correo as string, Contraseña as string).then((res: any) => {
-            localStorage.setItem('user-token', res?.Data?.token)
-            redirect('/home')
-        }).catch((err: Response) => {
-            setError(err.Message)
-        })
+        const body = { Correo, Contraseña }
+        try {
+            const res = await UsePost(SERVER_URL + ENDPOINTS.USER.LOGIN, body);
+            localStorage.setItem('user-token', res?.Data?.token);
+            router.push('/home');
+        } catch (err: unknown) {
+            setError("Correo o contraseña incorrectos")
+        }
         setIsLoading(false)
     }
     return (
