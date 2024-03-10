@@ -4,7 +4,7 @@ import Button from "@/system-design/atoms/Button"
 import NavButton from "@/system-design/atoms/NavButton"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
-import { company as companyT } from "@/lib/constants/declarations"
+import { Empresa as companyT } from "@/lib/constants/declarations"
 export default function Aside() {
     const { UseGetCompany: company, UseSetCompany } = companyActions()
     const router = useRouter()
@@ -24,8 +24,8 @@ export default function Aside() {
     return (
         <aside className="nav-bar">
             <section className="info">
-                <img width={50} src={company.imagen ? company.imagen : "/Images/user.png"} alt="" />
-                <h1>{company?.nombre}</h1>
+                <img width={50} src={company.Logo ? company.Logo : "/Images/user.png"} alt="" />
+                <h1>{company?.Nombre}</h1>
             </section>
             <section className="options">
                     <NavButton to="/company" content="Rutas" className="dashboard-option"/>
