@@ -35,7 +35,7 @@ export default function Add() {
                             <ul className="stops">
                                 {
                                     stops.map(stop => (
-                                        <li className="stop">
+                                        <li key={stop} className="stop">
                                             <span>{stop}</span>
                                         </li>
                                     ))
