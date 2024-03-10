@@ -1,0 +1,114 @@
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+
+.single-route-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-base;
+    gap: $padding-base;
+
+    .company-wrapper {
+        align-self: flex-start;
+        transition: ease .2s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .company-logo {
+            width: fit-content;
+            height: 50px;
+        }
+    }
+
+    .route-map {
+        width: 100%;
+        height: 300px;
+        border-radius: $radius-base;
+
+        .map {
+            border-radius: $radius-base;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .route-information {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+
+        .route-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-shadow: 1px 1px 50px white;
+        }
+
+        .route-description {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 50ch;
+            font-weight: 300;
+            text-shadow: 1px 1px 50px white;
+        }
+
+    }
+
+    .route-stops {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+
+        .stop-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .stop {
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.05);
+                }
+
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+                padding: $padding-base / 2;
+                border-radius: $radius-base;
+                background-color: darken($base-color, 15%);
+                width: 300px;
+                align-items: center;
+                justify-content: center;
+                height: 300px;
+
+                &:nth-child(2n) {
+                    background-color: $primary;
+
+                    * {
+                        color: $base-color;
+                    }
+                }
+
+                .stop-image {
+                    height: 80%;
+                    width: 90%;
+                    object-fit: cover;
+                    border-radius: $radius-base;
+                }
+
+            }
+        }
+
+    }
+
+}

@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Aleo } from "next/font/google";
 import "./globals.scss";
-import "@/lib/style-helpers/_colors.scss"
 const inter = Aleo({
   subsets: ["latin"],
   weight: "400",
@@ -21,6 +20,7 @@ export default function RootLayout({ children }: props) {
   return (
 
     <html lang="es">
+      
         <body className={`${inter.className} dark-mode`}>{children}</body>
     </html>
   );

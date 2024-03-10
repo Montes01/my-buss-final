@@ -12,7 +12,7 @@ export const ENDPOINTS = {
   },
   ROUTE: {
     ADD: "Ruta/Agregar",
-    LIST: "Ruta/Listar",
+    LIST: "Ruta/Lista",
     LIST_BY_COMPANY: "Ruta/ListaPorEmpresa",
   },
   BUS: {
@@ -32,29 +32,29 @@ export const PRINCIPAL_MESSAGE = `Descubre y planifica tus rutas con nosotros. C
 
 export const Services: ServiceCard[] = [
   {
-    title: "Horarios de la Ciudad",
-    description: "Consulta los horarios de transporte público y lugares de interés en la ciudad.",
+    title: "Rutas comunes",
+    description: "Consulta los horarios de las rutas de transporte público y lugares de interés en la ciudad.",
     image: "/Images/Gadget-1.png",
-    href: "/horarios-ciudad",
+    href: "/routes",
   },
   {
     title: "Rutas Alternativas",
     description: "Explora diferentes rutas para llegar a tu destino de manera eficiente.",
     image: "/Images/Gadget-2.png",
-    href: "/horarios-ciudad",
+    href: "/routes/alternative",
   },
   {
-    title: "Sitios de Interés",
-    description: "Descubre los lugares más emblemáticos y sitios turísticos de la ciudad.",
+    title: "Paradas",
+    description: "Aquí veras los paraderos \"Amable\" de la ciudad",
     image: "/Images/Gadget-4.png",
-    href: "/horarios-ciudad",
+    href: "/home/stops",
   },
   {
-    title: "Asistencia al Viajero",
-    description: "Servicio de asistencia y soporte en caso de incidencias durante el viaje.",
+    title: "Compra tus tiquetes aquí",
+    description: "Compra tus tiquetes de manera anticipada aquí",
     image: "/Images/Gadget-3.png",
-    href: "/horarios-ciudad",
-  },
+    href: "/buy",
+  }
 ];
 
 export const users: UserCard[] = [

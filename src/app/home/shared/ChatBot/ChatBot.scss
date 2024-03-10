@@ -1,0 +1,26 @@
+/* En ChatBot.css */
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+.chatbot-container.open {
+  height: 550px;
+  background-color: $base-color;
+}
+
+.chatbot-toggle {
+  background-color: #007bff;
+  color: #fff;
+  padding: $padding-base/2;
+  width: fit-content;
+}
+
+iframe {
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

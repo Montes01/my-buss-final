@@ -18,7 +18,7 @@ export default function AddRoute() {
             "Authorization": `Bearer ${localStorage.getItem("token")}`
         }
         console.log(headers)
-        const body = { NumeroR, InicioR, FinR, EstadoR, FkIdEmpresa: company.idEmpresa }
+        const body = { NumeroR, InicioR, FinR, EstadoR, FkIdEmpresa: company.ID_Empresa }
         UsePost(url, body, headers).then(res => {
             console.log(res)
             if (res.message === "OK") {

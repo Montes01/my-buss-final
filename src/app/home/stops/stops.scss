@@ -1,0 +1,101 @@
+/*
+<main className="stops-page">
+<h2 className="title">Paraderos de la ciudad</h2>
+<section className="stop-list">
+    {stops.map(({ ID_Paradero, Nombre, Foto }) => (
+        <section key={ID_Paradero} className="stop">
+            <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="stop-location" />
+            <section className="content">
+                <h3>{Nombre}</h3>
+                <img src={Foto} alt="" className="stop-image" />
+                <NavButton to={`/home/stop/${ID_Paradero}`} content="Ver paradero" />
+            </section>
+        </section>
+    ))}
+</section>
+</main>
+*/
+@import "../../../lib/style-helpers/measurement";
+@import "../../../lib/style-helpers/colors";
+
+.stops-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: $padding-base*2;
+    background-color: $base-color;
+    position: relative;
+
+    .title {
+        color: $dark-color;
+        font-size: 2rem;
+    }
+
+    .stop-list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        width: 100%;
+
+        .stop {
+            max-height: 80vh;
+            height: 350px;
+            width: 80%;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+            align-items: center;
+            padding: $padding-base;
+            border-radius: $radius-base;
+            background-color: rgba(darken($base-color, 25%), .85);
+
+            &:nth-child(2n) {
+                flex-direction: row-reverse;
+                background-color: $primary;
+
+                .content {
+                    .button {
+                        background-color: $base-color;
+                        color: $primary;
+                    }
+
+                    h3 {
+                        color: $base-color;
+
+                    }
+                }
+
+
+            }
+
+            .stop-location {
+                height: 100%;
+                border-radius: $radius-base;
+                object-fit: cover;
+                flex: 1;
+            }
+
+            .content {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+
+                h3 {
+                    color: $dark-color;
+                }
+
+                .stop-image {
+                    width: 100%;
+                    height: 200px;
+                    border-radius: $radius-base;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+}

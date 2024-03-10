@@ -1,47 +1,80 @@
-import { type company, type user } from "./declarations"
+import { Empresa, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
+import { decodeTokenMock } from "./mocks";
 
-export function parseUser(user: any): user {
-    //validate camps
-    if (user.Nombre === undefined) throw new Error("nombre is required")
-    if (user.Apellido === undefined) throw new Error("apellido is required")
-    if (user.Correo === undefined) throw new Error("correo is required")
-    if (user.Documento === undefined) throw new Error("documento is required")
-    if (user.Foto === undefined) throw new Error("foto is required")
-    if (user.Telefono === undefined) throw new Error("telefono is required")
-    if (user.Rol === undefined) throw new Error("rol is required")
-    if (user.Edad === undefined) throw new Error("edad is required")
+export function parseUser(user: any): Usuario {
+    if (!user) throw new Error("Usuario inválido");
+    if (!user.ID_Usuario) throw new Error("ID de usuario inválido");
+    if (!user.Nombre) throw new Error("Nombre de usuario inválido");
+    if (!user.CorreoElectronico) throw new Error("Correo electrónico de usuario inválido");
+    if (!user.Teléfono) throw new Error("Número de teléfono de usuario inválido");
+    if (!user.Rol) throw new Error("Rol de usuario inválido");
+    if (!user.FotoPerfil) throw new Error("Foto de perfil de usuario inválida");
+    if (!user.Dirección) throw new Error("Dirección de usuario inválida");
+
 
     return {
-        nombre: user.Nombre,
-        apellido: user.Apellido,
-        correo: user.Correo,
-        documento: user.Documento,
-        foto: user.Foto,
-        telefono: user.Telefono,
-        rol: user.Rol,
-        edad: user.Edad,
+        ID_Usuario: user.ID_Usuario,
+        Nombre: user.Nombre,
+        CorreoElectronico: user.CorreoElectronico,
+        FotoPerfil: user.FotoPerfil,
+        Dirección: user.Dirección,
+        Teléfono: user.Teléfono,
+        Rol: user.Rol ? user.Rol : "Usuario",
+        Contraseña: user.Contraseña ? user.Contraseña : "empty"
     }
 }
-export function readToken(token: string): user {
+
+export function parseCompany(company: any): Empresa {
+    if (!company) throw new Error("Empresa inválida");
+    if (!company.ID_Empresa) throw new Error("ID de empresa inválido");
+    if (!company.Nombre) throw new Error("Nombre de empresa inválido");
+    if (!company.CorreoElectronico) throw new Error("Correo electrónico de empresa inválido");
+    if (!company.Teléfono) throw new Error("Número de teléfono de empresa inválido");
+    if (!company.Logo) throw new Error("Logo de empresa inválido");
+    if (!company.Dirección) throw new Error("Dirección de empresa inválida");
+
+    return {
+        ID_Empresa: company.ID_Empresa,
+        Nombre: company.Nombre,
+        CorreoElectronico: company.CorreoElectronico,
+        Logo: company.Logo,
+        Dirección: company.Dirección,
+        Teléfono: company.Teléfono,
+        Contraseña: company.Contraseña ? company.Contraseña : "empty"
+    }
+}
+
+export function readToken(token: string): Usuario {
     const user = decode(token)
     if (user === null) throw new Error("invalid token")
     return parseUser(user)
 }
-export const parseCompany = (company: any): company => {
-    if (company.IdEmpresa === undefined) throw new Error("idEmpresa is required")
-    if (company.Nombre === undefined) throw new Error("nombre is required")
-    if (company.Correo_electronico === undefined) throw new Error("correo_electronico is required")
-    if (company.Imagen === undefined) throw new Error("imagen is required")
-    if (company.Telefono === undefined) throw new Error("telefono is required")
-    if (company.Ubicacion === undefined) throw new Error("ubicacion is required")
-    return {
-        idEmpresa: company.IdEmpresa,
-        nombre: company.Nombre,
-        correo_electronico: company.Correo_electronico,
-        imagen: company.Imagen,
-        telefono: company.Telefono,
-        ubicacion: company.Ubicacion,
+
+export const isCompanyAuthenticated = (callback: Function) => {
+    const token = localStorage.getItem("company-token")
+
+    if (token) {
+        const company = decode(token)
+        if (company) {
+            callback(parseCompany(company))
+        }
+    } else {
+        callback(null)
+    }
+}
+
+export const isUserAuthenticated = (callback: Function) => {
+    const token = localStorage.getItem("user-token")
+
+    if (token) {
+        // const user = decode(token)
+        const user = decodeTokenMock(token)
+        if (user) {
+            callback(parseUser(user))
+        }
+    } else {
+        callback(null)
     }
 }
