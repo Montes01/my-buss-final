@@ -17,34 +17,34 @@ export default function Register() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsLoading(true)
-    const data = new FormData(e.currentTarget)
-    const Documento = data.get('document')!
-    const Correo = data.get('mail')!
-    const Nombre = data.get('name')!
-    const Apellido = data.get('last-name') ?? ""
-    const Edad = data.get('age')!
-    const Telefono = data.get('phone') ?? ""
-    const Contraseña = data.get('password')!
-    const Rol = "User"
-    const ConfirmarContraseña = data.get('password-confirm')!
-    if (Contraseña !== ConfirmarContraseña) {
-      setMessage('Las contraseñas no coinciden')
-      setIsLoading(false)
-      return
-    } else {
-      setMessage('')
-    }
-    const { REGISTER } = ENDPOINTS.USER
-    const res = await UsePost(SERVER_URL + REGISTER, { Documento, Correo, Nombre, Apellido, Edad, Telefono, Contraseña, Rol })
-    if (res.message === "OK") {
-      handleContinue(1)
-      setMessage('Usuario registrado con éxito')
-      formRef.current?.reset()
-    } else {
-      setMessage(res.message)
-    }
-    setIsLoading(false)
+    // setIsLoading(true)
+    // const data = new FormData(e.currentTarget)
+    // const Documento = data.get('document')!
+    // const Correo = data.get('mail')!
+    // const Nombre = data.get('name')!
+    // const Apellido = data.get('last-name') ?? ""
+    // const Edad = data.get('age')!
+    // const Telefono = data.get('phone') ?? ""
+    // const Contraseña = data.get('password')!
+    // const Rol = "User"
+    // const ConfirmarContraseña = data.get('password-confirm')!
+    // if (Contraseña !== ConfirmarContraseña) {
+    //   setMessage('Las contraseñas no coinciden')
+    //   setIsLoading(false)
+    //   return
+    // } else {
+    //   setMessage('')
+    // }
+    // const { REGISTER } = ENDPOINTS.USER
+    // const res = await UsePost(SERVER_URL + REGISTER, { Documento, Correo, Nombre, Apellido, Edad, Telefono, Contraseña, Rol })
+    // if (res.Message === "OK") {
+    //   handleContinue(1)
+    //   setMessage('Usuario registrado con éxito')
+    //   formRef.current?.reset()
+    // } else {
+    //   setMessage(res.Message)
+    // }
+    // setIsLoading(false)
 
   }
 
