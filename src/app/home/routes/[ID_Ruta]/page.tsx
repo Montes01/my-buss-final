@@ -39,8 +39,8 @@ export default async function RoutePage({ params }: { params: Params }) {
 
     return (
         <main className="single-route-page">
-            <Link href={`/home/companies/${empresa?.ID_Empresa}`} className="company-wrapper">
-                <img src={empresa?.Logo} alt="" className="company-logo" />
+            <Link href={`/home/companies/${empresa?.iD_Empresa}`} className="company-wrapper">
+                <img src={empresa?.logo} alt="" className="company-logo" />
             </Link>
             <section className="route-map">
                 <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="map" />

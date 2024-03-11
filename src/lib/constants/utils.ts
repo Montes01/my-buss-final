@@ -4,25 +4,24 @@ import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
 
 export function parseUser(user: any): Usuario {
+  
     if (!user) throw new Error("Usuario inválido");
     if (!user.ID_Usuario) throw new Error("ID de usuario inválido");
     if (!user.Nombre) throw new Error("Nombre de usuario inválido");
     if (!user.CorreoElectronico) throw new Error("Correo electrónico de usuario inválido");
     if (!user.Teléfono) throw new Error("Número de teléfono de usuario inválido");
-    if (!user.Rol) throw new Error("Rol de usuario inválido");
-    if (!user.FotoPerfil) throw new Error("Foto de perfil de usuario inválida");
-    if (!user.Dirección) throw new Error("Dirección de usuario inválida");
 
+    console.log(user)
 
     return {
         ID_Usuario: user.ID_Usuario,
         Nombre: user.Nombre,
         CorreoElectronico: user.CorreoElectronico,
-        FotoPerfil: user.FotoPerfil,
-        Dirección: user.Dirección,
         Teléfono: user.Teléfono,
-        Rol: user.Rol ? user.Rol : "Usuario",
-        Contraseña: user.Contraseña ? user.Contraseña : "empty"
+        Contraseña: user.Contraseña ? user.Contraseña : "empty",
+        FotoPerfil: user.FotoPerfil ? user.FotoPerfil : "empty",
+        Dirección: user.Dirección ? user.Dirección : "empty",
+        Rol: user.Rol ? user.Rol : "Usuario"
     }
 }
 
@@ -36,13 +35,13 @@ export function parseCompany(company: any): Empresa {
     if (!company.Dirección) throw new Error("Dirección de empresa inválida");
 
     return {
-        ID_Empresa: company.ID_Empresa,
-        Nombre: company.Nombre,
-        CorreoElectronico: company.CorreoElectronico,
-        Logo: company.Logo,
-        Dirección: company.Dirección,
-        Teléfono: company.Teléfono,
-        Contraseña: company.Contraseña ? company.Contraseña : "empty"
+        iD_Empresa: company.ID_Empresa,
+        nombre: company.Nombre,
+        correoElectronico: company.CorreoElectronico,
+        logo: company.Logo,
+        dirección: company.Dirección,
+        teléfono: company.Teléfono,
+        contraseña: company.Contraseña ? company.Contraseña : "empty"
     }
 }
 
@@ -67,10 +66,8 @@ export const isCompanyAuthenticated = (callback: Function) => {
 
 export const isUserAuthenticated = (callback: Function) => {
     const token = localStorage.getItem("user-token")
-
     if (token) {
-        // const user = decode(token)
-        const user = decodeTokenMock(token)
+        const user = decode(token)
         if (user) {
             callback(parseUser(user))
         }

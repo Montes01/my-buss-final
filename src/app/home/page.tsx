@@ -6,18 +6,16 @@ import CompanyCard from "@/system-design/molecules/CompanyCard";
 import { EmpresasMock } from "@/lib/constants/mocks";
 import { Empresa, Response } from "@/lib/constants/declarations";
 import { IconBus } from "@tabler/icons-react"
+import { UseGet } from "@/lib/hooks/fetchHook";
 export default function Home() {
 
   const [companies, setCompanies] = useState<Empresa[] | null>([])
 
   useEffect(() => {
     const getCompanies = async () => {
-      EmpresasMock().then((res: Response) => {
-        setCompanies(res.Data as Empresa[])
-      }).catch((err) => {
-        console.log(err)
-        setCompanies(null)
-      })
+      const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
+        console.log(fetchedData)
+        setCompanies(fetchedData.Data);
     }
     getCompanies()
   }, [])
@@ -75,13 +73,13 @@ export default function Home() {
             companies?.map((el) => {
               return (
                 <CompanyCard
-                  Nombre={el.Nombre}
-                  Teléfono={el.Teléfono}
-                  CorreoElectronico={el.CorreoElectronico}
-                  Logo={el.Logo}
-                  key={el.ID_Empresa}
-                  ID_Empresa={el.ID_Empresa}
-                  Contraseña={el.Contraseña}
+                  nombre={el.nombre}
+                  teléfono={el.teléfono}
+                  correoElectronico={el.correoElectronico}
+                  logo={el.logo}
+                  key={el.iD_Empresa}
+                  iD_Empresa={el.iD_Empresa}
+                  contraseña={el.contraseña}
                 />
               )
             }) ?? "Hubo un error al cargar las compañias de buses. Por favor, intente más tarde."

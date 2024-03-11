@@ -22,13 +22,13 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
 
 }
 
-export async function UseGet(url: string) {
+export async function UseGet(url: string): Promise<Response> {
     try {
         const res = await fetch(url);
         const res_1 = await res.json();
-        return res_1;
+        return { ...res_1, Data: res_1.data };
     } catch (err) {
-        return err;
+        throw new Error("Error al obtener los datos");
     }
 }
 
