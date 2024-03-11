@@ -1,16 +1,19 @@
 "use server"
 
-import { PROJECT_NAME } from "@/lib/constants/constants"
+import { ENDPOINTS, PROJECT_NAME, SERVER_URL } from "@/lib/constants/constants"
 import { Empresa } from "@/lib/constants/declarations"
 import { EmpresasMock } from "@/lib/constants/mocks"
 import Button from "@/system-design/atoms/Button"
 import Input from "@/system-design/atoms/Input"
 import "./buy.scss"
+import { UseGet } from "@/lib/hooks/fetchHook"
 export default async function Buy() {
     let empresas: Empresa[] | null = null
     try {
         const empresasData = await EmpresasMock()
-        empresas = empresasData.Data;
+        const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
+        console.log(fetchedData)
+        empresas = fetchedData.Data;
     } catch (error) {
         console.log(error)
     }
@@ -24,7 +27,8 @@ export default async function Buy() {
                         <label className="input-wrapper">
                             Empresa
                             <select name="" id="" className="company">
-                                {empresas && empresas.map(empresa => <option key={empresa.ID_Empresa} value={empresa.ID_Empresa}>{empresa.Nombre}</option>)}
+                                <option value="" disabled>Selecionar empresa</option>
+                                {empresas && empresas.map(empresa => <option key={empresa.iD_Empresa} value={empresa.iD_Empresa}>{empresa.nombre}</option>)}
                             </select>
                         </label>
                         <Input type="date" label="Fecha de salida" />

@@ -58,13 +58,14 @@
         justify-content: center;
         width: 100%;
         padding: 25px;
+        padding-top: 150px;
         gap: 20px;
 
         h2 {
             font-size: 2rem;
             font-weight: 600;
-            text-align: center;
-
+            text-align: start;
+            align-self: flex-start;
 
 
         }
@@ -85,8 +86,9 @@
 
             .buy-form {
                 display: flex;
-                align-items: center;
-                justify-content: space-evenly;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 15px;
                 flex: 1;
                 background-color: $base-color;
                 padding: 40px 20px;
@@ -94,16 +96,24 @@
                 border: 1px solid;
 
                 label {
+                    font-size: larger;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: center;
+                    flex: 1;
 
                     select {
                         width: 100%;
                         padding: 5px;
                         border-radius: $radius-base;
+                        font-size: large;
 
+                    }
+
+                    input {
+                        font-size: large;
+                        width: 100%;
                     }
                 }
 
@@ -116,7 +126,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 5px 25px;
+        padding: 15px 25px;
         background-color: $base-color;
 
         h4 {
@@ -145,7 +155,7 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
-        padding: 50px 25px;
+        padding: 150px 25px;
 
         h3 {
             font-size: 2rem;

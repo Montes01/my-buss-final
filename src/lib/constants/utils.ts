@@ -35,13 +35,13 @@ export function parseCompany(company: any): Empresa {
     if (!company.Dirección) throw new Error("Dirección de empresa inválida");
 
     return {
-        ID_Empresa: company.ID_Empresa,
-        Nombre: company.Nombre,
-        CorreoElectronico: company.CorreoElectronico,
-        Logo: company.Logo,
-        Dirección: company.Dirección,
-        Teléfono: company.Teléfono,
-        Contraseña: company.Contraseña ? company.Contraseña : "empty"
+        iD_Empresa: company.ID_Empresa,
+        nombre: company.Nombre,
+        correoElectronico: company.CorreoElectronico,
+        logo: company.Logo,
+        dirección: company.Dirección,
+        teléfono: company.Teléfono,
+        contraseña: company.Contraseña ? company.Contraseña : "empty"
     }
 }
 
