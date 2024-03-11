@@ -10,7 +10,7 @@ import Input from "@/system-design/atoms/Input"
 export default function Profile() {
     const router = useRouter()
     const [canEdit, setCanEdit] = useState(false)
-    const { UseGetUser: user, UseLogin } = UserActions()
+    const { UseGetUser: user } = UserActions()
     const dialogRef = useRef<HTMLDialogElement>(null)
 
     useEffect(() => {
@@ -21,17 +21,6 @@ export default function Profile() {
         })
     }, [])
 
-
-
-    useEffect(() => {
-        isUserAuthenticated((user: Usuario | null) => {
-            if (user) {
-                UseLogin(user)
-            } else {
-                router.push("/home/join/login")
-            }
-        })
-    }, [])
 
 
     const handleEditProfileClick = () => {
@@ -45,7 +34,9 @@ export default function Profile() {
                 <p className="profile-text">Administra tu información personal y controla a qué información pueden acceder otras personas y aplicaciones.</p>
                 <section className="image-name">
                     <h4 className="username-display">{user?.Nombre}</h4>
-                    <img src={user?.FotoPerfil || "/Images/user.png"} width={75} height={75} alt="Foto de perfil" />
+                    <img src={user?.FotoPerfil ? user.FotoPerfil : "/Images/user.png"} onError={() => {
+                        return "/Images/user.png"
+                    }} width={75} height={75} alt="Foto de perfil" />
                     <Button action={handleEditProfileClick} content="Editar perfil" className="edit-profile" />
                 </section>
 

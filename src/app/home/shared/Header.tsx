@@ -13,7 +13,6 @@ export default function Header() {
   useEffect(() => {
     isUserAuthenticated((user: Usuario) => {
       if (user) {
-
         UseLogin(user)
       }
     })

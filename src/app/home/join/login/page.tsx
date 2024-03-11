@@ -25,7 +25,7 @@ export default function Login() {
         const body = { Correo, Contraseña }
         try {
             const res = await UsePost(SERVER_URL + ENDPOINTS.USER.LOGIN, body);
-            localStorage.setItem('user-token', res?.Data?.token);
+            localStorage.setItem('user-token', res?.Data);
             router.push('/home');
         } catch (err: unknown) {
             setError("Correo o contraseña incorrectos")
