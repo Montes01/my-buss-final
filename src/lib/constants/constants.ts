@@ -23,6 +23,9 @@ export const ENDPOINTS = {
     LIST: "Empresa/Listar",
     ADD: "Empresa/Registrar",
     LOGIN: "Empresa/Ingresar",
+  },
+   TICKET: {
+    ADD: "Tiquete/Agregar",
   }
 
 
