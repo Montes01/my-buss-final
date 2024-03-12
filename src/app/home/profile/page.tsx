@@ -20,7 +20,7 @@ export default function Profile() {
             }
         })
     }, [])
-
+    const imageRef = useRef<HTMLImageElement>(null)
 
 
     const handleEditProfileClick = () => {
@@ -34,8 +34,9 @@ export default function Profile() {
                 <p className="profile-text">Administra tu información personal y controla a qué información pueden acceder otras personas y aplicaciones.</p>
                 <section className="image-name">
                     <h4 className="username-display">{user?.Nombre}</h4>
-                    <img src={user?.FotoPerfil ? user.FotoPerfil : "/Images/user.png"} onError={() => {
-                        return "/Images/user.png"
+                    <img ref={imageRef} src={user?.FotoPerfil ? user.FotoPerfil : "/Images/user.png"} onError={() => {
+                        if (!imageRef.current) return;
+                        imageRef.current.src = "https://th.bing.com/th/id/R.8dff49985d0d8afa53751d9ba8907aed?rik=7clxEmBk65lU2A&pid=ImgRaw&r=0"
                     }} width={75} height={75} alt="Foto de perfil" />
                     <Button action={handleEditProfileClick} content="Editar perfil" className="edit-profile" />
                 </section>
