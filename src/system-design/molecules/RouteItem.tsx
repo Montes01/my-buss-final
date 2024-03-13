@@ -5,11 +5,14 @@ export default function RouteItem({ ID_Ruta, Nombre, Descripción, Horario, Tari
     return (
         <article className="route-item">
             <section className="route-state">
-                <strong className="route-number">{Nombre}</strong>
+                <h3 className="route-number">{Nombre}</h3>
             </section>
             <section className="route-info">
+                <strong>Description:</strong>
                 <p>{Descripción}</p>
+                <strong>Schedule:</strong>
                 <p>{Horario}</p>
+                <strong>Price:</strong>
                 <p>{Tarifa}</p>
             </section>
             <section className="controls">

@@ -30,9 +30,7 @@ export default function AddRoute() {
     }
     return (
         <form onSubmit={handleSubmit} className="route-form">
-            <Input label="Numero de Ruta" name="NumeroR" required type="number" className="input" />
-            <Input label="Inicio de Ruta" name="InicioR" required type="text" className="input" />
-            <Input label="Fin de Ruta" name="FinR" required type="text" className="input" />
+            
             <Button content="Registrar" submit />
 
 

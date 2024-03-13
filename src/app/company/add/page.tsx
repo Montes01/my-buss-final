@@ -25,11 +25,16 @@ export default function Add() {
                 <form className="add-route-form">
                     <section className="form-sections">
                         <section className="form-section">
-
-                            <Input className="route-input" label="Numero de ruta" type="number" />
-                            <Input className="route-input" label="Inicio de la ruta" type="text" />
-                            <Input className="route-input" label="Fin de la ruta" type="text" />
-
+                            <Input label="Nombre" name="Nombre" type="text" className="route-input" />
+                            <Input label="Descripcion" name="Descripción" type="number" className="route-input" />
+                            <Input label="Tarifa" name="Tarifa" type="number" className="route-input" />
+                            <label className="route-select">
+                                Tipo
+                                <select name="Tipo" className="route-input">
+                                    <option value="urbano">Urbano</option>
+                                    <option value="alternativo">Alternativo</option>
+                                </select>
+                            </label>
                         </section>
                         <section className="stops-part">
                             <ul className="stops">

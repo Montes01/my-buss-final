@@ -80,6 +80,7 @@
                     .stop {
                         color: black;
                         list-style: inside;
+
                         span {
                             color: black;
                         }
@@ -131,4 +132,11 @@
             gap: 3px;
         }
     }
+}
+
+.route-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
