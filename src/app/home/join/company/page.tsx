@@ -1,37 +1,18 @@
-'use client'
-import "./_login.scss";
+"use client"
 import Button from "@/system-design/atoms/Button";
-import { IconBrandGoogle, IconBrandGithub, IconBrandFacebook } from "@tabler/icons-react";
-import Input from "@/system-design/atoms/Input";
-import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
-import { UsePost } from "@/lib/hooks/fetchHook"
 import Spinner from "@/system-design/atoms/Spinner";
-import { useState } from "react";
-import ChangeJoin from "../shared/ChanngeJoin";
-import { useRouter } from "next/navigation";
-import { loginMock } from "@/lib/constants/mocks";
-import { Response } from "@/lib/constants/declarations";
+import "./job.scss";
 import Link from "next/link";
-export default function Login() {
-    const router = useRouter()
+import Input from "@/system-design/atoms/Input";
+import ChangeJoin from "../shared/ChanngeJoin";
+import { useState } from "react";
+
+export default function LoginCompany() {
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setError("")
-        setIsLoading(true)
-        const data = new FormData(e.currentTarget)
-        const Correo = data.get('email')!
-        const Contraseña = data.get('password')!
-        const body = { Correo, Contraseña }
-        try {
-            const res = await UsePost(SERVER_URL + ENDPOINTS.USER.LOGIN, body);
-            localStorage.setItem('user-token', res?.Data);
-            router.push('/home');
-        } catch (err: unknown) {
-            setError("Correo o contraseña incorrectos")
-        }
-        setIsLoading(false)
     }
     return (
         <>
@@ -41,7 +22,7 @@ export default function Login() {
                 action=""
                 className="login-form"
             >
-                <h3 className="login-form_title">Inicia Sesión</h3>
+                <h3 className="login-form_title">Ingresa a tu panel de control</h3>
                 <section className="login-ways">
                     {/* <Button className="login-google login-way" content={IconBrandGoogle} />
                     <Button className="login-github login-way" content={IconBrandFacebook} /> */}
@@ -55,7 +36,7 @@ export default function Login() {
 
                     </section>
                     <section className="join-as-company">
-                        <p>¿Eres una empresa? <Link className="company-anchor" href="/home/join/company"> Ingresa a tu cuenta</Link> </p>
+                        <p>¿Eres un usuario? <Link className="company-anchor" href="/home/join/login"> Ingresa a tu cuenta</Link> </p>
                     </section>
                     <section className="login-form_error">
                         {error}
