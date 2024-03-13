@@ -38,13 +38,13 @@ export const Services: ServiceCard[] = [
     title: "Rutas comunes",
     description: "Consulta los horarios de las rutas de transporte público y lugares de interés en la ciudad.",
     image: "/Images/Gadget-1.png",
-    href: "/routes",
+    href: "/routes/",
   },
   {
     title: "Rutas Alternativas",
     description: "Explora diferentes rutas para llegar a tu destino de manera eficiente.",
     image: "/Images/Gadget-2.png",
-    href: "/routes/alternative",
+    href: "/home/routes/alternative",
   },
   {
     title: "Paradas",
