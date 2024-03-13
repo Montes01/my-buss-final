@@ -95,15 +95,16 @@ const AlternativeRoutes = () => {
           <img src={route.distanceIcon} alt="Icono de distancia" /> 
           <span>{route.distance}</span> 
           <span>{route.difficulty}</span> 
-        </div>
-          <button className="route-button">Ver Ruta</button>
-      </div>
+  </div>
+    <button className="route-button">Ver Ruta</button>
+    
+  </div>
     ))}
   </div>
 </div>
 
-  
-  );
+
+);
 };
 
 export default AlternativeRoutes;
