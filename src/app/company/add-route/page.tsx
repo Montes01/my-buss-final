@@ -15,7 +15,7 @@ export default function AddRoute() {
         const EstadoR = false
         const url = SERVER_URL + ENDPOINTS.ROUTE.ADD
         const headers = {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
+            "Authorization": `Bearer ${localStorage.getItem("company-token")}`
         }
         console.log(headers)
         const body = { NumeroR, InicioR, FinR, EstadoR, FkIdEmpresa: company.iD_Empresa }

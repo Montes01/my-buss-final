@@ -1,4 +1,4 @@
-import { Empresa, Usuario } from "./declarations"
+import { Empresa, Ruta, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
@@ -62,6 +62,39 @@ export const isCompanyAuthenticated = (callback: Function) => {
     } else {
         callback(null)
     }
+}
+
+export const parseSingularRoute = (route: any): Ruta => {
+  /*
+export interface Ruta {
+  ID_Ruta: number;
+  ID_Empresa: number;
+  Nombre: string;
+  Tipo?: string;
+  Descripción?: string;
+  Horario?: string;
+  Tarifa: number;
+}
+  */
+    if (!route) throw new Error("Ruta inválida");
+    if (!route.iD_Ruta) throw new Error("ID de ruta inválido");
+    if (!route.iD_Empresa) throw new Error("ID de empresa inválido");
+    if (!route.nombre) throw new Error("Nombre de ruta inválido");
+    if (!route.tarifa) throw new Error("Tarifa de ruta inválida");
+
+    return {
+        ID_Ruta: route.iD_Ruta,
+        ID_Empresa: route.iD_Empresa,
+        Nombre: route.nombre,
+        Tipo: route.tipo ? route.tipo : "empty",
+        Descripción: route.descripcion ? route.descripcion : "empty",
+        Horario: route.horario ? route.horario : "empty",
+        Tarifa: route.tarifa
+    }
+}
+
+export const parseRouteList = (routes: any[]): Ruta[] => {
+    return routes.map(route => parseSingularRoute(route))
 }
 
 export const isUserAuthenticated = (callback: Function) => {
