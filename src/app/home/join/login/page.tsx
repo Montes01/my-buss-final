@@ -11,6 +11,7 @@ import ChangeJoin from "../shared/ChanngeJoin";
 import { useRouter } from "next/navigation";
 import { loginMock } from "@/lib/constants/mocks";
 import { Response } from "@/lib/constants/declarations";
+import Link from "next/link";
 export default function Login() {
     const router = useRouter()
     const [error, setError] = useState("")
@@ -42,8 +43,8 @@ export default function Login() {
             >
                 <h3 className="login-form_title">Inicia Sesión</h3>
                 <section className="login-ways">
-                    <Button className="login-google login-way" content={IconBrandGoogle} />
-                    <Button className="login-github login-way" content={IconBrandFacebook} />
+                    {/* <Button className="login-google login-way" content={IconBrandGoogle} />
+                    <Button className="login-github login-way" content={IconBrandFacebook} /> */}
                 </section>
                 <section className="camps">
                     <Input required name="email" className="form-input" label="Correo" type="email" />
@@ -52,6 +53,9 @@ export default function Login() {
                         <Button submit content="Ingresar" className=" login-button" />
                         {isLoading && <Spinner />}
 
+                    </section>
+                    <section className="join-as-company">
+                        <p>¿Eres una empresa? <Link className="company-anchor" href="/job/login"> Ingresa a tu cuenta</Link> </p>
                     </section>
                     <section className="login-form_error">
                         {error}
