@@ -7,15 +7,29 @@ import { EmpresasMock } from "@/lib/constants/mocks";
 import { Empresa, Response } from "@/lib/constants/declarations";
 import { IconBus } from "@tabler/icons-react"
 import { UseGet } from "@/lib/hooks/fetchHook";
+import { useRouter } from "next/navigation";
 export default function Home() {
-
+  const router = useRouter()
   const [companies, setCompanies] = useState<Empresa[] | null>([])
+
+  useEffect(() => {
+    const companyToken = localStorage.getItem("company-token")
+    if (companyToken) {
+      localStorage.removeItem("user-token")
+      router.push("/company")
+    }
+    const userToken = localStorage.getItem("user-token")
+    if (userToken) {
+      localStorage.removeItem("company-token")
+      router.push("/user")
+    }
+
+  }, [])
 
   useEffect(() => {
     const getCompanies = async () => {
       const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
-        console.log(fetchedData)
-        setCompanies(fetchedData.Data);
+      setCompanies(fetchedData.Data);
     }
     getCompanies()
   }, [])
