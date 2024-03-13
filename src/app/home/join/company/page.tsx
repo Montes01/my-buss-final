@@ -6,8 +6,12 @@ import Link from "next/link";
 import Input from "@/system-design/atoms/Input";
 import ChangeJoin from "../shared/ChanngeJoin";
 import { useState } from "react";
+import { UsePost } from "@/lib/hooks/fetchHook";
+import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
+import { useRouter } from "next/navigation";
 
 export default function LoginCompany() {
+    const router = useRouter()
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
 
@@ -19,7 +23,18 @@ export default function LoginCompany() {
         const Correo = data.get('email')!
         const Contraseña = data.get('password')!
         const body = { Correo, Contraseña }
-        
+        try {
+            const response = await UsePost(SERVER_URL + ENDPOINTS.COMPANY.LOGIN, body)
+            const token = response.Data
+            setIsLoading(false)
+            if (!token) throw new Error("Error al iniciar sesión")
+            localStorage.setItem("company-token", response.Data)
+            router.push("/company")
+        } catch (error) {
+            setError((error as Error).message)
+            setIsLoading(false)
+        }
+
     }
     return (
         <>

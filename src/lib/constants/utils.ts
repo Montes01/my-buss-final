@@ -30,9 +30,9 @@ export function parseCompany(company: any): Empresa {
     if (!company.ID_Empresa) throw new Error("ID de empresa inválido");
     if (!company.Nombre) throw new Error("Nombre de empresa inválido");
     if (!company.CorreoElectronico) throw new Error("Correo electrónico de empresa inválido");
-    if (!company.Teléfono) throw new Error("Número de teléfono de empresa inválido");
+    if (!company.Telefono) throw new Error("Número de teléfono de empresa inválido");
     if (!company.Logo) throw new Error("Logo de empresa inválido");
-    if (!company.Dirección) throw new Error("Dirección de empresa inválida");
+    if (!company.Direccion) throw new Error("Dirección de empresa inválida");
 
     return {
         iD_Empresa: company.ID_Empresa,
@@ -40,7 +40,7 @@ export function parseCompany(company: any): Empresa {
         correoElectronico: company.CorreoElectronico,
         logo: company.Logo,
         dirección: company.Dirección,
-        teléfono: company.Teléfono,
+        teléfono: company.Telefono,
         contraseña: company.Contraseña ? company.Contraseña : "empty"
     }
 }
