@@ -13,6 +13,13 @@ export default function LoginCompany() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setError("")
+        setIsLoading(true)
+        const data = new FormData(e.currentTarget)
+        const Correo = data.get('email')!
+        const Contraseña = data.get('password')!
+        const body = { Correo, Contraseña }
+        
     }
     return (
         <>
