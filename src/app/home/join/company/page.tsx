@@ -1,7 +1,7 @@
 "use client"
 import Button from "@/system-design/atoms/Button";
 import Spinner from "@/system-design/atoms/Spinner";
-import "./job.scss";
+import "./_job.scss";
 import Link from "next/link";
 import Input from "@/system-design/atoms/Input";
 import ChangeJoin from "../shared/ChanngeJoin";
