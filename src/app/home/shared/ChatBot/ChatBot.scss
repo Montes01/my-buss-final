@@ -5,22 +5,29 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 9999; /* Asegura que esté por encima de todo */
   transition: all 0.3s ease;
+  border-radius: 10px;
+  border: solid black 1px;
 }
 
 .chatbot-container.open {
   height: 550px;
-  background-color: $base-color;
+  background-color:#a5a3a3;
+  
 }
 
 .chatbot-toggle {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #9d1717;
+  color: #655f5f;
   padding: $padding-base/2;
   width: fit-content;
+  border-radius: 8px;
+  
 }
 
 iframe {
   border: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Asegura que esté por encima de todo */
 }
