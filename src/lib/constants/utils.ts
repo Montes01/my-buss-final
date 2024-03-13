@@ -87,7 +87,7 @@ export interface Ruta {
         ID_Empresa: route.iD_Empresa,
         Nombre: route.nombre,
         Tipo: route.tipo ? route.tipo : "empty",
-        Descripción: route.descripcion ? route.descripcion : "empty",
+        Descripción: route.descripción ? route.descripción : "empty",
         Horario: route.horario ? route.horario : "empty",
         Tarifa: route.tarifa
     }
