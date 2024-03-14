@@ -37,3 +37,33 @@ export async function UseGet(url: string): Promise<Response> {
     }
 }
 
+export async function UsePut(url: string, data: object, headers: object = {}): Promise<Response> {
+    const res = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            ...headers
+        },
+        body: JSON.stringify(data)
+    });
+    if (!res.ok) {
+        const catchedError = await res.json();
+        throw new Error(catchedError.data);
+    }
+    const res_1 = await res.json();
+    return { ...res_1, Data: res_1.data };
+}
+
+export async function UseDelete(url: string, headers: object = {}): Promise<Response> {
+    const res = await fetch(url, {
+        method: 'DELETE',
+        headers: { ...headers }
+    });
+    if (!res.ok) {
+        const catchedError = await res.json();
+        throw new Error(catchedError.data);
+    }
+    const res_1 = await res.json();
+    return { ...res_1, Data: res_1.data };
+}
+
