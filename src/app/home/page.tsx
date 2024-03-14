@@ -61,7 +61,7 @@ export default function Home() {
       <div className="services_text">
   <h3 className="services-title">Servicios</h3>
   <strong>Descubre nuestra amplia gama de soluciones de transporte personalizado</strong>
-  <p>"Nuestro sistema de transporte garantiza una experiencia segura y cómoda para todo tipo de viajes. Nuestro equipo profesional se enfoca en la comodidad y la puntualidad, asegurando un servicio excepcional y confiable para llevarte a tu destino rápidamente."</p>
+  <p>Nuestro sistema de transporte garantiza una experiencia segura y cómoda para todo tipo de viajes. Nuestro equipo profesional se enfoca en la comodidad y la puntualidad, asegurando un servicio excepcional y confiable para llevarte a tu destino rápidamente.</p>
 </div>
         
         <section className="info-part">
