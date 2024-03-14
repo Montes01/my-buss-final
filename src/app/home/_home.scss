@@ -27,7 +27,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    // background: radial-gradient(ellipse at bottom right, darken($primary, 5%), darken($primary, 1%));
     position: relative;
 
     img {
@@ -59,7 +58,6 @@
       color: $base-color;
       font-size: 3.5rem;
       font-weight: 900;
-      text-shadow: 1px 1px 50px white;
     }
 
     .welcome-pharagraph {
@@ -67,8 +65,6 @@
       font-size: 1.2rem;
       max-width: 50ch;
       font-weight: 300;
-      text-shadow: 1px 1px 50px white;
-
     }
 
     .logos {
@@ -115,10 +111,6 @@
   }
 
 }
-
-
-
-
 
 .home-content {
   padding: 20px*2.5 15px*2.5;
@@ -176,20 +168,6 @@
   position: relative;
   padding: 25px 0;
 
-  .services_text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-    .services-title {
-      text-transform: capitalize;
-      font-size: 2.5rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 20px white;
-    }
-  }
 
   .info-part {
     display: flex;
@@ -209,6 +187,38 @@
     width: 80%;
     height: 1px;
   }
+  .services_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre elementos */
+  
+    .services-title {
+      font-size: 2rem; /* Tamaño del título */
+      font-weight: bold; /* Negrita */
+      text-transform: uppercase; /* Convertir a mayúsculas */
+      color: #ffffff; /* Color del texto */
+      background-color: #600505;
+      padding: 5px 10px; /* Ajusta el espaciado entre el texto y el borde */
+      border-radius: 15px;
+      width: 40%;
+    }
+    
+    strong {
+      font-size: 1.2rem; /* Tamaño del texto en negrita */
+      font-weight: bold; /* Negrita */
+      color: black; /* Color del texto */
+    }
+  
+    p {
+      font-size: 1rem; /* Tamaño del párrafo */
+      color: #000000; /* Color del texto */
+      max-width: 80%; /* Ancho máximo del párrafo */
+    }
+  }
+  
 
 
 }
@@ -260,15 +270,6 @@
 
 }
 
-/* <section className="final-info">
-        <section className="content">
-          <h3>Descubre el Futuro del Transporte con MyBuss</h3>
-          <p>En MyBuss, no solo ofrecemos un servicio de transporte, sino una revolución en cada viaje. Con nuestra aplicación, experimentarás una nueva era de movilidad: desde la comodidad de conocer la ubicación exacta de tu autobús hasta acceder a rutas convenientes y exclusivos convenios. En MyBuss, tu viaje se transforma en una experiencia sin complicaciones y llena de beneficios. ¡Descarga la aplicación hoy y haz de cada trayecto una aventura placentera!</p>
-        </section>
-        <aside className="image">
-          <img src="/Images/final-home-image.png" alt="phone" />
-        </aside>
-      </section>*/
 .final-info {
   display: flex;
   justify-content: center;
@@ -317,5 +318,152 @@
       aspect-ratio: 2/1.5;
       animation: float 6s ease-in-out infinite;
     }
+  }
+}
+.Pagos {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide el área en dos columnas */
+  gap: 20px; /* Espacio entre las dos áreas */
+  padding: 20px; /* Añade espacio alrededor del grid */
+  background-color: #ffffff;
+}
+
+.metodos-pago {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.titulo {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center; /* Centra el texto */
+}
+
+.imagenes-pequenas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Mostrar tres columnas por fila */
+  gap: 10px; /* Espacio entre las imágenes */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+
+.imagenes-pequenas img {
+  max-width: 100%;
+  height: auto;
+}
+
+.texto-grande {
+  display: flex;
+  margin-top: 20%;
+  font-size: 1.5rem; /* Tamaño del texto grande */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar el texto horizontalmente */
+  
+}
+.titulo{
+  font-size: 2.5rem;
+}
+
+.imagen-grande img{
+  width: 70%;
+}
+@keyframes movimiento {
+  0% {
+    transform: translateY(0); /* Sin movimiento al inicio */
+  }
+  50% {
+    transform: translateY(-5px); /* Movimiento hacia arriba a la mitad de la animación */
+  }
+  100% {
+    transform: translateY(0); /* Volver al estado inicial al final */
+  }
+}
+
+.imagenes-pequenas img {
+  max-width: 100%;
+  height: auto;
+  animation: movimiento 3s ease-in-out infinite; /* Aplicar animación de movimiento */
+}
+
+
+//MEDIA QUERIES
+/* Estilos base */
+.main-home {
+  position: relative;
+  height: 90vh;
+  max-height: 1000px;
+  padding: 50px;
+  background-color: $base-color;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $base-color;
+  position: relative;
+  padding: 25px 0;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .main-home {
+    padding: 20px; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  .services .info-part {
+    gap: 20px; /* Ajustar el espacio entre elementos */
+    padding: 2rem 1rem; /* Ajustar el padding */
+  }
+
+  .services .services_text .services-title {
+    font-size: 1.5rem; /* Tamaño de título reducido */
+  }
+
+  .imagenes-pequenas {
+    grid-template-columns: repeat(1, 1fr); /* Mostrar una columna por fila en pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 577px) and (max-width: 991px) {
+  .main-home {
+    padding: 30px; /* Ajustar el padding en pantallas medianas */
+  }
+
+  .services .info-part {
+    gap: 30px; /* Ajustar el espacio entre elementos */
+    padding: 2rem 2rem; /* Ajustar el padding */
+  }
+
+  .services .services_text .services-title {
+    font-size: 1.8rem; /* Tamaño de título reducido */
+  }
+
+  .imagenes-pequenas {
+    grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas por fila en pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) {
+  .main-home {
+    padding: 50px; /* Mantener el padding original en pantallas grandes */
+  }
+
+  .services .info-part {
+    gap: 50px; /* Ajustar el espacio entre elementos */
+    padding: 3rem 3rem; /* Ajustar el padding */
+  }
+
+  .services .services_text .services-title {
+    font-size: 2rem; /* Tamaño de título original */
+  }
+
+  .imagenes-pequenas {
+    grid-template-columns: repeat(3, 1fr); /* Mantener tres columnas por fila en pantallas grandes */
   }
 }
