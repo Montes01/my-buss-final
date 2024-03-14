@@ -269,57 +269,56 @@
   }
 
 }
-
 .final-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 80px 20px;
-  background-color: $base-color;
+  gap: 50px;
+  padding: 100px 100px;
+  background-color: #fffafa;
   position: relative;
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-
-    h3 {
-      font-size: 2rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 20px white;
-      text-wrap: balance;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1rem;
-      max-width: 50ch;
-      font-weight: 300;
-      text-shadow: 1px 1px 20px white;
-    }
-  }
-
-  .image {
-    width: 40%;
-    height: 90%;
-    border-radius: $radius-base;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lighten($base-color, 5%);
-    padding: 20px;
-
-    img {
-      width: 80%;
-      aspect-ratio: 2/1.5;
-      animation: float 6s ease-in-out infinite;
-    }
-  }
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.content h3 {
+  font-size: 2.5rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  background-color: #000; /* Fondo negro para el título */
+  color: #fff; /* Color blanco para el texto */
+  padding: 10px; /* Añadir espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  max-width: 80%; /* Ancho máximo del texto */
+  margin: 0 auto; /* Centrar el texto horizontalmente */
+}
+
+
+.image {
+  width: 50%;
+  margin-left: 50px;
+}
+
+.image img {
+  width: 70%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
 .Pagos {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Divide el área en dos columnas */
@@ -369,6 +368,7 @@
 .imagen-grande img{
   width: 70%;
 }
+
 @keyframes movimiento {
   0% {
     transform: translateY(0); /* Sin movimiento al inicio */

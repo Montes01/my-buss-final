@@ -126,14 +126,13 @@ export default function Home() {
       <section className="final-info">
         <section className="content">
           <h3>Descubre el Futuro del Transporte con MyBuss</h3>
-          <p>En MyBuss, no solo ofrecemos un servicio de transporte, sino una revolución en cada viaje. Con nuestra aplicación, experimentarás una nueva era de movilidad: desde la comodidad de conocer la ubicación exacta de tu autobús hasta acceder a rutas convenientes y exclusivos convenios. En MyBuss, tu viaje se transforma en una experiencia sin complicaciones y llena de beneficios. ¡Descarga la aplicación hoy y haz de cada trayecto una aventura placentera!</p>
+          <p>Descubre una nueva era de movilidad con MyBuss. Nuestra aplicación ofrece comodidad, ubicación en tiempo real de autobuses, rutas convenientes y exclusivos beneficios. Transforma tus viajes en experiencias sin complicaciones. ¡Descarga la aplicación hoy para aventuras placenteras en cada trayecto!</p>
+          <img className="bus" src="https://www.mybus.io/wp-content/themes/mybus/assets/dist/images/interface/bus-mooving.gif" alt="" />
         </section>
         <aside className="image">
           <img src="/Images/final-home-image.png" alt="phone" />
         </aside>
       </section>
-
-
     </>
   )
 }
