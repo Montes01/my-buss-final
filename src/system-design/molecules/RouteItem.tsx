@@ -4,21 +4,21 @@ import { IconEdit, IconTrash } from "@tabler/icons-react"
 import { useRef } from "react";
 import { UseDelete } from "@/lib/hooks/fetchHook";
 import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
+import swal from "sweetalert";
 export default function RouteItem({ ID_Ruta, Nombre, Descripción, Horario, Tarifa }: Ruta) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const handleRemoveButton = () => {
         const headers = {
             Authorization: `Bearer ${localStorage.getItem("company-token")}`
         }
-        try {
-            UseDelete(SERVER_URL + ENDPOINTS.ROUTE.DELETE + "?ID_Ruta=" + ID_Ruta, headers).then(res => {
-                console.log(res)
-                dialogRef.current?.close()
+        UseDelete(SERVER_URL + ENDPOINTS.ROUTE.DELETE + "?ID_Ruta=" + ID_Ruta, headers).then(res => {
+            swal("Ruta eliminada", "La ruta ha sido eliminada con éxito", "success").then(() => {
+                location?.reload()
             })
-
-        } catch (err) {
-            console.log(err)
-        }
+            dialogRef.current?.close()
+        }).catch(err => {
+            swal("Error", (err as Error).message, "error")
+        })
     }
     return (
         <>
@@ -28,7 +28,7 @@ export default function RouteItem({ ID_Ruta, Nombre, Descripción, Horario, Tari
                 </section>
                 <section className="route-info">
                     <strong>Descripción:</strong>
-                    <p>{Descripción}</p>
+                    <p className="route-description">{Descripción?.split("", 20)}...</p>
                     <strong>Horario:</strong>
                     <p>{Horario}</p>
                     <strong>Precio:</strong>
@@ -39,12 +39,12 @@ export default function RouteItem({ ID_Ruta, Nombre, Descripción, Horario, Tari
                     <Button content={IconTrash} className="delete-button" action={() => dialogRef.current?.showModal()} />
                 </section>
             </article>
-            <dialog ref={dialogRef}>
+            <dialog className="delete-dialog" ref={dialogRef}>
                 <h2>Eliminar ruta</h2>
                 <p>¿Estás seguro de que deseas eliminar la ruta?</p>
                 <section>
-                    <Button content="Cancelar" action={() => dialogRef.current?.close()} />
-                    <Button content="Eliminar" action={handleRemoveButton} />
+                    <Button content="Cancelar" className="cancel-button" action={() => dialogRef.current?.close()} />
+                    <Button content="Eliminar" className="delete-button" action={handleRemoveButton} />
                 </section>
             </dialog>
         </>
