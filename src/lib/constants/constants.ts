@@ -26,6 +26,10 @@ export const ENDPOINTS = {
   },
    TICKET: {
     ADD: "Tiquete/Agregar",
+  },
+  STOP: {
+    ADD: "Paradero/Agregar",
+    LIST: "Paradero/Listar",
   }
 
 

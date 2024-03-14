@@ -1,7 +1,8 @@
 "use client"
 import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants"
-import {  Ruta } from "@/lib/constants/declarations"
+import { Ruta } from "@/lib/constants/declarations"
 import { routesMock } from "@/lib/constants/mocks"
+import { parseRouteList } from "@/lib/constants/utils"
 import companyActions from "@/lib/context/hooks/companyActions"
 import { UseGet } from "@/lib/hooks/fetchHook"
 import RouteItem from "@/system-design/molecules/RouteItem"
@@ -11,27 +12,35 @@ export default function Company() {
     const [routes, setRoutes] = useState<Ruta[]>([])
 
     useEffect(() => {
-        routesMock().then(res => {
-            setRoutes(res as Ruta[])
+        const companyId = UseGetCompany.iD_Empresa
+        if (!companyId) return
+        const url = SERVER_URL + ENDPOINTS.ROUTE.LIST_BY_COMPANY + "?ID_Empresa=" + companyId
+
+        UseGet(url).then(res => {
+            const routes = res.Data
+            const parsedRoutes = parseRouteList(routes)
+            setRoutes(parsedRoutes)
         })
-    }, [])
+    }, [UseGetCompany])
 
 
 
     return (
         <section className="routes">
             {
-                // routes.map(({ estadoR, finR, inicioR, numeroR, fkIdEmpresa }) => (
+                routes.map(({ ID_Empresa, ID_Ruta, Nombre, Tarifa, Descripción, Horario, Tipo }) => (
 
-                //     <RouteItem
-                //         key={numeroR}
-                //         numeroR={numeroR}
-                //         inicioR={inicioR}
-                //         finR={finR}
-                //         estadoR={estadoR}
-                //         fkIdEmpresa={fkIdEmpresa}
-                //     />
-                // ))
+                    <RouteItem
+                        key={ID_Ruta}
+                        ID_Empresa={ID_Empresa}
+                        ID_Ruta={ID_Ruta}
+                        Nombre={Nombre}
+                        Tarifa={Tarifa}
+                        Descripción={Descripción}
+                        Horario={Horario}
+                        Tipo={Tipo}
+                    />
+                ))
             }
         </section>
 

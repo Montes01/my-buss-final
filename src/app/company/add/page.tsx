@@ -4,14 +4,17 @@ import Input from "@/system-design/atoms/Input";
 import { useRef, useState } from "react";
 import "./add.scss";
 import Dialog from "./components/dialog";
+import { Paradero } from "@/lib/constants/declarations"
 export default function Add() {
-    const [stops, setStops] = useState<string[]>([]);
+    const [stops, setStops] = useState<Paradero[]>([]);
     const dialogRef = useRef<HTMLDialogElement | null>(null);
-    const handleAddStopSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const name = formData.get("stop") ?? "";
-        setStops([...stops, name.toString()]);
+    const addStopCallback = (stop: Paradero) => {
+        if (stops.find(s => s.ID_Paradero === stop.ID_Paradero)) {
+            setStops(stops.filter(s => s.ID_Paradero !== stop.ID_Paradero));
+            dialogRef.current?.close();
+        } else {
+            setStops([...stops, stop]);
+        };
         dialogRef.current?.close();
     }
 
@@ -25,18 +28,23 @@ export default function Add() {
                 <form className="add-route-form">
                     <section className="form-sections">
                         <section className="form-section">
-
-                            <Input className="route-input" label="Numero de ruta" type="number" />
-                            <Input className="route-input" label="Inicio de la ruta" type="text" />
-                            <Input className="route-input" label="Fin de la ruta" type="text" />
-
+                            <Input label="Nombre" name="Nombre" type="text" className="route-input" />
+                            <Input label="Descripcion" name="Descripción" type="number" className="route-input" />
+                            <Input label="Tarifa" name="Tarifa" type="number" className="route-input" />
+                            <label className="route-select">
+                                Tipo
+                                <select name="Tipo" className="route-input">
+                                    <option value="urbano">Urbano</option>
+                                    <option value="alternativo">Alternativo</option>
+                                </select>
+                            </label>
                         </section>
                         <section className="stops-part">
                             <ul className="stops">
                                 {
                                     stops.map(stop => (
-                                        <li key={stop} className="stop">
-                                            <span>{stop}</span>
+                                        <li key={stop.ID_Paradero} className="stop">
+                                            <span>{stop.Nombre}</span>
                                         </li>
                                     ))
                                 }
@@ -47,7 +55,7 @@ export default function Add() {
                 </form>
                 <Button content="Confirmar" />
             </main>
-            <Dialog OnSubmit={handleAddStopSubmit} dialogRef={dialogRef} />
+            <Dialog addedStopList={stops} callback={addStopCallback} dialogRef={dialogRef} />
         </>
     )
 }

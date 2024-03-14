@@ -13,13 +13,13 @@ export default function Aside() {
             if (company) {
                 UseSetCompany(company)
             } else {
-                router.push("/job/login")
+                router.push("/home/join/company")
             }
         })
     }, [])
     const handleLogout = () => {
         localStorage.removeItem("company-token")
-        router.push("/job/login")
+        router.push("/home/join/company")
     }
     return (
         <aside className="nav-bar">
