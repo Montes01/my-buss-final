@@ -8,11 +8,11 @@ export default function RouteItem({ ID_Ruta, Nombre, Descripción, Horario, Tari
                 <h3 className="route-number">{Nombre}</h3>
             </section>
             <section className="route-info">
-                <strong>Description:</strong>
+                <strong>Descripción:</strong>
                 <p>{Descripción}</p>
-                <strong>Schedule:</strong>
+                <strong>Horario:</strong>
                 <p>{Horario}</p>
-                <strong>Price:</strong>
+                <strong>Precio:</strong>
                 <p>{Tarifa}</p>
             </section>
             <section className="controls">
