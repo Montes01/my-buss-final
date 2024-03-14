@@ -1,10 +1,10 @@
-import { Empresa, Ruta, Usuario } from "./declarations"
+import { Empresa, Paradero, Ruta, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
 
 export function parseUser(user: any): Usuario {
-  
+
     if (!user) throw new Error("Usuario inválido");
     if (!user.ID_Usuario) throw new Error("ID de usuario inválido");
     if (!user.Nombre) throw new Error("Nombre de usuario inválido");
@@ -65,17 +65,6 @@ export const isCompanyAuthenticated = (callback: Function) => {
 }
 
 export const parseSingularRoute = (route: any): Ruta => {
-  /*
-export interface Ruta {
-  ID_Ruta: number;
-  ID_Empresa: number;
-  Nombre: string;
-  Tipo?: string;
-  Descripción?: string;
-  Horario?: string;
-  Tarifa: number;
-}
-  */
     if (!route) throw new Error("Ruta inválida");
     if (!route.iD_Ruta) throw new Error("ID de ruta inválido");
     if (!route.iD_Empresa) throw new Error("ID de empresa inválido");
@@ -95,6 +84,23 @@ export interface Ruta {
 
 export const parseRouteList = (routes: any[]): Ruta[] => {
     return routes.map(route => parseSingularRoute(route))
+}
+
+export const parseSingleStop = (stop: any): Paradero => {
+    if (!stop) throw new Error("Paradero inválido");
+    if (!stop.iD_Paradero) throw new Error("ID de paradero inválido");
+    if (!stop.nombre) throw new Error("Nombre de paradero inválido");
+
+    return {
+        ID_Paradero: stop.iD_Paradero,
+        Nombre: stop.nombre,
+        Descripción: stop.descripción ? stop.descripción : "empty",
+        Foto: stop.foto ? stop.foto : "empty",
+        Ubicación: stop.ubicación ? stop.ubicación : "empty"
+    }
+}
+export const parseStopList = (stops: any[]): Paradero[] => {
+    return stops.map(stop => parseSingleStop(stop))
 }
 
 export const isUserAuthenticated = (callback: Function) => {

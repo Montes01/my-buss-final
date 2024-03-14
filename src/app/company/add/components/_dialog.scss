@@ -1,0 +1,93 @@
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+
+.stop-insert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .stop-insert-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 300px;
+        height: 110px;
+
+    }
+
+
+
+    .stop-image-insert {
+        width: 150px;
+        height: 100px;
+        border-radius: $radius-base;
+    }
+
+    .stop-actions-insert {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 1.5rem;
+            // color: $text-color;
+        }
+    }
+
+}
+
+
+.dialog {
+
+    margin: auto;
+    padding: 25px;
+    background-color: $base-color;
+    border-radius: $radius-base;
+    border: none;
+
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+
+    }
+
+
+}
+
+.company-form {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+    // padding: 20px 40px;
+}
+
+details {
+    width: 300px;
+
+    transition: all 0.3s ease;
+    border-radius: $radius-base;
+    display: flex;
+    padding: 10px;
+    background-color: darken($base-color, 10%);
+    flex-direction: column;
+    gap: 10px;
+
+    summary {
+        cursor: pointer;
+    }
+
+    &[open] {
+        background-color: darken($base-color, 20%);
+    }
+}
