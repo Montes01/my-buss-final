@@ -10,7 +10,7 @@ const AlternativeRoutes = async () => {
 
   let alternativeRoutes: Ruta[] = []
   try {
-    const data = await UseGet(SERVER_URL + ENDPOINTS.ROUTE.LIST)
+    const data = await UseGet(SERVER_URL + ENDPOINTS.ROUTE.ALTERNATIVE_LIST)
     const parsedRoutes = parseRouteList(data.Data).filter(route => (route.Tipo?.toLowerCase()) !== "urbano")
     alternativeRoutes = parsedRoutes
   } catch (error) {

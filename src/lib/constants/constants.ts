@@ -16,6 +16,7 @@ export const ENDPOINTS = {
     LIST_BY_COMPANY: "Ruta/ListaPorEmpresa",
     DELETE: "Ruta/Eliminar",
     ADD_STOP: "Ruta/AgregarParadero",
+    ALTERNATIVE_LIST: "Ruta/Alternativas",
   },
   BUS: {
     ADD: "Bus/Agregar",
