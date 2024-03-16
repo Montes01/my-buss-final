@@ -17,6 +17,8 @@ export const ENDPOINTS = {
     DELETE: "Ruta/Eliminar",
     ADD_STOP: "Ruta/AgregarParadero",
     ALTERNATIVE_LIST: "Ruta/Alternativas",
+    GET: "Ruta/Obtener",
+    LIST_BY_STOP: "Ruta/ListarPorParadero",
   },
   BUS: {
     ADD: "Bus/Agregar",
@@ -26,13 +28,17 @@ export const ENDPOINTS = {
     LIST: "Empresa/Listar",
     ADD: "Empresa/Registrar",
     LOGIN: "Empresa/Ingresar",
+    GET: "Empresa/Obtener",
   },
    TICKET: {
     ADD: "Tiquete/Agregar",
+    DELETE: "Tiquete/Eliminar",
   },
   STOP: {
     ADD: "Paradero/Agregar",
     LIST: "Paradero/Listar",
+    GET: "Paradero/Obtener",
+    LIST_BY_ROUTE: "Paradero/ListarPorRuta",
   }
 
 

@@ -1,0 +1,47 @@
+/*
+        <article className="stop-card">
+            <h3 className="stop-name">
+                {Nombre}
+            </h3>
+            <img src={Foto} alt="" className="stop-image" />
+            <p className="stop-description">{Descripción}</p>
+            <p className="stop-location">{Ubicación}</p>
+            <Link href={`/home/stops/${ID_Paradero}`} className="button">Ver paradero</Link>
+        </article>
+*/
+@import "../../lib/style-helpers/colors";
+.stop-card {
+    background-color: $base-color;
+    position: relative;
+    padding: $padding-base;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: $radius-base;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+    width: 80%;
+    margin: 20px auto;
+
+    h3 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .stop-image {
+        width: 100%;
+        aspect-ratio: 6/2;
+        border-radius: $radius-base;
+        object-fit: cover;
+    }
+
+    .stop-information {
+        width: 80%;
+        height: 400px;
+        gap: 20px;
+        padding: $padding-base;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+        border-radius: $radius-base;
+        display: flex;
+
+    }
+}

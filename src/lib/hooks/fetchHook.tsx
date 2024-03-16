@@ -23,7 +23,6 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
 export async function UseGet(url: string): Promise<Response> {
     try {
         const res = await fetch(url);
-        console.log(res)
         if (!res.ok) {
             const catchedError = await res.json();
             throw new Error(catchedError.data);

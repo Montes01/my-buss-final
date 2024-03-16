@@ -1,4 +1,5 @@
 import { Ruta } from "@/lib/constants/declarations";
+import Link from "next/link";
 
 /*
 {routes.map((route) => (
@@ -24,7 +25,7 @@ export default function SecondRouteCard({ ID_Empresa, ID_Ruta, Nombre, Tarifa, D
                 <span>- {Tipo}</span>
                 <span>- {Horario}</span>
             </div>
-            <button className="route-button">Ver Ruta</button>
+            <Link href={`/home/routes/${ID_Ruta}`} className="route-button">Ver Ruta</Link>
         </div>
     )
 }
