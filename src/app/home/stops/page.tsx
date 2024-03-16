@@ -3,11 +3,20 @@ import { Paradero } from "@/lib/constants/declarations"
 import { paradasMock } from "@/lib/constants/mocks"
 import "./stops.scss"
 import NavButton from "@/system-design/atoms/NavButton"
+import { UseGet } from "@/lib/hooks/fetchHook"
+import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants"
+import { parseStopList } from "@/lib/constants/utils"
 
 export default async function Stops() {
     let stops: Paradero[] = []
-    const data = await paradasMock()
-    stops = data.Data
+    try {
+        const data = await UseGet(SERVER_URL + ENDPOINTS.STOP.LIST)
+        const parsedStops = parseStopList(data.Data)
+        stops = parsedStops
+    } catch (error) {
+        console.error(error)
+        stops = []
+    }
 
     return (
         <main className="stops-page">
