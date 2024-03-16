@@ -38,137 +38,319 @@
 @import "../../lib/style-helpers/measurement";
 
 .buy-page {
+    padding: 0 50px;
+}
+
+.container_T_I {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+}
+
+
+.container_T_I .payment-text {
+    grid-column: 1; /* Colocamos el texto en la primera columna */
+    text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+.container_T_I .Tienda {
+    grid-column: 2; /* Colocamos la imagen en la segunda columna */
+    display: flex;
+    justify-content: center;
+}
+
+.container_T_I .Tienda img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.payment-text h3 {
+    font-size: 58px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 10px 20px; /* Ajusta el espacio alrededor del texto */
+    border-radius: 10px; /* Agrega un borde redondeado */
+}
+
+
+.payment-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+}
+
+.pay-methods {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .pay-methods h4 {
+    font-size: 50px; /* Título más grande */
+    margin-bottom: 20px; /* Mayor espacio debajo del título */
+  }
+  
+  .pay-methods-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+  
+  .pay-methods-icons img {
+    width: 120px; /* Imágenes más grandes */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+
+header {
+    text-align: center;
+}
+
+header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.buy-row {
+    display: flex;
+    align-items: center;
+}
+
+.buy-row .ticket {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.buy-row .buy-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    strong {
-        color: $primary;
-    }
-
-    header {
-        background: url("/Images/ticket-bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 25px;
-        padding-top: 150px;
-        gap: 20px;
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            text-align: start;
-            align-self: flex-start;
-
-
-        }
-
-        .buy-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            gap: 20px;
-
-            .ticket {
-                width: 30%;
-                aspect-ratio: 2/0.5;
-                object-fit: cover;
-                background-color: blue;
-            }
-
-            .buy-form {
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
-                gap: 15px;
-                flex: 1;
-                background-color: $base-color;
-                padding: 40px 20px;
-                border-radius: $radius-base;
-                border: 1px solid;
-
-                label {
-                    font-size: larger;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: center;
-                    flex: 1;
-
-                    select {
-                        width: 100%;
-                        padding: 5px;
-                        border-radius: $radius-base;
-                        font-size: large;
-
-                    }
-
-                    input {
-                        font-size: large;
-                        width: 100%;
-                    }
-                }
-
-            }
-        }
-    }
-
-    .pay-methods {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 15px 25px;
-        background-color: $base-color;
-
-        h4 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .pay-methods-icons {
-            display: flex;
-            align-items: center;
-            flex: 1;
-            justify-content: center;
-
-            img {
-                height: 100px;
-                object-fit: cover;
-                margin: 0 1rem;
-            }
-        }
-    }
-
-    .payment-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding: 150px 25px;
-
-        h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            text-align: center;
-            color: $primary;
-        }
-
-        p {
-            max-width: 80ch;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: center;
-        }
-    }
 }
+
+.buy-row .buy-form .input-wrapper {
+    margin-bottom: 10px;
+}
+
+.buy-row .buy-form select,
+.buy-row .buy-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.buy-row .buy-form .buy-button {
+    margin-top: 10px;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center; /* Centrar horizontalmente */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* Ancho de la carta */
+    height: 180px; /* Altura de la carta */
+  }
+  
+  .card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  .FormularioPago {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .FormularioPago h2 {
+    font-size: 32px; /* Tamaño de fuente del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  .buy-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Espacio arriba de la fila */
+  }
+  
+  .ticket {
+    width: 150px; /* Ancho de la imagen */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+  }
+  
+  .buy-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-wrapper {
+    margin-bottom: 20px; /* Espacio entre elementos */
+  }
+  
+  .company {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .buy-button {
+    width: 100%;
+  }
+  
+
+  
+
+  
+// .buy-page {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+
+//     strong {
+//         color: $primary;
+//     }
+
+//     header {
+//         background: url("/Images/ticket-bg.jpg");
+//         background-size: cover;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         width: 100%;
+//         padding: 25px;
+//         padding-top: 150px;
+//         gap: 20px;
+
+//         h2 {
+//             font-size: 2rem;
+//             font-weight: 600;
+//             text-align: start;
+//             align-self: flex-start;
+
+
+//         }
+
+//         .buy-row {
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             width: 100%;
+//             gap: 20px;
+
+//             .ticket {
+//                 width: 30%;
+//                 aspect-ratio: 2/0.5;
+//                 object-fit: cover;
+//                 background-color: blue;
+//             }
+
+//             .buy-form {
+//                 display: flex;
+//                 align-items: flex-end;
+//                 justify-content: center;
+//                 gap: 15px;
+//                 flex: 1;
+//                 background-color: $base-color;
+//                 padding: 40px 20px;
+//                 border-radius: $radius-base;
+//                 border: 1px solid;
+
+//                 label {
+//                     font-size: larger;
+//                     display: flex;
+//                     flex-direction: column;
+//                     align-items: flex-start;
+//                     justify-content: center;
+//                     flex: 1;
+
+//                     select {
+//                         width: 100%;
+//                         padding: 5px;
+//                         border-radius: $radius-base;
+//                         font-size: large;
+
+//                     }
+
+//                     input {
+//                         font-size: large;
+//                         width: 100%;
+//                     }
+//                 }
+
+//             }
+//         }
+//     }
+
+//     .pay-methods {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         width: 100%;
+//         padding: 15px 25px;
+//         background-color: $base-color;
+
+//         h4 {
+//             font-size: 1.5rem;
+//             font-weight: 600;
+//             text-align: center;
+//         }
+
+//         .pay-methods-icons {
+//             display: flex;
+//             align-items: center;
+//             flex: 1;
+//             justify-content: center;
+
+//             img {
+//                 height: 100px;
+//                 object-fit: cover;
+//                 margin: 0 1rem;
+//             }
+//         }
+//     }
+
+//     .payment-text {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 20px;
+//         padding: 150px 25px;
+
+//         h3 {
+//             font-size: 2rem;
+//             font-weight: 600;
+//             text-align: center;
+//             color: $primary;
+//         }
+
+//         p {
+//             max-width: 80ch;
+//             font-size: 1rem;
+//             font-weight: 600;
+//             text-align: center;
+//         }
+//     }
+// }
