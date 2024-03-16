@@ -45,7 +45,7 @@ export const Services: ServiceCard[] = [
     title: "Rutas comunes",
     description: "Consulta los horarios de las rutas de transporte público y lugares de interés en la ciudad.",
     image: "/Images/Gadget-1.png",
-    href: "/routes/",
+    href: "/home/routes/",
   },
   {
     title: "Rutas Alternativas",
