@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import { ENDPOINTS, PROJECT_NAME, SERVER_URL } from "@/lib/constants/constants";
 import { Empresa } from "@/lib/constants/declarations";
