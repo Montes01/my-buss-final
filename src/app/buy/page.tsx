@@ -6,11 +6,12 @@ import { EmpresasMock } from "@/lib/constants/mocks";
 import Button from "@/system-design/atoms/Button";
 import Input from "@/system-design/atoms/Input";
 import "./buy.scss";
-import { UseGet } from "@/lib/hooks/fetchHook";
-
+import { UseGet, UsePost } from "@/lib/hooks/fetchHook";
+import swal from "sweetalert";
+import { useRouter } from "next/navigation";
 export default function Buy() {
     const [empresas, setEmpresas] = useState<Empresa[] | null>(null);
-
+    const router = useRouter();
     useEffect(() => {
         async function fetchData() {
             try {
@@ -28,7 +29,28 @@ export default function Buy() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const token = localStorage.getItem("user-token");
-        
+        const ID_Empresa = formData.get("iD_Empresa");
+        const Precio = 2700;
+        const Estado = "Activo";
+        const TipoPago = "Transferencia";
+        const data = {
+            ID_Empresa,
+            Precio,
+            Estado,
+            TipoPago,
+        };
+        console.log(data)
+        try {
+            const res = await UsePost(SERVER_URL + ENDPOINTS.TICKET.ADD, data, { Authorization: `Bearer ${token}` });
+            console.log(res);   
+            await swal("Compra exitosa", "Tu pasaje ha sido comprado con éxito, Revisa tu correo", "success");
+            router.push("/home")
+        } catch (error) {
+            console.log(await error);
+            swal("Error", "No se ha podido realizar la compra", "error");
+        }
+
+
     }
 
     return (
@@ -39,10 +61,10 @@ export default function Buy() {
                 </h2>
                 <section className="buy-row">
                     <img src="/Images/ticket.jpg" alt="" className="ticket" />
-                    <form className="buy-form">
+                    <form onSubmit={handleBuy} className="buy-form">
                         <label className="input-wrapper">
                             Empresa
-                            <select name="" id="" className="company">
+                            <select name="iD_Empresa" id="" className="company">
                                 <option value="" disabled>
                                     Selecionar empresa
                                 </option>

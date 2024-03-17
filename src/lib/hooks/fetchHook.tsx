@@ -12,6 +12,7 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
     });
     if (!res.ok) {
         const catchedError = await res.json();
+        console.log(catchedError);
         throw new Error(catchedError.data);
     }
     const res_1 = await res.json();

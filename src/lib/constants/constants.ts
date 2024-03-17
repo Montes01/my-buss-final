@@ -31,8 +31,8 @@ export const ENDPOINTS = {
     GET: "Empresa/Obtener",
   },
    TICKET: {
-    ADD: "Tiquete/Agregar",
-    DELETE: "Tiquete/Eliminar",
+    ADD: "Ticket/Agregar",
+    DELETE: "Ticket/Eliminar",
   },
   STOP: {
     ADD: "Paradero/Agregar",
