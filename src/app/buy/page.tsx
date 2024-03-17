@@ -1,34 +1,56 @@
-"use server"
+import { useState, useEffect } from "react";
+import { ENDPOINTS, PROJECT_NAME, SERVER_URL } from "@/lib/constants/constants";
+import { Empresa } from "@/lib/constants/declarations";
+import { EmpresasMock } from "@/lib/constants/mocks";
+import Button from "@/system-design/atoms/Button";
+import Input from "@/system-design/atoms/Input";
+import "./buy.scss";
+import { UseGet } from "@/lib/hooks/fetchHook";
 
-import { ENDPOINTS, PROJECT_NAME, SERVER_URL } from "@/lib/constants/constants"
-import { Empresa } from "@/lib/constants/declarations"
-import { EmpresasMock } from "@/lib/constants/mocks"
-import Button from "@/system-design/atoms/Button"
-import Input from "@/system-design/atoms/Input"
-import "./buy.scss"
-import { UseGet } from "@/lib/hooks/fetchHook"
-export default async function Buy() {
-    let empresas: Empresa[] | null = null
-    try {
-        const empresasData = await EmpresasMock()
-        const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
-        console.log(fetchedData)
-        empresas = fetchedData.Data;
-    } catch (error) {
-        console.log(error)
+export default function Buy() {
+    const [empresas, setEmpresas] = useState<Empresa[] | null>(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST);
+                console.log(fetchedData);
+                setEmpresas(fetchedData.Data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const handleBuy = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const token = localStorage.getItem("user-token");
+        
     }
+
     return (
         <main className="buy-page">
             <header>
-                <h2>Compra tus pasajes aquí <strong> sin tener que salir de casa</strong></h2>
+                <h2>
+                    Compra tus pasajes aquí <strong>sin tener que salir de casa</strong>
+                </h2>
                 <section className="buy-row">
                     <img src="/Images/ticket.jpg" alt="" className="ticket" />
                     <form className="buy-form">
                         <label className="input-wrapper">
                             Empresa
                             <select name="" id="" className="company">
-                                <option value="" disabled>Selecionar empresa</option>
-                                {empresas && empresas.map(empresa => <option key={empresa.iD_Empresa} value={empresa.iD_Empresa}>{empresa.nombre}</option>)}
+                                <option value="" disabled>
+                                    Selecionar empresa
+                                </option>
+                                {empresas &&
+                                    empresas.map((empresa) => (
+                                        <option key={empresa.iD_Empresa} value={empresa.iD_Empresa}>
+                                            {empresa.nombre}
+                                        </option>
+                                    ))}
                             </select>
                         </label>
                         <Input type="date" label="Fecha de salida" />
@@ -53,5 +75,5 @@ export default async function Buy() {
                 </p>
             </section>
         </main>
-    )
+    );
 }
