@@ -12,6 +12,7 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
     });
     if (!res.ok) {
         const catchedError = await res.json();
+        console.log(catchedError);
         throw new Error(catchedError.data);
     }
     const res_1 = await res.json();
@@ -23,7 +24,6 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
 export async function UseGet(url: string): Promise<Response> {
     try {
         const res = await fetch(url);
-        console.log(res)
         if (!res.ok) {
             const catchedError = await res.json();
             throw new Error(catchedError.data);
@@ -35,5 +35,35 @@ export async function UseGet(url: string): Promise<Response> {
         console.log(err)
         throw new Error("Error al obtener los datos");
     }
+}
+
+export async function UsePut(url: string, data: object, headers: object = {}): Promise<Response> {
+    const res = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            ...headers
+        },
+        body: JSON.stringify(data)
+    });
+    if (!res.ok) {
+        const catchedError = await res.json();
+        throw new Error(catchedError.data);
+    }
+    const res_1 = await res.json();
+    return { ...res_1, Data: res_1.data };
+}
+
+export async function UseDelete(url: string, headers: object = {}): Promise<Response> {
+    const res = await fetch(url, {
+        method: 'DELETE',
+        headers: { ...headers }
+    });
+    if (!res.ok) {
+        const catchedError = await res.json();
+        throw new Error(catchedError.data);
+    }
+    const res_1 = await res.json();
+    return { ...res_1, Data: res_1.data };
 }
 

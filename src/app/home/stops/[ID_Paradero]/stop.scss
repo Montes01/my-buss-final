@@ -1,4 +1,3 @@
-
 @import "../../../../lib/style-helpers/measurement";
 @import "../../../../lib/style-helpers/colors";
 
@@ -16,12 +15,29 @@
         font-size: 1.5em;
     }
 
-    .stop-location {
-        width: 70%;
-        height: 300px;
-        object-fit: cover;
+    .stop-information {
+        width: 80%;
+        height: 400px;
+        gap: 20px;
+        padding: $padding-base;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
         border-radius: $radius-base;
+        display: flex;
+
+
+        .stop-location {
+            border-radius: $radius-base;
+            object-fit: cover;
+            width: 50%;
+            height: 100%;
+        }
+
+        .stop-image {
+            border-radius: $radius-base;
+            object-fit: cover;
+            width: 50%;
+            height: 100%;
+        }
     }
 
     .routes {
@@ -44,7 +60,39 @@
                     * {
                         color: white;
                     }
+
+                    &:hover {
+                        background-color: rgba(darken($primary, 25%), .85);
+
+                    }
                 }
+
+                transition: transform .3s ease,
+                background-color .3s ease,
+                color .3s ease;
+
+                &:hover {
+                    background-color: rgba(darken($base-color, 50%), .85);
+                    transform: scale(1.02);
+                }
+
+                .route-info-item {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+                    align-items: center;
+                    padding: $padding-base;
+                    border-radius: $radius-base;
+                    background-color: rgba(darken($base-color, 25%), .85);
+                    width: 80%;
+                    height: 50px;
+                    overflow: hidden;
+
+                    p {
+                        text-align: start;
+                    }
+                }
+
 
                 display: flex;
                 justify-content: space-between;
