@@ -39,7 +39,6 @@ export default function Home() {
     <>
       <main className="main-home">
         <section className="background">
-
           <section className="information">
             <h1 className="welcome-message">Bienvenido a {PROJECT_NAME}</h1>
             <p className="welcome-pharagraph">{PRINCIPAL_MESSAGE}</p>
@@ -49,12 +48,13 @@ export default function Home() {
               <img src="https://cdn-icons-png.flaticon.com/128/3124/3124296.png" alt="" />
               <img src="https://cdn-icons-png.flaticon.com/128/4496/4496927.png" alt="" />
             </section>
+            <img className="bus" src="https://www.mybus.io/wp-content/themes/mybus/assets/dist/images/interface/bus-mooving.gif" alt="" />
           </section>
           <aside className="phone-image">
             <img src="/Images/map-phone.png" alt="phone" />
             <img src="/Images/background-map-phone.png" alt="" className="background-map" />
           </aside>
-
+          
         </section>
       </main>
       <section className="services">
@@ -126,14 +126,13 @@ export default function Home() {
       <section className="final-info">
         <section className="content">
           <h3>Descubre el Futuro del Transporte con MyBuss</h3>
-          <p>En MyBuss, no solo ofrecemos un servicio de transporte, sino una revolución en cada viaje. Con nuestra aplicación, experimentarás una nueva era de movilidad: desde la comodidad de conocer la ubicación exacta de tu autobús hasta acceder a rutas convenientes y exclusivos convenios. En MyBuss, tu viaje se transforma en una experiencia sin complicaciones y llena de beneficios. ¡Descarga la aplicación hoy y haz de cada trayecto una aventura placentera!</p>
+          <p>Descubre una nueva era de movilidad con MyBuss. Nuestra aplicación ofrece comodidad, ubicación en tiempo real de autobuses, rutas convenientes y exclusivos beneficios. Transforma tus viajes en experiencias sin complicaciones. ¡Descarga la aplicación hoy para aventuras placenteras en cada trayecto!</p>
+        
         </section>
         <aside className="image">
           <img src="/Images/final-home-image.png" alt="phone" />
         </aside>
       </section>
-
-
     </>
   )
 }

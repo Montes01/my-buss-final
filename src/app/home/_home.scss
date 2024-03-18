@@ -4,25 +4,27 @@
 
 .main-home {
   position: relative;
-  height: 90vh;
-  max-height: 1000px;
-  padding: 50px;
-  background-color: $base-color;
+  height: 90vh; /* Altura del 90% del viewport */
+  max-height: 1000px; /* Altura máxima */
+  padding: 40px; /* Espaciado interno */
+  background-color: $base-color; /* Color de fondo */
 
+  /* Estilos para el contenedor principal */
   .background {
-    border-radius: $radius-base;
+    border-radius: $radius-base; /* Bordes redondeados */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: darken($primary, 10%);
+    width: 100%; /* Ancho del 100% */
+    height: 100%; /* Altura del 100% */
+    background-color: darken($primary, 10%); /* Color de fondo oscurecido */
   }
 
+  /* Estilos para la imagen del teléfono */
   .phone-image {
-    width: 40%;
-    height: 90%;
-    border-radius: $radius-base;
+    width: 40%; /* Ancho del 40% */
+    height: 90%; /* Altura del 90% */
+    border-radius: $radius-base; /* Bordes redondeados */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,10 +32,10 @@
     position: relative;
 
     img {
-      width: 100%;
-      animation: float 6s ease-in-out infinite;
+      width: 100%; /* Ancho del 100% */
+      animation: float 6s ease-in-out infinite; /* Animación de flotación */
       z-index: 10;
-      transform: translateY(-20px);
+      transform: translateY(-20px); /* Desplazamiento vertical */
     }
 
     .background-map {
@@ -46,39 +48,41 @@
     }
   }
 
+  /* Estilos para la información */
   .information {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-    width: 50%;
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px; /* Espaciado interno */
+    width: 50%; /* Ancho del 50% */
 
+    /* Estilos para el mensaje de bienvenida */
     .welcome-message {
-      color: $base-color;
-      font-size: 3.5rem;
-      font-weight: 900;
+      color: $base-color; /* Color del texto */
+      font-size: 3.5rem; /* Tamaño de fuente */
+      font-weight: 900; /* Grosor de fuente */
     }
 
+    /* Estilos para el párrafo de bienvenida */
     .welcome-pharagraph {
-      color: $base-color;
-      font-size: 1.2rem;
-      max-width: 50ch;
-      font-weight: 300;
+      color: $base-color; /* Color del texto */
+      font-size: 1.2rem; /* Tamaño de fuente */
+      max-width: 50ch; /* Ancho máximo */
+      font-weight: 300; /* Grosor de fuente */
     }
 
+    /* Estilos para los logos */
     .logos {
       display: flex;
-      gap: 20px;
+      gap: 20px; /* Espacio entre elementos */
       align-items: center;
       justify-content: center;
 
       img {
-        width: 30px;
-        filter: invert(1);
+        width: 30px; /* Ancho de imagen */
+        filter: invert(1); /* Invertir colores */
       }
-
-
     }
   }
 }
@@ -269,59 +273,56 @@
   }
 
 }
-
 .final-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 80px 20px;
-  background-color: $base-color;
+  gap: 50px;
+  padding: 100px 100px;
+  background-color: #fffafa;
   position: relative;
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-
-    h3 {
-      font-size: 2rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 20px white;
-      text-wrap: balance;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1rem;
-      max-width: 50ch;
-      font-weight: 300;
-      // text-align: justify;
-      text-align: center;
-      text-shadow: 1px 1px 20px white;
-    }
-  }
-
-  .image {
-    width: 40%;
-    height: 90%;
-    border-radius: $radius-base;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lighten($base-color, 5%);
-    padding: 20px;
-
-    img {
-      width: 80%;
-      aspect-ratio: 2/1.5;
-      animation: float 6s ease-in-out infinite;
-    }
-  }
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.content h3 {
+  font-size: 2.5rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  background-color: #000; /* Fondo negro para el título */
+  color: #fff; /* Color blanco para el texto */
+  padding: 10px; /* Añadir espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  max-width: 80%; /* Ancho máximo del texto */
+  margin: 0 auto; /* Centrar el texto horizontalmente */
+}
+
+
+.image {
+  width: 50%;
+  margin-left: 50px;
+}
+
+.image img {
+  width: 70%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
 .Pagos {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Divide el área en dos columnas */
@@ -338,9 +339,14 @@
 }
 
 .titulo {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  text-align: center; /* Centra el texto */
+  font-size: 2rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  background-color: #000; /* Fondo negro para el título */
+  color: #fff; /* Color blanco para el texto */
+  padding: 15px; /* Añadir espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .imagenes-pequenas {
@@ -359,9 +365,9 @@
 .texto-grande {
   display: flex;
   margin-top: 20%;
-  font-size: 1.5rem; /* Tamaño del texto grande */
-  font-weight: bold; /* Negrita */
-  text-align: center; /* Centrar el texto horizontalmente */
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  text-align: center; 
   
 }
 .titulo{
@@ -371,101 +377,97 @@
 .imagen-grande img{
   width: 70%;
 }
+
+.bus {
+  filter: invert(100%);
+  width: 60%        
+}
+
 @keyframes movimiento {
   0% {
-    transform: translateY(0); /* Sin movimiento al inicio */
+    transform: translateY(0); 
   }
   50% {
-    transform: translateY(-5px); /* Movimiento hacia arriba a la mitad de la animación */
+    transform: translateY(-5px); 
   }
   100% {
-    transform: translateY(0); /* Volver al estado inicial al final */
+    transform: translateY(0); 
   }
 }
 
 .imagenes-pequenas img {
   max-width: 100%;
   height: auto;
-  animation: movimiento 3s ease-in-out infinite; /* Aplicar animación de movimiento */
+  animation: movimiento 3s ease-in-out infinite; 
 }
 
 
-//MEDIA QUERIES
-/* Estilos base */
-.main-home {
-  position: relative;
-  height: 90vh;
-  max-height: 1000px;
-  padding: 50px;
-  background-color: $base-color;
-}
-
-.services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: $base-color;
-  position: relative;
-  padding: 25px 0;
-}
-
-/* Estilos para pantallas pequeñas */
-@media (max-width: 576px) {
-  .main-home {
-    padding: 20px; /* Reducir el padding en pantallas pequeñas */
+/* Estilos para pantallas pequeñas (mínimo 400px) */
+@media (min-width: 400px) {
+  
+  .final-info {
+    padding: 50px 20px;
+    gap: 20px;
   }
 
-  .services .info-part {
-    gap: 20px; /* Ajustar el espacio entre elementos */
-    padding: 2rem 1rem; /* Ajustar el padding */
+  .content {
+    width: 100%;
   }
 
-  .services .services_text .services-title {
-    font-size: 1.5rem; /* Tamaño de título reducido */
+  .content h3 {
+    font-size: 2rem;
   }
 
-  .imagenes-pequenas {
-    grid-template-columns: repeat(1, 1fr); /* Mostrar una columna por fila en pantallas pequeñas */
+  .content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .image img {
+    width: 100%;
   }
 }
 
-/* Estilos para pantallas medianas */
-@media (min-width: 577px) and (max-width: 991px) {
-  .main-home {
-    padding: 30px; /* Ajustar el padding en pantallas medianas */
+/* Estilos para pantallas medianas (mínimo 768px) */
+@media (min-width: 768px) {
+  .final-info {
+    padding: 100px 50px;
   }
 
-  .services .info-part {
-    gap: 30px; /* Ajustar el espacio entre elementos */
-    padding: 2rem 2rem; /* Ajustar el padding */
+  .content h3 {
+    font-size: 2.5rem;
   }
 
-  .services .services_text .services-title {
-    font-size: 1.8rem; /* Tamaño de título reducido */
+  .content p {
+    font-size: 1.2rem;
   }
 
-  .imagenes-pequenas {
-    grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas por fila en pantallas medianas */
+  .image {
+    width: 50%;
+    margin-left: 50px;
+  }
+
+  .image img {
+    width: 70%;
   }
 }
 
-/* Estilos para pantallas grandes */
-@media (min-width: 992px) {
-  .main-home {
-    padding: 50px; /* Mantener el padding original en pantallas grandes */
+/* Estilos para pantallas grandes (mínimo 1024px) */
+@media (min-width: 1024px) {
+  .final-info {
+    padding: 100px;
   }
 
-  .services .info-part {
-    gap: 50px; /* Ajustar el espacio entre elementos */
-    padding: 3rem 3rem; /* Ajustar el padding */
+  .content h3 {
+    font-size: 3rem;
   }
 
-  .services .services_text .services-title {
-    font-size: 2rem; /* Tamaño de título original */
-  }
-
-  .imagenes-pequenas {
-    grid-template-columns: repeat(3, 1fr); /* Mantener tres columnas por fila en pantallas grandes */
+  .content p {
+    font-size: 1.5rem;
   }
 }
