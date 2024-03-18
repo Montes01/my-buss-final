@@ -1,0 +1,113 @@
+/*
+<main className="route-main">
+            <h1>{Nombre}</h1>
+            <section className="route-info">
+                <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="stop-location" />
+            </section>
+            <section className="route-details">
+                <h2>Detalles de la ruta</h2>
+                <p>{Descripción}</p>
+                <div className="route-details">
+                    <span>- {Tarifa}$ </span>
+                    <span>- {Tipo}</span>
+                    <span>- {Horario}</span>
+                </div>
+            </section>
+            <section className="stops">
+                <h2>Paraderos</h2>
+                <ul>
+                    {stops.map((stop) => (
+                        <StopCard
+                            key={stop.ID_Paradero}
+                            ID_Paradero={stop.ID_Paradero}
+                            Nombre={stop.Nombre}
+                            Descripción={stop.Descripción}
+                        />
+                    ))}
+                </ul>
+            </section>
+        </main>
+*/
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+
+.route-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    gap: 20px;
+    padding: 20px;
+    background-color: $base-color;
+    font-weight: bold;
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .route-info {
+        color: black;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        .stop-location {
+            border-radius: $radius-base;
+            object-fit: cover;
+            width: 70%;
+            aspect-ratio: 26/9;
+        }
+    }
+
+    .route-details {
+        background-color: $primary;
+        width: 100%;
+        border-radius: $radius-base;
+        color: white;
+        padding: $padding-base;
+
+        strong {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        color: white;
+
+        span {
+            color: white;
+            font-size: 1.2rem;
+        }
+    }
+
+    .stops {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            width: 100%;
+            font-weight: 900;
+            font-size: 3rem;
+        }
+
+        .stop-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+
+        }
+    }
+}

@@ -1,48 +1,44 @@
 .alternative-routes-container {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .page-description {
-  position: relative;
-  margin-bottom: 20px;
-  height: 300px;
-  background-image: url('https://www.omio.com/gcs-proxy/static_content_repo/web/content/rest/hero/connection_page-bus-dw.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  overflow: hidden;
+    position: relative;
+    height: 300px;
+    background-image: url('https://www.omio.com/gcs-proxy/static_content_repo/web/content/rest/hero/connection_page-bus-dw.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }
 
 .page-description p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  font-size: 20px; /* Reducir el tamaño del texto */
-  font-weight: bold;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    /* Reducir el tamaño del texto */
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
 }
-  
-  .contenedor-route{
-    
-  }
-  
-  .alternative-routes-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+
+.alternative-routes-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     gap: 20px;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 5%;
 }
 
-span{
-  color: black;
-}
+
 
 // .alternative-routes-container {
 //   margin: 0 auto;
