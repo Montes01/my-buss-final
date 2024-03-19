@@ -45,17 +45,19 @@
         }
     }
 
-    .route-dates {
+    .route-info {
         display: flex;
         align-self: end;
         justify-content: space-between;
         width: 40%;
+        flex: 1;
 
-        p {
+        .route-description {
             display: flex;
             flex-direction: column;
             font-size: 1em;
-
+            text-overflow: ellipsis;
+            max-lines: 1;
             span {
                 font-weight: 700;
                 color: black;
@@ -82,5 +84,59 @@
             }
         }
 
+    }
+}
+
+
+// <dialog className="delete-dialog" ref={dialogRef}>
+// <h2>Eliminar ruta</h2>
+// <p>¿Estás seguro de que deseas eliminar la ruta?</p>
+// <section>
+//     <Button content="Cancelar" className="cancel-button" action={() => dialogRef.current?.close()} />
+//     <Button content="Eliminar" className="delete-button" action={handleRemoveButton} />
+// </section>
+// </dialog>
+
+.delete-dialog {
+    // display: flex;
+    &[open] {
+        display: flex;
+        margin: auto;
+    }
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.8) ;
+        
+    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-radius: $radius-base;
+    background-color: darken($base-color, 10%);
+    width: 300px;
+    height: 200px;
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    section {
+        display: flex;
+        gap: 20px;
+        align-self: end;
+
+        .cancel-button,
+        .delete-button {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }

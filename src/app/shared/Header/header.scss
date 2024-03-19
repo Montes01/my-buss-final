@@ -19,6 +19,14 @@
     transition: all 0.5s ease-in-out;
     backdrop-filter: blur(10px); // Add blur effect to the background
 
+    .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        
+
+    }
     .header-buttons {
 
         display: flex;

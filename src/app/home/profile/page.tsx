@@ -7,6 +7,8 @@ import { Usuario } from "@/lib/constants/declarations"
 import "./profile.scss"
 import Button from "@/system-design/atoms/Button"
 import Input from "@/system-design/atoms/Input"
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+
 export default function Profile() {
     const router = useRouter()
     const [canEdit, setCanEdit] = useState(false)
@@ -20,7 +22,7 @@ export default function Profile() {
             }
         })
     }, [])
-
+    const imageRef = useRef<HTMLImageElement>(null)
 
 
     const handleEditProfileClick = () => {
@@ -29,42 +31,92 @@ export default function Profile() {
 
     return (
         <>
-            <main className="main-profile">
-                <h3 className="profile-title">Perfil y visibilidad</h3>
-                <p className="profile-text">Administra tu información personal y controla a qué información pueden acceder otras personas y aplicaciones.</p>
-                <section className="image-name">
-                    <h4 className="username-display">{user?.Nombre}</h4>
-                    <img src={user?.FotoPerfil ? user.FotoPerfil : "/Images/user.png"} onError={() => {
-                        return "/Images/user.png"
-                    }} width={75} height={75} alt="Foto de perfil" />
-                    <Button action={handleEditProfileClick} content="Editar perfil" className="edit-profile" />
-                </section>
+  <section  className="contenedro-perfil">
 
-                <form className="profile-camps">
+      <h3 className="profile-title">Perfil y visibilidad</h3>
+         <main className="main-profile">
+      <p className="profile-text">Administra tu información personal y controla a qué información pueden acceder otras personas y aplicaciones.</p>
+      <section className="image-name">
+        <h4 className="username-display">{user?.Nombre}</h4>
+        <img ref={imageRef} src={user?.FotoPerfil ? user.FotoPerfil : "/Images/user.png"} onError={() => {
+          if (!imageRef.current) return;
+          imageRef.current.src = "https://th.bing.com/th/id/R.8dff49985d0d8afa53751d9ba8907aed?rik=7clxEmBk65lU2A&pid=ImgRaw&r=0"
+        }} width={75} height={75} alt="Foto de perfil" />
+        <Button action={handleEditProfileClick} content="Editar perfil" className="edit-profile" />
+      </section>
 
-                    <Input readonly type="email" label="correo electronico" className="profile-input" defaultValue={user.CorreoElectronico} />
-                    <Input readonly label="Rol" className="profile-input" defaultValue={user.Rol} />
-                    <Input readonly={!canEdit} label="Nombre" className="profile-input" defaultValue={user.Nombre} />
-                    <Input readonly={!canEdit} type="tel" label="Telefono" className="profile-input" defaultValue={user.Teléfono} />
+      <form className="profile-form">
+  <div className="profile-input-container">
+    <FaMapMarkerAlt className="input-icon" />
+    <Input
+      readonly={!canEdit}
+      type="text"
+      label="Dirección"
+      className="profile-input"
+      defaultValue={user.Dirección}
+      />
+  </div>
+  <div className="profile-input-container">
+    <FaEnvelope className="input-icon" />
+    <Input
+      readonly={!canEdit}
+      type="email"
+      label="Correo electrónico"
+      className="profile-input"
+      defaultValue={user.CorreoElectronico}
+    />
+  </div>
+  <div className="profile-input-container">
+    <FaPhoneAlt className="input-icon" />
+    <Input
+      readonly={!canEdit}
+      type="tel"
+      label="Teléfono"
+      className="profile-input"
+      defaultValue={user.Teléfono}
+    />
+  </div>
+  <div className="profile-input-container">
+    <FaMapMarkerAlt className="input-icon" />
+    <Input
+      readonly={!canEdit}
+      type="text"
+      label="Rol"
+      className="profile-input"
+      defaultValue={user.Rol}
+      />
+  </div>
+  <div className="profile-input-container">
+    <FaMapMarkerAlt className="input-icon" />
+    <Input
+      readonly={!canEdit}
+      type="text"
+      label="Nombre"
+      className="profile-input"
+      defaultValue={user.Nombre}
+    />
+  </div>
+  {canEdit && <Button content="Guardar" className="save-profile-btn" />}
+</form>
 
-                    {canEdit && <Button content="Guardar" className="save-profile" />}
-                </form>
-                {/* delete account button */}
-                <section className="delete-account">
-                    <Button action={() => dialogRef.current?.showModal()} content="Eliminar cuenta" className="delete-account-button" />
-                </section>
-            </main>
 
-            <dialog ref={dialogRef}>
-                <section className="dialog-content">
-                    <h3>Eliminar cuenta</h3>
-                    <p>¿Estás seguro de que quieres eliminar tu cuenta?</p>
-                    <section className="dialog-buttons">
-                        <Button action={() => dialogRef.current?.close()} content="Cancelar" className="cancel-delete" />
-                        <Button content="Eliminar" className="confirm-delete" />
-                    </section>
-                </section>
-            </dialog>
+      <section className="delete-account">
+        <Button action={() => dialogRef.current?.showModal()} content="Eliminar cuenta" className="delete-account-button" />
+      </section>
+    </main>
+
+    <div className="dialog-background">
+  <dialog ref={dialogRef} className="dialog-content">
+    <h3>Eliminar cuenta</h3>
+    <p>¿Estás seguro de que quieres eliminar tu cuenta?</p>
+    <div className="dialog-buttons">
+      <Button action={() => dialogRef.current?.close()} content="Cancelar" className="cancel-delete" />
+      <Button content="Eliminar" className="confirm-delete" />
+    </div>
+  </dialog>
+</div>
+
+      </section>
         </>
     )
 

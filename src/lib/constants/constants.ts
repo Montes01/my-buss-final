@@ -14,6 +14,11 @@ export const ENDPOINTS = {
     ADD: "Ruta/Agregar",
     LIST: "Ruta/Lista",
     LIST_BY_COMPANY: "Ruta/ListaPorEmpresa",
+    DELETE: "Ruta/Eliminar",
+    ADD_STOP: "Ruta/AgregarParadero",
+    ALTERNATIVE_LIST: "Ruta/Alternativas",
+    GET: "Ruta/Obtener",
+    LIST_BY_STOP: "Ruta/ListarPorParadero",
   },
   BUS: {
     ADD: "Bus/Agregar",
@@ -23,9 +28,17 @@ export const ENDPOINTS = {
     LIST: "Empresa/Listar",
     ADD: "Empresa/Registrar",
     LOGIN: "Empresa/Ingresar",
+    GET: "Empresa/Obtener",
   },
    TICKET: {
-    ADD: "Tiquete/Agregar",
+    ADD: "Ticket/Agregar",
+    DELETE: "Ticket/Eliminar",
+  },
+  STOP: {
+    ADD: "Paradero/Agregar",
+    LIST: "Paradero/Listar",
+    GET: "Paradero/Obtener",
+    LIST_BY_ROUTE: "Paradero/ListarPorRuta",
   }
 
 
@@ -38,13 +51,13 @@ export const Services: ServiceCard[] = [
     title: "Rutas comunes",
     description: "Consulta los horarios de las rutas de transporte público y lugares de interés en la ciudad.",
     image: "/Images/Gadget-1.png",
-    href: "/routes",
+    href: "/home/routes/",
   },
   {
     title: "Rutas Alternativas",
     description: "Explora diferentes rutas para llegar a tu destino de manera eficiente.",
     image: "/Images/Gadget-2.png",
-    href: "/routes/alternative",
+    href: "/home/routes/alternative",
   },
   {
     title: "Paradas",
