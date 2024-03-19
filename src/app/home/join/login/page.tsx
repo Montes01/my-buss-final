@@ -36,32 +36,27 @@ export default function Login() {
     return (
         <>
             <ChangeJoin isLogin />
-            <form
-                onSubmit={handleSubmit}
-                action=""
-                className="login-form"
-            >
-                <h3 className="login-form_title">Inicia Sesión</h3>
-                <section className="login-ways">
-                    {/* <Button className="login-google login-way" content={IconBrandGoogle} />
-                    <Button className="login-github login-way" content={IconBrandFacebook} /> */}
-                </section>
-                <section className="camps">
-                    <Input required name="email" className="form-input" label="Correo" type="email" />
-                    <Input required name="password" className="form-input" label="Contraseña" type="password" />
-                    <section className="final-step">
-                        <Button submit content="Ingresar" className=" login-button" />
-                        {isLoading && <Spinner />}
+            <form onSubmit={handleSubmit} action="" className="login-form">
+    <h3 className="login-form_title">Inicia Sesión</h3>
+    <section className="login-ways">
+        {/* Aquí podrías agregar botones para iniciar sesión con Google, Facebook, etc. */}
+    </section>
+    <section className="camps">
+        <Input required name="email" className="form-input" label="Correo" type="email" />
+        <Input required name="password" className="form-input" label="Contraseña" type="password" />
+        <section className="final-step">
+            <Button submit content="Ingresar" className="login-button" />
+            {isLoading && <Spinner />}
+        </section>
+        <section className="join-as-company">
+            <p>¿Eres una empresa? <Link className="company-anchor" href="/home/join/company">Ingresa a tu cuenta</Link> </p>
+        </section>
+        <section className="login-form_error">
+            {error}
+        </section>
+    </section>
+</form>
 
-                    </section>
-                    <section className="join-as-company">
-                        <p>¿Eres una empresa? <Link className="company-anchor" href="/home/join/company"> Ingresa a tu cuenta</Link> </p>
-                    </section>
-                    <section className="login-form_error">
-                        {error}
-                    </section>
-                </section>
-            </form>
         </>
     )
 }

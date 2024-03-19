@@ -1,47 +1,96 @@
 @import "../../../lib/style-helpers/mixins";
 
-.footer{
-  padding-top: 3%;
-  padding-left: 10%;
-  background-color: rgba(33,37,41,255);
-  color: white;
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
 }
 
-.footer .box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-  gap: 1.5rem;
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.footer .box-container .box h3 {
-  font-size: 2.5rem;
-  padding: 1rem 0;
-  color: white;
+.box {
+  flex: 1;
+  margin: 0 20px;
 }
 
-.footer .box-container .box a {
+.box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.box a, .box p {
+  color: #fff;
+  text-decoration: none;
   display: block;
-  font-size: 1.1rem;
-  padding: 1%;
- color: rgb(255, 255, 255);
-
+  margin-bottom: 10px;
 }
 
-.footer .box-container .box a i {
-  padding-right: .5rem;
-  
+.box a:hover {
+  text-decoration: underline;
 }
 
-
-
-.footer .credit {
+.credit {
   text-align: center;
-  font-size: 1opx;
-  padding: 2rem 1rem;
-  margin-top: 1rem;
-  color: var(--main-color);
+  margin-top: 30px;
 }
 
-.footer .credit span {
- color: white;
+.credit p {
+  margin: 5px 0;
+  color: white;
 }
+
+.credit span {
+  font-weight: bold;
+  color: #fff;
+}
+
+// .footer{
+//   padding-top: 3%;
+//   padding-left: 10%;
+//   background-color: rgba(33,37,41,255);
+//   color: white;
+// }
+
+// .footer .box-container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+//   gap: 1.5rem;
+// }
+
+// .footer .box-container .box h3 {
+//   font-size: 2.5rem;
+//   padding: 1rem 0;
+//   color: white;
+// }
+
+// .footer .box-container .box a {
+//   display: block;
+//   font-size: 1.1rem;
+//   padding: 1%;
+//  color: rgb(255, 255, 255);
+
+// }
+
+// .footer .box-container .box a i {
+//   padding-right: .5rem;
+  
+// }
+
+
+
+// .footer .credit {
+//   text-align: center;
+//   font-size: 1opx;
+//   padding: 2rem 1rem;
+//   margin-top: 1rem;
+//   color: var(--main-color);
+// }
+
+// .footer .credit span {
+//  color: white;
+// }
