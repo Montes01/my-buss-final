@@ -23,7 +23,10 @@ export default function Header() {
   }
   return (
     <header className="home-header">
-      <Logo to="/home" className="home-logo" />
+      <section className="header-logo">
+        <Logo to="/dashboard" className="home-logo" />
+        <h1 className="my-buss-title">My Buss</h1>
+      </section>
       <section className="header-buttons">
         <NavButton content="Inicio" className="header-button" to="/home" />
         <NavButton content="Nosotros" className="header-button" to="/home/about" />
