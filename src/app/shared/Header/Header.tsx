@@ -10,7 +10,10 @@ export default function Header() {
     }
     return (
         <header className="dashboard-header">
-            <Logo to="/dashboard" className="dashboard-logo" />
+            <section className="header-logo">
+                <Logo to="/dashboard" className="dashboard-logo" />
+                <h1 className="my-buss-title">My Buss</h1>
+            </section>
             <section className="header-buttons">
                 <NavButton content="Inicio" className="header-button" to="/dashboard" />
                 <NavButton content="Configuración" className="header-button" to="/dashboard/settings" />
