@@ -1,0 +1,90 @@
+.alternative-route {
+    width: 350px;
+
+    * {
+        color: #000;
+        /* Color de texto negro */
+    }
+
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+    // cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+
+
+.alternative-route:hover {
+    transform: scale(1.2);
+}
+
+
+.route-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-details img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.route-details span {
+    font-size: 14px;
+}
+
+.route-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    /* Aumentar el tamaño del botón */
+    border-radius: 8px;
+    /* Redondear los bordes del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.route-button:hover {
+    background-color: #00000033;
+    color: black;
+}
+
+.route-title {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.route-title h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.route-title p {
+    font-size: 1.2rem;
+    color: #000;
+    padding-top: 2%;
+
+}
+
+span {
+    color: black;
+}
