@@ -394,10 +394,86 @@
   animation: movimiento 3s ease-in-out infinite; 
 }
 
+@media screen and (max-width: 360px) {
+  
+  .main-home {
+
+.information{
+  .bus {
+   display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .logos{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  }
+    padding: 0;
+  }
+  .main-home .background {
+    display: flex;
+    justify-content: center;
+}
+  .title {
+    font-size: 1.5rem; 
+  }
+
+  .stop-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  }
+  .services .services_text .services-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #600505;
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 40%;
+}
+.companies-part .companies-text {
+  font-size: 1.5em;
+  width: 50%;
+  text-align: center;
+  text-wrap: balance;
+  padding: 20px;
+}
+.final-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #fffafa;
+  position: relative;
+  .image {
+    display: none;
+  }
+  .content h3 {
+    font-size: 1.5rem;
+  }
+  .content p{
+    font-size: 1.1rem;
+  }
+}
+.Pagos {
+  display: grid;
+  grid-template-columns: 1fr ; /* Divide el área en dos columnas */
+  gap: 20px; /* Espacio entre las dos áreas */
+  padding: 20px; /* Añade espacio alrededor del grid */
+  background-color: #ffffff;
+}
+.imagen-grande{
+  display: none;
+}
+
+}
 
 
-/* Estilos para pantallas pequeñas (mínimo 400px) */
-@media (min-width: 400px) {
+@media (max-width: 400px) {
+
   
   .final-info {
     padding: 50px 20px;
@@ -430,9 +506,20 @@
 
 
 /* Estilos para pantallas medianas (mínimo 768px) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .final-info {
     padding: 100px 50px;
+  }
+  .main-home{
+    // padding: 0;
+    .phone-image {
+      display: none;
+    }
+
+    .information {
+        // padding: 0;
+        width: 100%;
+    }
   }
 
   .content h3 {
