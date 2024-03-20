@@ -67,9 +67,9 @@ export default function Page({ params }: { params: Params }) {
                         stops.map((stop, i) => {
 
                             return (
-                                <label className="stop-timeline-item">
+                                <label key={stop.Ubicación} className="stop-timeline-item">
                                     {stop.Nombre}
-                                    <input key={stop.Ubicación} type="radio" className="timeline-input"  onChange={(e) => {
+                                    <input type="radio" className="timeline-input"  onChange={(e) => {
                                         if (e.target.checked) {
                                             setSelectedStop(stop);
                                         }
