@@ -1,113 +1,113 @@
-/*
-<main className="route-main">
-            <h1>{Nombre}</h1>
-            <section className="route-info">
-                <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="stop-location" />
-            </section>
-            <section className="route-details">
-                <h2>Detalles de la ruta</h2>
-                <p>{Descripción}</p>
-                <div className="route-details">
-                    <span>- {Tarifa}$ </span>
-                    <span>- {Tipo}</span>
-                    <span>- {Horario}</span>
-                </div>
-            </section>
-            <section className="stops">
-                <h2>Paraderos</h2>
-                <ul>
-                    {stops.map((stop) => (
-                        <StopCard
-                            key={stop.ID_Paradero}
-                            ID_Paradero={stop.ID_Paradero}
-                            Nombre={stop.Nombre}
-                            Descripción={stop.Descripción}
-                        />
-                    ))}
-                </ul>
-            </section>
-        </main>
-*/
 @import "../../../../lib/style-helpers/colors";
 @import "../../../../lib/style-helpers/measurement";
+@import "../../../../lib/style-helpers/mixins";
 
 .route-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-
-    h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    gap: 20px;
-    padding: 20px;
+    padding: $padding-base*1.5;
     background-color: $base-color;
-    font-weight: bold;
-
-    h1 {
-        font-size: 2rem;
-    }
+    gap: $padding-base*1.5;
+    
 
     .route-info {
-        color: black;
         display: flex;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
-
-        .stop-location {
-            border-radius: $radius-base;
-            object-fit: cover;
-            width: 70%;
-            aspect-ratio: 26/9;
-        }
-    }
-
-    .route-details {
-        background-color: $primary;
+        justify-content: space-between;
         width: 100%;
-        border-radius: $radius-base;
-        color: white;
-        padding: $padding-base;
 
-        strong {
-            font-size: 1.5rem;
+        .info-section {
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
             font-weight: 900;
-            color: white;
-        }
 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        color: white;
-
-        span {
-            color: white;
-            font-size: 1.2rem;
+            p {
+                font-weight: normal;
+                text-wrap: ellipsis;
+            }
         }
     }
 
-    .stops {
-        display: flex;
-        flex-direction: column;
+    .stops-title {
+        width: 100%;
+        font-size: 1.5rem;
+    }
 
-        h2 {
-            text-align: center;
-            width: 100%;
-            font-weight: 900;
-            font-size: 3rem;
+    .stops-part {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 250px;
+        padding: $padding-base*1.5;
+        background-color: darken($base-color, 5%);
+        border-radius: $radius-base;
+        position: relative;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        .stops-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            .stop-timeline-item {
+                display: flex;
+                gap: 10px;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 10px;
+                
+                .timeline-input {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 2px solid $primary;
+                    z-index: 12;
+
+                 
+                }
+            }
         }
 
-        .stop-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+        .stop-image {
+            flex: 1;
+            height: 250px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0);
+            border-radius: $radius-base;
+            @include interactive{
+                &:hover {
+                    transform: scale(1.02);
+                }
+            };
+            
+            .stop-image-link {
+                
+                width: 100%;
+                height: 100%;
+                
+                img {
+                    border-radius: $radius-base;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
 
+                }
+            }
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 15px;
+            width: 2px;
+            bottom: 0;
+            height: 90%;
+            margin: auto 0;
+            background-color: $primary;
+            z-index: 10;
         }
     }
 }

@@ -7,14 +7,16 @@ import { UseGet } from "@/lib/hooks/fetchHook";
 import StopCard from "@/system-design/molecules/StopCard";
 import { useEffect, useState } from "react";
 import "./route.scss"
+import Link from "next/link";
 interface Params {
     ID_Ruta: number;
 }
 
 export default function Page({ params }: { params: Params }) {
 
-    const [{ ID_Empresa, ID_Ruta, Nombre, Tarifa, Descripción, Horario, Tipo }, setRoute] = useState<Ruta>({} as Ruta);
+    const [{ Nombre, Tarifa, Descripción }, setRoute] = useState<Ruta>({} as Ruta);
     const [stops, setStops] = useState<Paradero[]>([]);
+    const [selectedStop, setSelectedStop] = useState<Paradero>({} as Paradero);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -34,6 +36,7 @@ export default function Page({ params }: { params: Params }) {
                 const data = await UseGet(SERVER_URL + ENDPOINTS.STOP.LIST_BY_ROUTE + `?ID_Ruta=${params.ID_Ruta}`);
                 const parsedStops = parseStopList(data.Data);
                 setStops(parsedStops);
+                setSelectedStop(parsedStops[0]);
             } catch (error) {
                 console.error(error);
             }
@@ -42,32 +45,46 @@ export default function Page({ params }: { params: Params }) {
     }, []);
     return (
         <main className="route-main">
-            <h1>{Nombre}</h1>
             <section className="route-info">
-                <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="stop-location" />
+
+                <label className="info-section">Nombre:
+                    <p>{Nombre}</p>
+                </label>
+                <label className="info-section">Descripción:
+                    <p>{Descripción}</p>
+                </label>
+                <label className="info-section">Tarifa:
+                    <p>{Tarifa}$</p>
+                </label>
+
             </section>
-            <section className="route-details">
-                <h2>Detalles de la ruta</h2>
-                <p>{Descripción}</p>
-                <div className="route-details">
-                    <span><strong>Precio: </strong>{Tarifa}$ </span>
-                    <span><strong>Tipo:</strong> {Tipo}</span>
-                    <span><strong>Horario: </strong>{Horario}</span>
-                </div>
-            </section>
-            <section className="stops">
+            <section className="stops-title">
                 <h2>Paraderos</h2>
-                <ul className="stop-list">
-                    {stops.map((stop) => (
-                        <StopCard
-                            key={stop.ID_Paradero}
-                            ID_Paradero={stop.ID_Paradero}
-                            Nombre={stop.Nombre}
-                            Descripción={stop.Descripción}
-                            Foto={stop.Foto}
-                        />
-                    ))}
-                </ul>
+            </section>
+            <section className="stops-part">
+                <section className="stops-timeline">
+                    {
+                        stops.map((stop, i) => {
+
+                            return (
+                                <label key={stop.Ubicación} className="stop-timeline-item">
+                                    {stop.Nombre}
+                                    <input type="radio" className="timeline-input"  onChange={(e) => {
+                                        if (e.target.checked) {
+                                            setSelectedStop(stop);
+                                        }
+                                    }} defaultChecked={i === 0} name="stop" />
+                                </label>
+                            )
+
+                        })
+                    }
+                </section>
+                <section className="stop-image">
+                    <Link className="stop-image-link" href={`/home/stops/${selectedStop?.ID_Paradero}`}>
+                        <img src={selectedStop?.Foto} alt="" />
+                    </Link>
+                </section>
             </section>
         </main>
     );
