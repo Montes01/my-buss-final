@@ -42,11 +42,7 @@
   .header-button {
     padding: 8px; /* Reducir tamaño de los botones */
     font-size: 14px; /* Tamaño de letra reducido */
-    
-    padding: 8px;
-    font-size: 14px;
-
-    &:hover {
+        &:hover {
       text-decoration: underline;
     }
   }
