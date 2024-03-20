@@ -19,6 +19,7 @@ export const ENDPOINTS = {
     ALTERNATIVE_LIST: "Ruta/Alternativas",
     GET: "Ruta/Obtener",
     LIST_BY_STOP: "Ruta/ListarPorParadero",
+    GET_BY_NAME: "Ruta/ObtenerPorNombre",
   },
   BUS: {
     ADD: "Bus/Agregar",
