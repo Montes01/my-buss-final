@@ -464,20 +464,58 @@
 }
 }
 
-/* Estilos para pantallas grandes (mínimo 1024px) */
-@media (min-width: 1024px) {
-  .final-info {
-    padding: 100px;
-  }
 
-  .content h3 {
-    font-size: 3rem;
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  
+  .main-home{
+    height: fit-content;
+    .background{
+      height: 70%;
+    }
+    .phone-image{
+      display: none;
+      
+          }
+          .information{
+            width: 100%;
+            padding: 50px;
+          }
+          .logos{width: 100%;
+          }
+          .bus{
+            width: 80%;
+            margin: 0 auto;
+          }
+   .background-map{
+    display: none;
+   }
+   .imagen-grande{
+    display: none;
+   }
+   
   }
-
-  .content p {
-    font-size: 1.5rem;
+  .Pagos {
+    display: grid;
+    grid-template-columns: 1fr ; /* Divide el área en dos columnas */
+    gap: 20px; /* Espacio entre las dos áreas */
+    padding: 20px; /* Añade espacio alrededor del grid */
+    background-color: #ffffff;
+    .imagen-grande{
+      display: none;
+    }
+}
+.final-info{
+  .content {
+    width: 100%;
+  }
+  .image{
+    display: none;
   }
 }
+
+}
+
+/*360*/
 @media screen and (max-width: 360px) {
   
   .main-home {
