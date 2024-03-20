@@ -1,5 +1,6 @@
 @import "../../../../lib/style-helpers/colors";
 @import "../../../../lib/style-helpers/measurement";
+@import "../../../../lib/style-helpers/mixins";
 
 
 .register-content {
@@ -77,7 +78,7 @@
   }
 }
 
-.image-profile-wrapper   {
+.image-profile-wrapper {
   display: flex;
   position: relative;
   justify-content: center;
@@ -109,4 +110,44 @@
     cursor: pointer;
   }
 
+}
+
+@include responsive("tablet") {
+  .register-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .register-form {
+    width: 100%;
+  }
+
+  .register-camps {
+    width: 100%;
+  }
+
+  .image-profile-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+@include responsive("phone") {
+  .register-content {
+    width: 90%;
+  }
+
+  .register-form {
+    width: 100%;
+  }
+
+  .register-camps {
+    width: 100%;
+  }
+
+  .image-profile-wrapper {
+    width: 150px;
+    height: 150px;
+  }
 }
