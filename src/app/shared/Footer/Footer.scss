@@ -1,7 +1,9 @@
 @import "../../../lib/style-helpers/mixins";
+@import "../../../lib/style-helpers/colors";
+
 
 .footer {
-  background-color: #333;
+  background-color: $dark-color;
   color: #fff;
   padding: 50px 0;
 }
