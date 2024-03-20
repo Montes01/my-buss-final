@@ -4,27 +4,25 @@
 
 .main-home {
   position: relative;
-  height: 90vh; /* Altura del 90% del viewport */
-  max-height: 1000px; /* Altura máxima */
-  padding: 40px; /* Espaciado interno */
-  background-color: $base-color; /* Color de fondo */
+  height: 90vh; 
+  max-height: 1000px;
+  padding: 40px; 
+  background-color: $base-color; 
 
-  /* Estilos para el contenedor principal */
   .background {
-    border-radius: $radius-base; /* Bordes redondeados */
+    border-radius: $radius-base; 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ancho del 100% */
-    height: 100%; /* Altura del 100% */
-    background-color: darken($primary, 10%); /* Color de fondo oscurecido */
+    width: 100%; 
+    height: 100%; 
+    background-color: darken($primary, 10%); 
   }
 
-  /* Estilos para la imagen del teléfono */
   .phone-image {
-    width: 40%; /* Ancho del 40% */
-    height: 90%; /* Altura del 90% */
-    border-radius: $radius-base; /* Bordes redondeados */
+    width: 40%; 
+    height: 90%; 
+    border-radius: $radius-base; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,10 +30,10 @@
     position: relative;
 
     img {
-      width: 100%; /* Ancho del 100% */
-      animation: float 6s ease-in-out infinite; /* Animación de flotación */
+      width: 100%; 
+      animation: float 6s ease-in-out infinite; 
       z-index: 10;
-      transform: translateY(-20px); /* Desplazamiento vertical */
+      transform: translateY(-20px); 
     }
 
     .background-map {
@@ -48,40 +46,36 @@
     }
   }
 
-  /* Estilos para la información */
   .information {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px; /* Espacio entre elementos */
-    padding: 20px; /* Espaciado interno */
-    width: 50%; /* Ancho del 50% */
+    gap: 20px; 
+    padding: 20px; 
+    width: 50%; 
 
-    /* Estilos para el mensaje de bienvenida */
     .welcome-message {
-      color: $base-color; /* Color del texto */
-      font-size: 3.5rem; /* Tamaño de fuente */
-      font-weight: 900; /* Grosor de fuente */
+      color: $base-color; 
+      font-size: 3.5rem; 
+      font-weight: 900; 
     }
 
-    /* Estilos para el párrafo de bienvenida */
     .welcome-pharagraph {
-      color: $base-color; /* Color del texto */
-      font-size: 1.2rem; /* Tamaño de fuente */
-      max-width: 50ch; /* Ancho máximo */
-      font-weight: 300; /* Grosor de fuente */
+      color: $base-color; 
+      font-size: 1.2rem; 
+      max-width: 50ch; 
+      font-weight: 300; 
     }
 
-    /* Estilos para los logos */
     .logos {
       display: flex;
-      gap: 20px; /* Espacio entre elementos */
+      gap: 20px; 
       align-items: center;
       justify-content: center;
 
       img {
-        width: 30px; /* Ancho de imagen */
-        filter: invert(1); /* Invertir colores */
+        width: 30px; 
+        filter: invert(1); 
       }
     }
   }
@@ -197,29 +191,29 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    gap: 20px; /* Espacio entre elementos */
+    gap: 20px; 
   
     .services-title {
-      font-size: 2rem; /* Tamaño del título */
-      font-weight: bold; /* Negrita */
-      text-transform: uppercase; /* Convertir a mayúsculas */
-      color: #ffffff; /* Color del texto */
+      font-size: 2rem; 
+      font-weight: bold;
+      text-transform: uppercase; 
+      color: #ffffff; 
       background-color: #600505;
-      padding: 5px 10px; /* Ajusta el espaciado entre el texto y el borde */
+      padding: 5px 10px; 
       border-radius: 15px;
       width: 40%;
     }
     
     strong {
-      font-size: 1.2rem; /* Tamaño del texto en negrita */
-      font-weight: bold; /* Negrita */
-      color: black; /* Color del texto */
+      font-size: 1.2rem; 
+      font-weight: bold;
+      color: black; 
     }
   
     p {
-      font-size: 1rem; /* Tamaño del párrafo */
-      color: #000000; /* Color del texto */
-      max-width: 80%; /* Ancho máximo del párrafo */
+      font-size: 1rem; 
+      color: #000000; 
+      max-width: 80%; 
     }
   }
   
@@ -401,6 +395,7 @@
 }
 
 
+
 /* Estilos para pantallas pequeñas (mínimo 400px) */
 @media (min-width: 400px) {
   
@@ -431,6 +426,8 @@
     width: 100%;
   }
 }
+
+
 
 /* Estilos para pantallas medianas (mínimo 768px) */
 @media (min-width: 768px) {

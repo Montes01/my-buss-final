@@ -8,9 +8,11 @@ import { Empresa, Response } from "@/lib/constants/declarations";
 import { IconBus } from "@tabler/icons-react"
 import { UseGet } from "@/lib/hooks/fetchHook";
 import { useRouter } from "next/navigation";
+
 export default function Home() {
   const router = useRouter()
   const [companies, setCompanies] = useState<Empresa[] | null>([])
+  const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
 
   useEffect(() => {
     const companyToken = localStorage.getItem("company-token")
@@ -33,6 +35,11 @@ export default function Home() {
     }
     getCompanies()
   }, [])
+
+  // Filtrar empresas de buses según el término de búsqueda
+  const filteredCompanies = companies?.filter((company) =>
+    company.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
 
