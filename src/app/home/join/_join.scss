@@ -1,5 +1,6 @@
 @import "../../../lib/style-helpers/measurement";
 @import "../../../lib/style-helpers/colors";
+@import "../../../lib/style-helpers/mixins";
 
 /* Estilos generales */
 .join-home {
@@ -7,23 +8,37 @@
     display: grid;
     place-items: center;
     height: 100vh;
+
     background-image: url("https://images.pexels.com/photos/1391293/pexels-photo-1391293.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
-    * {
-        color: $base-color; /* Asegúrate de definir $base-color */
+    @include responsive("phone") {
+        height: fit-content;
+
     }
 
+    * {
+        color: $base-color;
+        /* Asegúrate de definir $base-color */
+    }
+
+
+
     .form-sections {
-        border-radius: $radius-base; /* Asegúrate de definir $radius-base */
+        border-radius: $radius-base;
+        /* Asegúrate de definir $radius-base */
         backdrop-filter: brightness(0.15) blur(3px);
         display: flex;
+
+
+
         width: 80%;
 
         .change-join-type {
-            background-color: $primary; /* Asegúrate de definir $primary */
+            background-color: $primary;
+            /* Asegúrate de definir $primary */
             padding: 5rem 1rem;
             flex: 1;
             display: flex;
@@ -34,7 +49,8 @@
             border-radius: inherit;
 
             .change-join-button {
-                background-color: $dark-color; /* Asegúrate de definir $dark-color */
+                background-color: $dark-color;
+                /* Asegúrate de definir $dark-color */
             }
 
             h2 {
@@ -45,41 +61,77 @@
             p {
                 font-size: 1.2rem;
                 text-align: center;
-                /* No existe una propiedad 'text-wrap', creo que quisiste usar 'white-space' */
-                white-space: pre-wrap;
             }
         }
     }
 }
 
-/* Media queries */
-@media screen and (max-width: 414px) {
-    /* Estilos para iPhone 14 Pro Max */
+@include responsive("tablet") {
     .join-home {
-        /* Ajusta los estilos según sea necesario */
+        height: fit-content;
+
+        .form-sections {
+            border-radius: none;
+            border-radius: none;
+            flex-direction: column-reverse;
+            padding: 0;
+            width: 100%;
+
+            .change-join-type {
+                border-radius: 0;
+                padding: 20px;
+                gap: 10px;
+                width: 100%;
+
+                h2 {
+                    font-size: 1.5rem;
+
+                }
+            }
+        }
+
     }
+
 }
 
-@media screen and (max-width: 412px) {
-    /* Estilos para Samsung S8 Plus */
+@include responsive("phone") {
     .join-home {
-        /* Ajusta los estilos según sea necesario */
+        height: fit-content;
+
+
+        .final-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     }
+
+    .form-sections {
+        border-radius: none;
+        border-radius: none;
+        flex-direction: column-reverse;
+        padding: 0;
+        width: 100%;
+
+        .change-join-type {
+            padding: 0;
+            border-radius: 0;
+            padding: 30px 20px;
+            gap: 10px;
+            width: 100%;
+
+            h2 {
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+
 }
 
-@media screen and (max-width: 834px) {
-    /* Estilos para iPad Mini */
-    .join-home {
-        /* Ajusta los estilos según sea necesario */
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    /* Estilos para iPad Pro */
-    .join-home {
-        /* Ajusta los estilos según sea necesario */
-    }
-}
+
 
 
 //     .join-home {

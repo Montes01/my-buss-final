@@ -5,11 +5,12 @@ import { useRef, useState } from "react";
 import "./add.scss";
 import Dialog from "./components/dialog";
 import { Paradero } from "@/lib/constants/declarations"
-import { UsePost } from "@/lib/hooks/fetchHook";
+import { UseGet, UsePost } from "@/lib/hooks/fetchHook";
 import swal from "sweetalert";
 import Spinner from "@/system-design/atoms/Spinner";
 import { ENDPOINTS, SERVER_URL } from "@/lib/constants/constants";
 import { useRouter } from "next/navigation";
+import { parseSingularRoute } from "@/lib/constants/utils";
 export default function Add() {
     const router = useRouter()
     const [stops, setStops] = useState<Paradero[]>([]);
@@ -37,8 +38,10 @@ export default function Add() {
             Nombre: formData.get("Nombre")!,
             Descripción: formData.get("Descripción") ?? "",
             Tarifa: formData.get("Tarifa") ?? 2700,
-            Tipo: formData.get("Tipo")!
+            Tipo: formData.get("Tipo")!,
+            Paraderos: stops.map(s => s.ID_Paradero)
         }
+        console.log(data)
         const headers = {
             Authorization: `Bearer ${localStorage.getItem("company-token")}`
         }
@@ -50,17 +53,6 @@ export default function Add() {
             swal("Error", (err as Error).message, "error")
         })
 
-        stops.forEach(stop => {
-            const data = {
-                ID_Ruta: 1,
-                ID_Paradero: stop.ID_Paradero
-            }
-            UsePost(SERVER_URL + ENDPOINTS.ROUTE.ADD_STOP, data, headers).then(res => {
-                console.log(res)
-            }).catch(err => {
-                console.log(err)
-            })
-        })
         setIsLoading(false);
     }
     return (
