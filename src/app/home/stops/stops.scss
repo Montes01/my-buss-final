@@ -18,6 +18,97 @@
 @import "../../../lib/style-helpers/measurement";
 @import "../../../lib/style-helpers/colors";
 
+// .stops-page {
+//   padding: 2rem;
+// }
+
+// .section-header {
+//   text-align: center;
+//   margin-bottom: 2rem;
+// }
+
+// .title {
+//   font-size: 2rem;
+//   margin-bottom: 0.5rem;
+// }
+
+// .subtitle {
+//   color: rgb(0, 0, 0);
+//   font-size: 1.1rem;
+//   margin-bottom: 2rem;
+// }
+
+// .stop-list {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+//   gap: 1rem;
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// .stop {
+//   border: 1px solid #ddd;
+//   padding: 1rem;
+//   box-sizing: border-box;
+//   overflow: hidden;
+//   position: relative;
+// }
+
+// .stop-location {
+//   width: 100%;
+//   height: 12rem;
+//   object-fit: cover;
+//   margin-bottom: 1rem;
+// }
+
+// .content {
+//   padding: 0 1rem;
+// }
+
+// .stop-image {
+//   width: 100%;
+//   height: 12rem;
+//   object-fit: cover;
+//   margin-bottom: 1rem;
+// }
+
+// /* Hover effect */
+// .stop:hover {
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+// }
+
+// /* Responsive adjustments */
+// @media screen and (max-width: 768px) {
+//   .stop-list {
+//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//   }
+
+//   .stop-location,
+//   .stop-image {
+//     height: 10rem;
+//   }
+// }
+
+// .button {
+//   display: block;
+//   width: 40%;
+//   background-color: #000000;
+//   color: white;
+//   padding: 0.5rem 1rem;
+//   text-align: center;
+//   text-decoration: none;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+//   font-size: 13px;
+// }
+
+// .button:hover {
+//   background-color: #202326;
+// }
+
 .stops-page {
     padding: 20px;
   }

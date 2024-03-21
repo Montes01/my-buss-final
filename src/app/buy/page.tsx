@@ -85,17 +85,26 @@ export default function Buy() {
   </div>
 </section>
 
+<section className="pay-methods">
+  <h4>
+    Todas las formas de pago <br /> <strong>Compras 100% seguras</strong>
+  </h4>
+  <section className="pay-methods-icons">
+    <div className="icon-container">
+      <img src="https://i.pinimg.com/originals/cb/0a/41/cb0a415465fcee4abb64ec1e0403a377.png" alt="PayPal" />
+      <p>PayPal</p>
+    </div>
+    <div className="icon-container">
+      <img src="https://pngimg.com/uploads/mastercard/mastercard_PNG16.png" alt="Mastercard" />
+      <p>Mastercard</p>
+    </div>
+    <div className="icon-container">
+      <img src="https://th.bing.com/th/id/R.ec4bee918a997aa7b86de0c38da66deb?rik=lc0DmGNippGWmA&riu=http%3a%2f%2fwww.timon.com.co%2fwp-content%2fuploads%2fEfecty.png&ehk=sH%2bBzR6ihiCBc0HQ50t5G9XWvSHFpu3RjfNeCFGwqzg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Efecty" />
+      <p>Efecty</p>
+    </div>
+  </section>
+</section>
 
-        <section className="pay-methods">
-          <h4>
-            Todas las formas de pago <br /> <strong>Compras 100% seguras</strong>
-          </h4>
-          <section className="pay-methods-icons">
-            <img src="https://i.pinimg.com/originals/cb/0a/41/cb0a415465fcee4abb64ec1e0403a377.png" alt="PayPal" />
-            <img src="https://pngimg.com/uploads/mastercard/mastercard_PNG16.png" alt="Mastercard" />
-            <img src="https://th.bing.com/th/id/R.ec4bee918a997aa7b86de0c38da66deb?rik=lc0DmGNippGWmA&riu=http%3a%2f%2fwww.timon.com.co%2fwp-content%2fuploads%2fEfecty.png&ehk=sH%2bBzR6ihiCBc0HQ50t5G9XWvSHFpu3RjfNeCFGwqzg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Efecty" />
-          </section>
-        </section>
         <section className="FormularioPago">
           <h2>Compra tus pasajes aquí <strong>sin tener que salir de casa</strong></h2>
           <section className="buy-row">

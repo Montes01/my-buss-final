@@ -1,0 +1,217 @@
+/*
+        <main className="buy-page">
+            <header>
+                <h2>Compra tus pasajes aquí <strong> sin tener que salir de casa</strong></h2>
+                <section className="buy-row">
+                    <img src="" alt="" className="ticket" />
+                    <form className="buy-form">
+                        <label>
+                            Empresa
+                            <select name="" id="" className="company">
+                                {empresas && empresas.map(empresa => <option value={empresa.ID_Empresa}>{empresa.Nombre}</option>)}
+                            </select>
+                        </label>
+                        <Input type="date" label="Fecha de salida" />
+                        <Button submit className="buy-button" content="Comprar" />
+                    </form>
+                </section>
+            </header>
+            <section className="pay-methods">
+                <h4>
+                    Todas las formas de pago <br /> <strong>Compras 100% seguras</strong>
+                </h4>
+                <section className="pay-methods-icons">
+                    <img src="https://i.pinimg.com/originals/cb/0a/41/cb0a415465fcee4abb64ec1e0403a377.png" alt="" />
+                    <img src="https://pngimg.com/uploads/mastercard/mastercard_PNG16.png" alt="" />
+                    <img src="https://th.bing.com/th/id/R.ec4bee918a997aa7b86de0c38da66deb?rik=lc0DmGNippGWmA&riu=http%3a%2f%2fwww.timon.com.co%2fwp-content%2fuploads%2fEfecty.png&ehk=sH%2bBzR6ihiCBc0HQ50t5G9XWvSHFpu3RjfNeCFGwqzg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="" />
+                </section>
+            </section>
+            <section className="payment-text">
+                <h3>Tu viaje comienza en {PROJECT_NAME}</h3>
+                <p>
+                    Encuentra cual es el pasaje en bus más barato, cuáles son las mejores promociones y/o descuentos para comprar tus pasajes de bus con MyBuss. Ahora puedes comparar todas las diferentes ofertas que ofrecen todas las empresas de transporte para viajar a tu destino favorito, de una forma muy fácil en MyBuss. Vas a poder encontrar la información que necesitas para viajar de forma segura. Qué esperas para comprar tus tiquetes con MyBuss.
+                </p>
+            </section>
+        </main>
+*/
+@import "../../lib/style-helpers/colors";
+@import "../../lib/style-helpers/measurement";
+
+.buy-page {
+    padding: 0 50px;
+}
+
+.container_T_I {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+}
+
+
+.container_T_I .payment-text {
+    grid-column: 1; /* Colocamos el texto en la primera columna */
+    text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+.container_T_I .Tienda {
+    grid-column: 2; /* Colocamos la imagen en la segunda columna */
+    display: flex;
+    justify-content: center;
+}
+
+.container_T_I .Tienda img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.payment-text h3 {
+    font-size: 58px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 10px 20px; /* Ajusta el espacio alrededor del texto */
+    border-radius: 10px; /* Agrega un borde redondeado */
+}
+
+
+.payment-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+}
+.pay-methods {
+  text-align: center;
+  margin-bottom: 30px;
+  height: 300px;
+}
+
+.pay-methods h4 {
+  font-size: 2.5rem; 
+  margin-bottom: 20px;
+  font-weight: bold; 
+  color: #000000; 
+}
+
+.pay-methods-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.pay-methods-icons img {
+  width: 150px; 
+  height: auto; 
+  transition: transform 0.3s ease; 
+}
+
+.pay-methods-icons img:hover {
+  transform: scale(1.1); 
+}
+
+  
+
+.buy-row {
+    display: flex;
+    align-items: center;
+}
+
+.buy-row .ticket {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.buy-row .buy-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-row .buy-form .input-wrapper {
+    margin-bottom: 10px;
+}
+
+.buy-row .buy-form select,
+.buy-row .buy-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.buy-row .buy-form .buy-button {
+    margin-top: 10px;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center; /* Centrar horizontalmente */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* Ancho de la carta */
+    height: 180px; /* Altura de la carta */
+  }
+  
+  .card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  .FormularioPago {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .FormularioPago h2 {
+    font-size: 32px; /* Tamaño de fuente del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  .buy-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Espacio arriba de la fila */
+  }
+  
+  .ticket {
+    width: 150px; /* Ancho de la imagen */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+  }
+  
+  .buy-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-wrapper {
+    margin-bottom: 20px; /* Espacio entre elementos */
+  }
+  
+  .company {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .buy-button {
+    width: 100%;
+  }
+  
+
