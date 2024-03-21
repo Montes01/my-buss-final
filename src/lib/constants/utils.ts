@@ -1,4 +1,4 @@
-import { Empresa, Paradero, Ruta, Usuario } from "./declarations"
+import { Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
@@ -113,4 +113,28 @@ export const isUserAuthenticated = (callback: Function) => {
     } else {
         callback(null)
     }
+}
+
+export const parseSingleTicket = (ticket: any): Ticket => {
+    if (!ticket) throw new Error("Ticket inválido");
+    if (!ticket.iD_Ticket) throw new Error("ID de ticket inválido");
+    if (!ticket.iD_Usuario) throw new Error("ID de usuario inválido");
+    if (!ticket.iD_Empresa) throw new Error("ID de empresa inválido");
+    if (!ticket.fechaCompra) throw new Error("Fecha de compra inválida");
+    if (!ticket.precio) throw new Error("Precio de ticket inválido");
+    if (!ticket.estado) throw new Error("Estado de ticket inválido");
+
+    return {
+        ID_Ticket: ticket.iD_Ticket,
+        ID_Usuario: ticket.iD_Usuario,
+        ID_Empresa: ticket.iD_Empresa,
+        FechaCompra: ticket.fechaCompra,
+        Precio: ticket.precio,
+        TipoPago: ticket.tipoPago,
+        Estado: ticket.estado
+    }
+}
+
+export const parseTicketList = (tickets: any[]): Ticket[] => {
+    return tickets.map(ticket => parseSingleTicket(ticket))
 }

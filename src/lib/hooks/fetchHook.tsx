@@ -13,7 +13,7 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
     if (!res.ok) {
         const catchedError = await res.json();
         console.log(catchedError);
-          throw new Error(catchedError.data);
+        throw new Error(catchedError.data);
     }
     const res_1 = await res.json();
     console.log(res_1)
@@ -21,9 +21,14 @@ export async function UsePost(url: string, data: object, headers: object = {}): 
 
 }
 
-export async function UseGet(url: string): Promise<Response> {
+export async function UseGet(url: string, headers: object = {}): Promise<Response> {
     try {
-        const res = await fetch(url);
+        const res = await fetch(url, {
+
+            method: 'GET',
+            headers: { ...headers }
+        }
+        );
         if (!res.ok) {
             const catchedError = await res.json();
             throw new Error(catchedError.data);
