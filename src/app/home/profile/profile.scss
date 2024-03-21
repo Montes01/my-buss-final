@@ -1,342 +1,304 @@
-.profile-title {
-  font-size: 2.5rem;
-  color: #333; /* Cambiar al color deseado */
-  margin-bottom: 1rem;
+
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  max-width: 700px; /* Reduce el ancho máximo del contenedor */
+  margin: 1rem auto;
+  padding: 1rem; /* Reduce el espacio interno del contenedor */
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto; /* Establece la altura automática para adaptarse al contenido */
+}
+
+
+.profile-description {
+  grid-column: 1 / span 2; 
   text-align: center;
-  padding-top: 4%;
-  padding-bottom: 2%;
-  
+  margin-bottom: 2rem;
 }
 
-
-
-.main-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #ababab59; /* Cambiar al color de fondo deseado */
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 90px;
-  
-  
-    .profile-text {
-      font-size: 1.2rem;
-      color: #666; /* Cambiar al color deseado */
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  
-    .image-name {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-  
-      .username-display {
-        font-size: 1.8rem;
-        color: #333; /* Cambiar al color deseado */
-        margin-bottom: 1rem;
-      }
-  
-      img {
-        width: 40%;
-        height: 40%;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1rem;
-      }
-  
-      .edit-profile {
-        background-color: #dc3545;
-        color: white;
-        padding-left: 11%;
-        padding-right: 56px;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-size: 15px;
-  
-        &:hover {
-          background-color: rgb(144, 8, 8);
-        }
-      }
-    }
-
-   
-
-    .profile-camps {
-      
-      
-  
-      .input-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-  
-        .icon {
-          margin-right: 1rem;
-          font-size: 1.5rem;
-          color: #666; /* Cambiar al color deseado */
-        }
-  
-        .profile-input {
-          flex: 1;
-          font-size: 1.6rem;
-          padding: 0.8rem;
-          border: 1px solid #ccc; /* Cambiar al color deseado */
-          border-radius: 0.5rem;
-          transition: border-color 0.3s;
-  
-          &:focus {
-            border-color: #007bff; /* Cambiar al color deseado */
-            outline: none;
-          }
-        }
-    }
-  
-      .save-profile {
-        width: 100%;
-        margin-top: 1rem;
-      }
-    }
-  
-    .delete-account {
-      width: 100%;
-      margin-top: 2rem;
-  
-      .delete-account-button {
-        width: 100%;
-        background-color: #dc3545; /* Cambiar al color deseado */
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-size: 1.6rem;
-  
-        &:hover {
-          background-color: #c82333; /* Cambiar al color deseado */
-        }
-      }
-    }
-  }
-  
-  /* Estilos para el formulario de perfil */
-.profile-form {
-  width: 100%;
+.profile-image {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: center; 
 }
 
-/* Estilos para el contenedor de cada campo de perfil */
-.profile-input-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.profile-image img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-title {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-/* Estilos para el icono de cada campo */
+.edit-profile-button {
+  display: flex;
+  justify-content: center;
+  text-align: center; /* Para centrar horizontalmente */
+  margin-top: 20px;
+}
+
+
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  gap: 20px; /* Espacio entre los elementos */
+  height: 150px;
+
+}
+
+.profile-input-container {
+  display: flex;
+  align-items: center;
+}
+
 .input-icon {
-  margin-right: 1rem;
-  font-size: 1.5rem;
-  color: #666; /* Color deseado */
-  margin-left: 27%;
+  margin-right: 0.5rem;
 }
 
-/* Estilos para el input de cada campo */
-.profile-input {
-  flex: 1;
-  font-size: 1.6rem;
-  padding: 0.8rem;
-  border: 1px solid #ccc; /* Color deseado */
-  border-radius: 0.5rem;
-  transition: border-color 0.3s;
-
-  &:focus {
-    border-color: #007bff; /* Color deseado al estar enfocado */
-    outline: none;
-  }
+.tickets-section {
+  grid-column: 2; /* Ubicado en la segunda columna */
+  text-align: center;
+  height: 100px;
 }
 
-/* Estilos para el botón de guardar perfil */
-.save-profile-btn {
-  width: 100%;
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ticket-list li {
+  margin-bottom: 0.5rem;
+}
+
+.delete-account {
+  grid-column: 1 / span 2; /* Ocupa dos columnas */
+  text-align: center;
+}
+
+.dialog-container {
+  position: relative;
+}
+
+
+
+.dialog-content {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
   margin-top: 1rem;
 }
 
-.input-wrapper {
-    color: rgb(16, 16, 16);
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: 900;
+.cancel-delete {
+  margin-right: 1rem;
+}
+.tickets-section {
+  text-align: center;
+  margin-top: 2rem;
+}
 
+.tickets-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ticket-item {
+  margin-bottom: 0.5rem;
+}
+
+.ticket-title {
+  font-weight: bold;
+}
+
+.ticket-date {
+  color: #666;
+}
+
+.no-tickets-message {
+  color: #666;
+}
+
+.delete-account {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.delete-account-button {
+  background-color: #9e150b; /* Cambia el color del botón según tu preferencia */
+  color: #fff; /* Cambia el color del texto del botón según tu preferencia */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-account-button:hover {
+  background-color: #d32f2f; /* Cambia el color de fondo al pasar el ratón por encima */
 }
 
 
-// .main-profile {
-//     display: flex;
-//     flex-direction: column;
-//     gap: $gap-base; // Utilizando la variable $gap-base
-//     padding: $padding-base;
-//     position: relative;
-//     background-color: rgba(128, 128, 128, 0.549);
-//     padding-left: 20%;
-//     padding-right: 20%;
-    
-//     .profile-title,
-//     .profile-text {
-//         color: $base-color;
-//         text-align: center;
-//         font-size: 20px;
-//         color: black;
-//     }
 
-//     .image-name {
-//         position: relative;
-//         padding: $padding-base;
-//         display: flex;
-//         flex-direction: column;
-//         gap: $gap-base; // Utilizando la variable $gap-base
-//         align-items: start;
-//         border-radius: $radius-base;
 
-//         &::after {
-//             background-color: $primary;
-//             content: "";
-//             position: absolute;
-//             width: 100%;
-//             height: 50%;
-//             z-index: 1;
-//             top: 0;
-//             inset: 0;
-//             border-radius: $radius-base;
-//         }
-
-//         * {
-//             z-index: 2;
-//         }
-
-//         .username-display {
-//             color: white;
-//             font-size: 1.5rem;
-//         }
-
-//         .edit-profile {
-//             position: absolute;
-//             right: $padding-base;
-//             bottom: $padding-base;
-//         }
-//     }
+// .profile-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center; /* Centra horizontalmente */
+//   justify-content: center; /* Centra verticalmente */
+//   text-align: center; /* Alinea el texto al centro */
 // }
 
-// .profile-camps {
-//     display: flex;
-//     flex-direction: column;
-//     gap: $gap-base; // Utilizando la variable $gap-base
-//     padding: $padding-base * 2;
-//     border-radius: $radius-base;
-//     align-items: center;
-//     justify-content: center;
 
-//         input {
-//             font-size: 1rem;
-//             border: none;
-//             color: rgb(10, 10, 10);
-//             padding: $padding-base - 10;
-//             border-radius: 0;
-//             width: 100%;
-//             background-color: transparent;
+// .main-profile {
+//   display: flex;
+//   flex-direction: column;
+// }
 
-//             //read only
-//             border-bottom: 1px solid $base-color;
+// .profile-info {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 1rem; /* Espacio entre la imagen y el nombre */
+// }
 
-//             &:read-only {
-//                 border-bottom: 1px solid transparent;
-//             }
-//         }
-//     }
+// .profile-image {
+//   margin-right: 1.5rem; /* Reducir el espacio entre la imagen y los detalles */
+// }
+
+// .profile-image img {
+//   width: 75px;
+//   height: 75px;
+//   border-radius: 50%;
+//   object-fit: cover;
+// }
+
+// .profile-details {
+//   flex-grow: 1;
+//   display: flex;
+//   flex-wrap: wrap; /* Envolver los detalles en caso de espacio insuficiente */
+// }
+
+// .profile-details h4 {
+//   margin: 0 1rem 0.5rem 0; /* Espacio alrededor del nombre */
+//   font-size: 1.2rem;
+// }
+
+// .profile-form {
+//   margin-top: 1rem;
+// }
+
+// .profile-input-container {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 1rem;
+// }
+
+// .input-icon {
+//   margin-right: 0.5rem;
+// }
+
+// .profile-input {
+//   flex-grow: 1;
+// }
+
+// .tickets-section {
+//   margin-top: 2rem;
+// }
+
+// .tickets-section h3 {
+//   font-size: 1.3rem;
+//   margin-bottom: 1rem;
+// }
+
+// .ticket-list {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// .ticket-list li {
+//   margin-bottom: 0.5rem;
 // }
 
 // .delete-account {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     gap: $gap-base; // Utilizando la variable $gap-base
-//     padding: $padding-base;
-//     background-color: rgba(darken($primary, 35%), 0.2);
-//     border-radius: $radius-base;
-//     border-top-left-radius: 0;
-//     border-top-right-radius: 0;
-
-//     &::after {
-//         background-color: $base-color;
-//         content: "";
-//         position: absolute;
-//         width: 100%;
-//         height: 1px;
-//         z-index: 1;
-//         top: 0;
-//         inset: 0;
-//         border-radius: $radius-base;
-//     }
-
-//     .delete-account-button {
-//         background-color: rgba(darken($primary, 25%), 0.85);
-//         color: white;
-//         padding: $padding-base - 10;
-//         border-radius: $radius-base;
-//         font-size: 1rem;
-//         font-weight: 900;
-//         width: fit-content;
-//         text-align: center;
-//         cursor: pointer;
-
-//         &:hover {
-//             background-color: darken($primary, 10%);
-//         }
-//     }
+//   margin-top: 2rem;
+//   text-align: center;
 // }
 
-// dialog {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: auto;
+// .dialog-container {
+//   position: relative; /* Asegurar que la posición relativa */
+// }
 
-//     &:not([open]) {
-//         display: none;
-//     }
-
-//     border: none;
-//     border-radius: $radius-base;
+// .dialog-background {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   z-index: 1;
 // }
 
 // .dialog-content {
-//     display: flex;
-//     flex-direction: column;
-//     gap: $gap-base; // Utilizando la variable $gap-base
-//     padding: $padding-base;
-//     background-color: rgba(darken($primary, 35%), 0.2);
-//     border-radius: $radius-base;
-//     justify-content: center; // Center the dialog vertically
+//   position: relative;
+//   background-color: white;
+//   padding: 2rem;
+//   border-radius: 10px;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+//   z-index: 2;
+// }
 
-//     .dialog-buttons {
-//         display: flex;
-//         gap: $gap-base; // Utilizando la variable $gap-base
-//         align-items: center;
-//         justify-content: center;
-//         width: 100%;
-//     }
+// .dialog-buttons {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 1rem;
+// }
+
+// .cancel-delete {
+//   margin-right: 1rem;
+// }
+// .input-wrapper {
+//   margin-bottom: 10px;
+// }
+
+// .input-wrapper .input {
+//   padding: 10px; 
+//   border-radius: 5px;
+//   border: 1px solid #ccc; 
+//   width: 100%; 
+//   box-sizing: border-box; 
+// }
+
+// .input-wrapper .input:focus {
+//   outline: none; /* Eliminar el contorno al recibir foco */
+//   border-color: #b41206; /* Cambiar el color del borde al recibir foco */
+// }
+// .profile-description {
+//   text-align: center; /* Centrar el contenido */
+//   margin-bottom: 1rem; /* Añadir un margen inferior */
+// }
+
+// .profile-description-text {
+//   color: #666; /* Cambiar el color del texto para que sea menos prominente */
 // }
