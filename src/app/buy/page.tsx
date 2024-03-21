@@ -111,7 +111,7 @@ export default function Buy() {
             <img src="/Images/ticket.jpg" alt="" className="ticket" />
              <form onSubmit={handleBuy} className="buy-form">
                         <label className="input-wrapper">
-                            Empresa
+                              Empresa
                             <select name="iD_Empresa" id="" className="company">
                                 <option value="" disabled>
                                     Selecionar empresa
@@ -124,7 +124,7 @@ export default function Buy() {
                                     ))}
                             </select>
                         </label>
-                        <Input type="date" label="Fecha de salida" />
+                        <Input type="date" label="Fecha" />
                         <Button submit className="buy-button" content="Comprar" />
                     </form>
           </section>
