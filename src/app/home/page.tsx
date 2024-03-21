@@ -37,9 +37,9 @@ export default function Home() {
   }, [])
 
   // Filtrar empresas de buses según el término de búsqueda
-  const filteredCompanies = companies?.filter((company) =>
-    company.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // const filteredCompanies = companies?.filter((company) =>
+  //   company.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   return (
 
