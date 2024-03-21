@@ -6,7 +6,7 @@ interface Props {
 }
 export default function Dialog({ OnSubmit, dialogRef }: Props) {
     return (
-        <dialog ref={dialogRef}>
+        <dialog className="confirm-delete-dialog" ref={dialogRef}>
             <form onSubmit={OnSubmit}>
                 <p>Are you sure you want to commit the changes?</p>
                 <button type="submit">Confirm</button>

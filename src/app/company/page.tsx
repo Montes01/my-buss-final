@@ -12,7 +12,7 @@ export default function Company() {
     const [routes, setRoutes] = useState<Ruta[]>([])
 
     useEffect(() => {
-        const companyId = UseGetCompany.iD_Empresa
+        const companyId = UseGetCompany.ID_Empresa
         if (!companyId) return
         const url = SERVER_URL + ENDPOINTS.ROUTE.LIST_BY_COMPANY + "?ID_Empresa=" + companyId
 

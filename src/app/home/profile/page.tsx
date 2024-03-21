@@ -10,6 +10,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { useState, useRef, useEffect } from 'react';
 import { UseGet } from '@/lib/hooks/fetchHook';
 import { ENDPOINTS, SERVER_URL } from '@/lib/constants/constants';
+import Link from 'next/link';
 
 export default function Profile() {
 
@@ -106,7 +107,7 @@ export default function Profile() {
         {tickets && tickets.length > 0 ? (
           <ul className="ticket-list">
             {tickets.map((ticket) => (
-              <li key={ticket.ID_Ticket} className="ticket-item">
+              <Link href={`/buy/payment?IdTicket=${ticket.ID_Ticket}`} key={ticket.ID_Ticket} className="ticket-item">
                 <strong className='estado-y-precio' title={ticket.Estado}>
                   {
                     ticket.Estado?.toLocaleLowerCase() === "pendiente" && <>🟡</>
@@ -124,7 +125,7 @@ export default function Profile() {
                   <p className="ticket-title">{ticket.Precio}$</p>
                 </strong>
                 <p className="ticket-date">fecha: {ticket.FechaCompra.toString()}</p>
-              </li>
+              </Link>
             ))}
           </ul>
         ) : (
