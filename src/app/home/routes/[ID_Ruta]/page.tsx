@@ -46,17 +46,18 @@ export default function Page({ params }: { params: Params }) {
     return (
         <main className="route-main">
             <section className="route-info">
-
-                <label className="info-section">Nombre:
+                <section className="info-section">
+                    <strong>Nombre:</strong>
                     <p>{Nombre}</p>
-                </label>
-                <label className="info-section">Descripción:
+                </section>
+                <section className="info-section">
+                    <strong>Descripción:</strong>
                     <p>{Descripción}</p>
-                </label>
-                <label className="info-section">Tarifa:
+                </section>
+                <section className="info-section">
+                    <strong>Tarifa:</strong>
                     <p>{Tarifa}$</p>
-                </label>
-
+                </section>
             </section>
             <section className="stops-title">
                 <h2>Paraderos</h2>
@@ -65,18 +66,16 @@ export default function Page({ params }: { params: Params }) {
                 <section className="stops-timeline">
                     {
                         stops.map((stop, i) => {
-
                             return (
                                 <label key={stop.Ubicación} className="stop-timeline-item">
                                     {stop.Nombre}
-                                    <input type="radio" className="timeline-input"  onChange={(e) => {
+                                    <input type="radio" className="timeline-input" onChange={(e) => {
                                         if (e.target.checked) {
                                             setSelectedStop(stop);
                                         }
                                     }} defaultChecked={i === 0} name="stop" />
                                 </label>
                             )
-
                         })
                     }
                 </section>
