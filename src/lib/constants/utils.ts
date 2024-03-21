@@ -27,22 +27,26 @@ export function parseUser(user: any): Usuario {
 
 export function parseCompany(company: any): Empresa {
     if (!company) throw new Error("Empresa inválida");
-    if (!company.ID_Empresa) throw new Error("ID de empresa inválido");
-    if (!company.Nombre) throw new Error("Nombre de empresa inválido");
-    if (!company.CorreoElectronico) throw new Error("Correo electrónico de empresa inválido");
-    if (!company.Telefono) throw new Error("Número de teléfono de empresa inválido");
-    if (!company.Logo) throw new Error("Logo de empresa inválido");
-    if (!company.Direccion) throw new Error("Dirección de empresa inválida");
+    if (!company.iD_Empresa) throw new Error("ID de empresa inválido");
+    if (!company.nombre) throw new Error("Nombre de empresa inválido");
+    if (!company.correoElectronico) throw new Error("Correo electrónico de empresa inválido");
+    if (!company.teléfono) throw new Error("Número de teléfono de empresa inválido");
+    if (!company.logo) throw new Error("Logo de empresa inválido");
+    if (!company.dirección) throw new Error("Dirección de empresa inválida");
 
     return {
-        iD_Empresa: company.ID_Empresa,
-        nombre: company.Nombre,
-        correoElectronico: company.CorreoElectronico,
-        logo: company.Logo,
-        dirección: company.Dirección,
-        teléfono: company.Telefono,
-        contraseña: company.Contraseña ? company.Contraseña : "empty"
+        ID_Empresa: company.iD_Empresa,
+        Nombre: company.nombre,
+        CorreoElectronico: company.correoElectronico,
+        Logo: company.logo,
+        Dirección: company.dirección,
+        Teléfono: company.teléfono,
+        Contraseña: company.contraseña ? company.contraseña : "empty"
     }
+}
+
+export function parseCompanyList(companies: any[]): Empresa[] {
+    return companies.map(company => parseCompany(company))
 }
 
 export function readToken(token: string): Usuario {
@@ -57,7 +61,7 @@ export const isCompanyAuthenticated = (callback: Function) => {
     if (token) {
         const company = decode(token)
         if (company) {
-            callback(parseCompany(company))
+            callback(company as Empresa)
         }
     } else {
         callback(null)
