@@ -35,13 +35,13 @@ export interface Usuario {
 
 // Modelo de Empresa
 export interface Empresa {
-  iD_Empresa: number;
-  nombre: string;
-  correoElectronico: string;
-  contraseña: string;
-  logo?: string;
-  dirección?: string;
-  teléfono: string;
+  ID_Empresa: number;
+  Nombre: string;
+  CorreoElectronico: string;
+  Contraseña: string;
+  Logo?: string;
+  Dirección?: string;
+  Teléfono: string;
 }
 
 // Modelo de Ruta

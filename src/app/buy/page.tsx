@@ -9,6 +9,7 @@ import "./buy.scss";
 import { UseGet, UsePost } from "@/lib/hooks/fetchHook";
 import swal from "sweetalert";
 import { useRouter } from "next/navigation";
+import { parseCompanyList } from "@/lib/constants/utils";
 export default function Buy() {
     const [empresas, setEmpresas] = useState<Empresa[] | null>(null);
     const router = useRouter();
@@ -16,8 +17,8 @@ export default function Buy() {
         async function fetchData() {
             try {
                 const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST);
-                console.log(fetchedData);
-                setEmpresas(fetchedData.Data);
+                const parsedCompanies = parseCompanyList(fetchedData.Data);
+                setEmpresas(parsedCompanies);
             } catch (error) {
                 console.log(error);
             }
@@ -43,8 +44,8 @@ export default function Buy() {
         try {
             const res = await UsePost(SERVER_URL + ENDPOINTS.TICKET.ADD, data, { Authorization: `Bearer ${token}` });
             console.log(res);   
-            await swal("Compra exitosa", "Tu pasaje ha sido agregado con esto, seras redirigido a la pagina de pago", "success");
-            router.push("/buy/payment")
+            await swal("Compra exitosa", "Tu pasaje ha sido agregado con esto, seras redirigido a tu perfil", "success");
+            router.push("/home/profile")
         } catch (error) {
             console.log(await error);
             swal("Error", "No se ha podido realizar la compra", "error");
@@ -118,8 +119,8 @@ export default function Buy() {
                                 </option>
                                 {empresas &&
                                     empresas.map((empresa) => (
-                                        <option key={empresa.iD_Empresa} value={empresa.iD_Empresa}>
-                                            {empresa.nombre}
+                                        <option key={empresa.ID_Empresa} value={empresa.ID_Empresa}>
+                                            {empresa.Nombre}
                                         </option>
                                     ))}
                             </select>

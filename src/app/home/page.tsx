@@ -37,9 +37,9 @@ export default function Home() {
   }, [])
 
   // Filtrar empresas de buses según el término de búsqueda
-  const filteredCompanies = companies?.filter((company) =>
-    company.nombre.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // const filteredCompanies = companies?.filter((company) =>
+  //   company.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   return (
 
@@ -96,13 +96,13 @@ export default function Home() {
             companies?.map((el) => {
               return (
                 <CompanyCard
-                  nombre={el.nombre}
-                  teléfono={el.teléfono}
-                  correoElectronico={el.correoElectronico}
-                  logo={el.logo}
-                  key={el.iD_Empresa}
-                  iD_Empresa={el.iD_Empresa}
-                  contraseña={el.contraseña}
+                  Nombre={el.Nombre}
+                  Teléfono={el.Teléfono}
+                  CorreoElectronico={el.CorreoElectronico}
+                  Logo={el.Logo}
+                  key={el.ID_Empresa}
+                  ID_Empresa={el.ID_Empresa}
+                  Contraseña={el.Contraseña}
                 />
               )
             }) ?? "Hubo un error al cargar las compañias de buses. Por favor, intente más tarde."
