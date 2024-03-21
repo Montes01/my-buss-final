@@ -117,9 +117,9 @@
         </form>
       </div>
     </div>
-    <section className="tickets-section">
+    {/* <section className="tickets-section">
   <h3 className="tickets-title">Mis Tickets</h3>
-  {user?.tickets && user.tickets.length > 0 ? (
+  {user && user.tickets && user.tickets.length > 0 ? (
     <ul className="ticket-list">
       {user.tickets.map((ticket) => (
         <li key={ticket.id} className="ticket-item">
@@ -131,7 +131,7 @@
   ) : (
     <p className="no-tickets-message">No hay tickets disponibles.</p>
   )}
-</section>
+</section> */}
 <section className="delete-account">
   <Button
     action={() => dialogRef.current?.showModal()}
