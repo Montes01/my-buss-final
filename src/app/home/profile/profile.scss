@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 .profile-container {
@@ -160,8 +161,75 @@
 .delete-account-button:hover {
   background-color: #d32f2f; /* Cambia el color de fondo al pasar el ratón por encima */
 }
+=======
+@import "../../../lib/style-helpers/colors";
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
 
 
+
+  .profile-description {
+    display: flex;
+    background-color: darken($base-color, 20%);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+
+    .profile-description-text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+
+      .profile-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000000;
+
+      }
+    }
+
+    .profile-image {
+      border: 2px solid black;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: darken($base-color, 20%);
+    padding: 40px 20px;
+    gap: 20px;
+    border-radius: 10px;
+
+    .username-display {
+      font-size: 2rem;
+      text-align: center;
+    }
+>>>>>>> f6f4a3f63a7bfd88bd7d38833ebc2f8a9d3dedd7
+
+    .profile-info {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: white;
+
+<<<<<<< HEAD
 
 
 // .profile-container {
@@ -304,3 +372,70 @@
 // .profile-description-text {
 //   color: #666; /* Cambiar el color del texto para que sea menos prominente */
 // }
+=======
+      .profile-input-container {
+        background-color: $dark-color;
+        width: 300px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 10px;
+
+        * {
+          color: white;
+        }
+      }
+
+    }
+  }
+
+  .tickets-section {
+    display: flex;
+    background-color: $base-color;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+
+    .ticket-list {
+      list-style: none;
+      gap: 50px;
+      flex-wrap: wrap;
+      display: flex;
+
+      .ticket-item {
+        .estado-y-precio {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        background-color: darken($base-color, 20%);
+        border-radius: 10px;
+        width: 300px;
+        align-items: flex-start;
+        justify-content: center;
+
+        .ticket-title {
+          color: black;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        .ticket-date {
+          color: black;
+
+        }
+      }
+    }
+  }
+
+}
+>>>>>>> f6f4a3f63a7bfd88bd7d38833ebc2f8a9d3dedd7
