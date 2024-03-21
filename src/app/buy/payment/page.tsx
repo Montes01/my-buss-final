@@ -1,9 +1,20 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react';
 
-const page = () => {
+const Page = () => {
+  const [IdTicket, setIdTicket] = useState(null as number | null);
+  useEffect(function () {
+    if (location) {
+      var searchParams = new URLSearchParams(location.search);
+      var id = Number(searchParams.get('IdTicket'));
+      setIdTicket(id);
+    }
+  }, [])
   return (
-    <div>page</div>
-  )
+    <div>
+      <div>{IdTicket}</div>
+    </div>
+  );
 }
 
-export default page
+export default Page;

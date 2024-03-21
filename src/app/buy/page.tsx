@@ -43,8 +43,8 @@ export default function Buy() {
         try {
             const res = await UsePost(SERVER_URL + ENDPOINTS.TICKET.ADD, data, { Authorization: `Bearer ${token}` });
             console.log(res);   
-            await swal("Compra exitosa", "Tu pasaje ha sido comprado con éxito, Revisa tu correo", "success");
-            router.push("/home")
+            await swal("Compra exitosa", "Tu pasaje ha sido agregado con esto, seras redirigido a la pagina de pago", "success");
+            router.push("/buy/payment")
         } catch (error) {
             console.log(await error);
             swal("Error", "No se ha podido realizar la compra", "error");
