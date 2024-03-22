@@ -394,11 +394,147 @@
   animation: movimiento 3s ease-in-out infinite; 
 }
 
+
+
+
+@media (max-width: 400px) {
+
+  
+  .final-info {
+    padding: 50px 20px;
+    gap: 20px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .image img {
+    width: 100%;
+  }
+}
+
+/* Estilos para pantallas medianas (mínimo 768px) */
+@media (max-width: 768px) {
+
+  .main-home{
+    height: fit-content;
+    .background{
+      height: 70%;
+    }
+   .background-map{
+    display: none;
+   }
+   .imagen-grande{
+    display: none;
+   }
+   
+  }
+  .Pagos {
+    display: grid;
+    grid-template-columns: 1fr ; /* Divide el área en dos columnas */
+    gap: 20px; /* Espacio entre las dos áreas */
+    padding: 20px; /* Añade espacio alrededor del grid */
+    background-color: #ffffff;
+    .imagen-grande{
+      display: none;
+    }
+}
+.final-info{
+  .content {
+    width: 100%;
+  }
+  .image{
+    display: none;
+  }
+}
+}
+
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  
+  .main-home{
+    height: fit-content;
+    .background{
+      height: 70%;
+    }
+    .phone-image{
+      display: none;
+      
+          }
+          .information{
+            width: 100%;
+            padding: 50px;
+          }
+          .logos{width: 100%;
+          }
+          .bus{
+            width: 80%;
+            margin: 0 auto;
+          }
+   .background-map{
+    display: none;
+   }
+   .imagen-grande{
+    display: none;
+   }
+   
+  }
+  .Pagos {
+    display: grid;
+    grid-template-columns: 1fr ; /* Divide el área en dos columnas */
+    gap: 20px; /* Espacio entre las dos áreas */
+    padding: 20px; /* Añade espacio alrededor del grid */
+    background-color: #ffffff;
+    .imagen-grande{
+      display: none;
+    }
+}
+.final-info{
+  .content {
+    width: 100%;
+  }
+  .image{
+    display: none;
+  }
+}
+
+}
+
+/*360*/
 @media screen and (max-width: 360px) {
   
   .main-home {
 
+    .background{
+border-radius: 0;
+
+    }
+    .phone-image{
+display: none;
+
+border-radius: 0;
+    }
 .information{
+  width: 100%;
+  padding: 50px;
+  .welcome-message{
+    font-size: 2rem;
+  }
   .bus {
    display: flex;
     justify-content: center;
@@ -469,88 +605,4 @@
   display: none;
 }
 
-}
-
-
-@media (max-width: 400px) {
-
-  
-  .final-info {
-    padding: 50px 20px;
-    gap: 20px;
-  }
-
-  .content {
-    width: 100%;
-  }
-
-  .content h3 {
-    font-size: 2rem;
-  }
-
-  .content p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .image {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .image img {
-    width: 100%;
-  }
-}
-
-
-
-/* Estilos para pantallas medianas (mínimo 768px) */
-@media (max-width: 768px) {
-  .final-info {
-    padding: 100px 50px;
-  }
-  .main-home{
-    // padding: 0;
-    .phone-image {
-      display: none;
-    }
-
-    .information {
-        // padding: 0;
-        width: 100%;
-    }
-  }
-
-  .content h3 {
-    font-size: 2.5rem;
-  }
-
-  .content p {
-    font-size: 1.2rem;
-  }
-
-  .image {
-    width: 50%;
-    margin-left: 50px;
-  }
-
-  .image img {
-    width: 70%;
-  }
-}
-
-/* Estilos para pantallas grandes (mínimo 1024px) */
-@media (min-width: 1024px) {
-  .final-info {
-    padding: 100px;
-  }
-
-  .content h3 {
-    font-size: 3rem;
-  }
-
-  .content p {
-    font-size: 1.5rem;
-  }
 }
