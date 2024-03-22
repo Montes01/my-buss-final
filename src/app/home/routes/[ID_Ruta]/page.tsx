@@ -85,6 +85,7 @@ export default function Page({ params }: { params: Params }) {
                     </Link>
                 </section>
             </section>
+            <video src="/Images/RUTA4.mp4" autoPlay muted />
         </main>
     );
 }
