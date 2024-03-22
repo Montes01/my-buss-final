@@ -40,10 +40,14 @@
   gap: 15px;
 
   .header-button {
-    padding: 8px; /* Reducir tamaño de los botones */
-    font-size: 14px; /* Tamaño de letra reducido */
-    
-        &:hover {
+
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: $radius-base;
+    background-color: #444;
+    color: white;
+
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -62,9 +66,11 @@
   .logo {
     width: fit-content;
   }
+
   .home-logo {
     height: 100%;
     flex: 0;
+
     img {
       aspect-ratio: 1/1;
       @include interactive;
@@ -72,6 +78,7 @@
       /* Reducir tamaño del logo */
     }
   }
+
   .my-buss-title {
     width: fit-content;
     font-size: 20px;
@@ -84,13 +91,16 @@
   .header-buttons {
     gap: 10px;
   }
+
   .header-logo {
     gap: 5px;
   }
+
   .my-buss-title {
     font-size: 18px;
   }
 }
+
 @include responsive("phone") {
   .home-header {
     flex-direction: column;
@@ -98,9 +108,11 @@
     padding: 10px;
     gap: 20px;
   }
+
   .header-buttons {
     gap: 5px;
   }
+
   .my-buss-title {
     font-size: 16px;
   }

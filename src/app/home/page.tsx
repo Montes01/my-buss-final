@@ -8,6 +8,7 @@ import { Empresa, Response } from "@/lib/constants/declarations";
 import { IconBus } from "@tabler/icons-react"
 import { UseGet } from "@/lib/hooks/fetchHook";
 import { useRouter } from "next/navigation";
+import { parseCompanyList } from "@/lib/constants/utils";
 
 export default function Home() {
   const router = useRouter()
@@ -31,7 +32,8 @@ export default function Home() {
   useEffect(() => {
     const getCompanies = async () => {
       const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
-      setCompanies(fetchedData.Data);
+      const parsedCompanies = parseCompanyList(fetchedData.Data)
+      setCompanies(parsedCompanies);
     }
     getCompanies()
   }, [])
