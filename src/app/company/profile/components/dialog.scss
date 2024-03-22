@@ -1,0 +1,23 @@
+
+.confirm-delete-dialog {
+    margin: auto;
+
+    &[open] {
+        display: flex;
+    }
+
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    align-items: center;
+    border-radius: 15px;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .dialog-delete-buttons {
+        display: flex;
+        gap: 20px;
+    }
+}

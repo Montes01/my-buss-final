@@ -8,9 +8,12 @@ import { Empresa, Response } from "@/lib/constants/declarations";
 import { IconBus } from "@tabler/icons-react"
 import { UseGet } from "@/lib/hooks/fetchHook";
 import { useRouter } from "next/navigation";
+import { parseCompanyList } from "@/lib/constants/utils";
+
 export default function Home() {
   const router = useRouter()
   const [companies, setCompanies] = useState<Empresa[] | null>([])
+  const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
 
   useEffect(() => {
     const companyToken = localStorage.getItem("company-token")
@@ -29,10 +32,16 @@ export default function Home() {
   useEffect(() => {
     const getCompanies = async () => {
       const fetchedData = await UseGet(SERVER_URL + ENDPOINTS.COMPANY.LIST)
-      setCompanies(fetchedData.Data);
+      const parsedCompanies = parseCompanyList(fetchedData.Data)
+      setCompanies(parsedCompanies);
     }
     getCompanies()
   }, [])
+
+  // Filtrar empresas de buses según el término de búsqueda
+  // const filteredCompanies = companies?.filter((company) =>
+  //   company.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   return (
 
@@ -89,13 +98,13 @@ export default function Home() {
             companies?.map((el) => {
               return (
                 <CompanyCard
-                  nombre={el.nombre}
-                  teléfono={el.teléfono}
-                  correoElectronico={el.correoElectronico}
-                  logo={el.logo}
-                  key={el.iD_Empresa}
-                  iD_Empresa={el.iD_Empresa}
-                  contraseña={el.contraseña}
+                  Nombre={el.Nombre}
+                  Teléfono={el.Teléfono}
+                  CorreoElectronico={el.CorreoElectronico}
+                  Logo={el.Logo}
+                  key={el.ID_Empresa}
+                  ID_Empresa={el.ID_Empresa}
+                  Contraseña={el.Contraseña}
                 />
               )
             }) ?? "Hubo un error al cargar las compañias de buses. Por favor, intente más tarde."

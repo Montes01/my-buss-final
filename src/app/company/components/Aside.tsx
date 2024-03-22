@@ -24,8 +24,8 @@ export default function Aside() {
     return (
         <aside className="nav-bar">
             <section className="info">
-                <img width={50} src={company.logo ? company.logo : "/Images/user.png"} alt="" />
-                <h1>{company?.nombre}</h1>
+                <img width={50} src={company.Logo ? company.Logo : "/Images/user.png"} alt="" />
+                <h1>{company?.Nombre}</h1>
             </section>
             <section className="options">
                     <NavButton to="/company" content="Rutas" className="dashboard-option"/>

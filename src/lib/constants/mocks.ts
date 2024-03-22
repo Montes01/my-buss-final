@@ -32,31 +32,31 @@ export function EmpresasMock():Promise<Response> {
     return new Promise((resolve) => {
         const empresas: Empresa[] = [
             {
-                iD_Empresa: 0,
-                nombre: "Cooburquin",
-                correoElectronico: "Cooburquin@gmail.com",
-                contraseña: "empty",
-                logo: "https://th.bing.com/th?id=OIP.GIL4pvhe2xd4nCwDfKJxzwHaGR&w=271&h=230&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-                dirección: "Av. Principal #123, Armenia",
-                teléfono: "123456789"
+                ID_Empresa: 0,
+                Nombre: "Cooburquin",
+                CorreoElectronico: "Cooburquin@gmail.com",
+                Contraseña: "empty",
+                Logo: "https://th.bing.com/th?id=OIP.GIL4pvhe2xd4nCwDfKJxzwHaGR&w=271&h=230&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                Dirección: "Av. Principal #123, Armenia",
+                Teléfono: "123456789"
             },
             {
-                iD_Empresa: 1,
-                nombre: "Buses Armenia",
-                correoElectronico: "BASA@gmail.com",
-                contraseña: "empty",
-                logo: "https://www.mybus.io/wp-content/uploads/2020/10/maasify.svg",
-                dirección: "Calle Principal #456, Ciudad",
-                teléfono: "123456789"
+                ID_Empresa: 1,
+                Nombre: "Buses Armenia",
+                CorreoElectronico: "BASA@gmail.com",
+                Contraseña: "empty",
+                Logo: "https://www.mybus.io/wp-content/uploads/2020/10/maasify.svg",
+                Dirección: "Calle Principal #456, Ciudad",
+                Teléfono: "123456789"
             },
             {
-                iD_Empresa: 2,
-                nombre: "TUCM",
-                correoElectronico: "TUCM@gmail.com",
-                contraseña: "empty",
-                logo: "https://tucm.com.co/wp-content/uploads/2021/04/tucm.png",
-                dirección: "Calle Principal #456, Ciudad",
-                teléfono: "123456789"
+                ID_Empresa: 2,
+                Nombre: "TUCM",
+                CorreoElectronico: "TUCM@gmail.com",
+                Contraseña: "empty",
+                Logo: "https://tucm.com.co/wp-content/uploads/2021/04/tucm.png",
+                Dirección: "Calle Principal #456, Ciudad",
+                Teléfono: "123456789"
             }
         ];
 
@@ -207,13 +207,13 @@ export function getRutaMock(id: number): Promise<Response> {
 export function getEmpresaPorIdMock(id: number): Promise<Response> {
 
     const exampleEmpresa: Empresa = {
-        iD_Empresa: id,
-        nombre: "Cooburquin",
-        correoElectronico: "Cooburquin@gmail.com",
-        contraseña: "empty",
-        logo: "https://th.bing.com/th?id=OIP.GIL4pvhe2xd4nCwDfKJxzwHaGR&w=271&h=230&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        dirección: "Av. Principal #123, Armenia",
-        teléfono: "123456789"
+        ID_Empresa: id,
+        Nombre: "Cooburquin",
+        CorreoElectronico: "Cooburquin@gmail.com",
+        Contraseña: "empty",
+        Logo: "https://th.bing.com/th?id=OIP.GIL4pvhe2xd4nCwDfKJxzwHaGR&w=271&h=230&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+        Dirección: "Av. Principal #123, Armenia",
+        Teléfono: "123456789"
     }
 
     return new Promise((resolve) => {

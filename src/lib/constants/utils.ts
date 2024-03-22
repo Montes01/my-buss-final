@@ -1,4 +1,4 @@
-import { Empresa, Paradero, Ruta, Usuario } from "./declarations"
+import { Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
@@ -27,22 +27,26 @@ export function parseUser(user: any): Usuario {
 
 export function parseCompany(company: any): Empresa {
     if (!company) throw new Error("Empresa inválida");
-    if (!company.ID_Empresa) throw new Error("ID de empresa inválido");
-    if (!company.Nombre) throw new Error("Nombre de empresa inválido");
-    if (!company.CorreoElectronico) throw new Error("Correo electrónico de empresa inválido");
-    if (!company.Telefono) throw new Error("Número de teléfono de empresa inválido");
-    if (!company.Logo) throw new Error("Logo de empresa inválido");
-    if (!company.Direccion) throw new Error("Dirección de empresa inválida");
+    if (!company.iD_Empresa) throw new Error("ID de empresa inválido");
+    if (!company.nombre) throw new Error("Nombre de empresa inválido");
+    if (!company.correoElectronico) throw new Error("Correo electrónico de empresa inválido");
+    if (!company.teléfono) throw new Error("Número de teléfono de empresa inválido");
+    if (!company.logo) throw new Error("Logo de empresa inválido");
+    if (!company.dirección) throw new Error("Dirección de empresa inválida");
 
     return {
-        iD_Empresa: company.ID_Empresa,
-        nombre: company.Nombre,
-        correoElectronico: company.CorreoElectronico,
-        logo: company.Logo,
-        dirección: company.Dirección,
-        teléfono: company.Telefono,
-        contraseña: company.Contraseña ? company.Contraseña : "empty"
+        ID_Empresa: company.iD_Empresa,
+        Nombre: company.nombre,
+        CorreoElectronico: company.correoElectronico,
+        Logo: company.logo,
+        Dirección: company.dirección,
+        Teléfono: company.teléfono,
+        Contraseña: company.contraseña ? company.contraseña : "empty"
     }
+}
+
+export function parseCompanyList(companies: any[]): Empresa[] {
+    return companies.map(company => parseCompany(company))
 }
 
 export function readToken(token: string): Usuario {
@@ -57,7 +61,7 @@ export const isCompanyAuthenticated = (callback: Function) => {
     if (token) {
         const company = decode(token)
         if (company) {
-            callback(parseCompany(company))
+            callback(company as Empresa)
         }
     } else {
         callback(null)
@@ -113,4 +117,28 @@ export const isUserAuthenticated = (callback: Function) => {
     } else {
         callback(null)
     }
+}
+
+export const parseSingleTicket = (ticket: any): Ticket => {
+    if (!ticket) throw new Error("Ticket inválido");
+    if (!ticket.iD_Ticket) throw new Error("ID de ticket inválido");
+    if (!ticket.iD_Usuario) throw new Error("ID de usuario inválido");
+    if (!ticket.iD_Empresa) throw new Error("ID de empresa inválido");
+    if (!ticket.fechaCompra) throw new Error("Fecha de compra inválida");
+    if (!ticket.precio) throw new Error("Precio de ticket inválido");
+    if (!ticket.estado) throw new Error("Estado de ticket inválido");
+
+    return {
+        ID_Ticket: ticket.iD_Ticket,
+        ID_Usuario: ticket.iD_Usuario,
+        ID_Empresa: ticket.iD_Empresa,
+        FechaCompra: ticket.fechaCompra,
+        Precio: ticket.precio,
+        TipoPago: ticket.tipoPago,
+        Estado: ticket.estado
+    }
+}
+
+export const parseTicketList = (tickets: any[]): Ticket[] => {
+    return tickets.map(ticket => parseSingleTicket(ticket))
 }
