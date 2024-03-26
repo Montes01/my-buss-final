@@ -7,7 +7,7 @@
     width: 100%;
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 95vh;
 
     background-image: url("https://images.pexels.com/photos/1391293/pexels-photo-1391293.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-size: cover;
@@ -27,6 +27,8 @@
 
 
     .form-sections {
+
+        max-width: 1200px;
         border-radius: $radius-base;
         /* Asegúrate de definir $radius-base */
         backdrop-filter: brightness(0.15) blur(3px);
