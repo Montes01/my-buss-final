@@ -2,6 +2,8 @@ import { ServiceCard, UserCard } from "./declarations"
 
 export const PROJECT_NAME = "MyBuss";
 
+export const STRIPE_API_KEY = "pk_test_51OyEqeITkeuqFU4OqAT7JIG0d7ieF7a0ztFQD6L7HnpwWG9qGRWhSV9oZTghpFemR4vZ3E3nOjqQR6l0yNJ9Ty8g00xPKYFTAg"
+
 export const SERVER_URL = "https://mybuss.azurewebsites.net/" //?? process.env.SERVER_URL ?? ;
 // export const SERVER_URL = "https://localhost:7151/"
 
