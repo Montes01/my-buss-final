@@ -45,46 +45,107 @@ export default function Page({ params }: { params: Params }) {
     }, []);
     return (
         <main className="route-main">
-            <section className="route-info">
-                <section className="info-section">
-                    <strong>Nombre:</strong>
-                    <p>{Nombre}</p>
-                </section>
-                <section className="info-section">
-                    <strong>Descripción:</strong>
-                    <p>{Descripción}</p>
-                </section>
-                <section className="info-section">
-                    <strong>Tarifa:</strong>
-                    <p>{Tarifa}$</p>
-                </section>
-            </section>
-            <section className="stops-title">
-                <h2>Paraderos</h2>
-            </section>
-            <section className="stops-part">
-                <section className="stops-timeline">
-                    {
-                        stops.map((stop, i) => {
-                            return (
-                                <label key={stop.Ubicación} className="stop-timeline-item">
-                                    {stop.Nombre}
-                                    <input type="radio" className="timeline-input" onChange={(e) => {
-                                        if (e.target.checked) {
-                                            setSelectedStop(stop);
-                                        }
-                                    }} defaultChecked={i === 0} name="stop" />
-                                </label>
-                            )
-                        })
-                    }
-                </section>
-                <section className="stop-image">
-                    <Link className="stop-image-link" href={`/home/stops/${selectedStop?.ID_Paradero}`}>
-                        <img src={selectedStop?.Foto} alt="" />
-                    </Link>
-                </section>
-            </section>
-        </main>
+    <section className="route-info">
+        <section className="info-section">
+            <strong>Nombre:</strong>
+            <p>{Nombre}</p>
+        </section>
+        <section className="info-section">
+            <strong>Descripción:</strong>
+            <p>{Descripción}</p>
+        </section>
+        <section className="info-section">
+            <strong>Tarifa:</strong>
+            <p>{Tarifa}$</p>
+        </section>
+        <section className="info-section">
+            <strong>Duración Estimada del Viaje:</strong>
+            <p>30 minutos</p>
+        </section>
+        <section className="info-section">
+            <strong>Paradas Principales:</strong>
+            <ul>
+                <li>Parada 1</li>
+                <li>Parada 2</li>
+                <li>Parada 3</li>
+                {/* Agregar más paradas según sea necesario */}
+            </ul>
+        </section>
+        <section className="info-section">
+            <strong>Tipo de Transporte:</strong>
+            <p>Autobús</p>
+        </section>
+        <section className="info-section">
+            <strong>Disponibilidad de Transporte Accesible:</strong>
+            <p>Sí</p>
+        </section>
+    </section>
+    <section className="stops-title">
+        <h2>Paraderos</h2>
+    </section>
+    <section className="stops-part">
+        <section className="stops-timeline">
+            {stops.map((stop, i) => {
+                return (
+                    <label key={stop.Ubicación} className="stop-timeline-item">
+                        {stop.Nombre}
+                        <input type="radio" className="timeline-input" onChange={(e) => {
+                            if (e.target.checked) {
+                                setSelectedStop(stop);
+                            }
+                        }} defaultChecked={i === 0} name="stop" />
+                    </label>
+                )
+            })}
+        </section>
+        <section className="stop-image">
+            <Link className="stop-image-link" href={`/home/stops/${selectedStop?.ID_Paradero}`}>
+                <img src={selectedStop?.Foto} alt="" />
+            </Link>
+        </section>
+    </section>
+</main>
+
+/* <main className="route-main">
+  <section className="route-info">
+    <h2>Información de la Ruta</h2>
+    <section className="info-section">
+      <strong>Nombre:</strong>
+      <p>{Nombre}</p>
+    </section>
+    <section className="info-section">
+      <strong>Descripción:</strong>
+      <p>{Descripción}</p>
+    </section>
+    <section className="info-section">
+      <strong>Tarifa:</strong>
+      <p>{Tarifa}$</p>
+    </section>
+  </section>
+  <section className="stops-title">
+    <h2>Paraderos</h2>
+  </section>
+  <section className="stops-part">
+    <section className="stops-timeline">
+      {stops.map((stop, i) => (
+        <label key={stop.Ubicación} className="stop-timeline-item">
+          {stop.Nombre}
+          <input type="radio" className="timeline-input" onChange={(e) => {
+            if (e.target.checked) {
+              setSelectedStop(stop);
+            }
+          }} defaultChecked={i === 0} name="stop" />
+        </label>
+      ))}
+    </section>
+    <section className="stop-image">
+      <h2>Información del Paradero</h2>
+      <Link className="stop-image-link" href={`/home/stops/${selectedStop?.ID_Paradero}`}>
+        <img src={selectedStop?.Foto} alt="" />
+      </Link>
+    </section>
+  </section>
+</main> */
+
     );
 }
