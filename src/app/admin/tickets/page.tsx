@@ -1,10 +1,9 @@
-interface Props {
-    children: React.ReactNode
-}
-export default function Tickets({ children }: Props) {
+
+export default function Tickets() {
     return (
         <main>
-            {children}
+            
+            <h1>Tickets</h1>
         </main>
     )
 
