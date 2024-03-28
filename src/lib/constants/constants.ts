@@ -32,6 +32,7 @@ export const ENDPOINTS = {
     ADD: "Empresa/Registrar",
     LOGIN: "Empresa/Ingresar",
     GET: "Empresa/Obtener",
+    DELETE: "Empresa/Eliminar",
   },
    TICKET: {
     ADD: "Ticket/Agregar",

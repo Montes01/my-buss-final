@@ -86,7 +86,7 @@ export default function PaymentPage() {
         Precio: Ticket.Precio,
         Estado: "Pagado",
         TipoPago: "Tarjeta",
-        ID_Pago: paymentMethodResult?.paymentMethod?.id,
+        PaymentId: paymentMethodResult?.paymentMethod?.id,
         ID_Empresa: Ticket.ID_Empresa
       };
       await UsePut(SERVER_URL + ENDPOINTS.TICKET.PAY, data, {
