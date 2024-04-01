@@ -12,6 +12,10 @@ export const ENDPOINTS = {
     LOGIN: "Usuario/Ingresar",
     REGISTER: "Usuario/Registrar",
     UPDATE: "Usuario/Actualizar",
+    WORK: {
+      REQUEST: "",
+      CANCEL: ""
+    }
   },
   ROUTE: {
     ADD: "Ruta/Agregar",
@@ -47,6 +51,7 @@ export const ENDPOINTS = {
     LIST: "Paradero/Listar",
     GET: "Paradero/Obtener",
     LIST_BY_ROUTE: "Paradero/ListarPorRuta",
+    DELETE: "Paradero/Eliminar",
   },
   ADMIN: {
     DELETE_COMPANY: "Admin/Eliminar/Empresa",
@@ -54,6 +59,9 @@ export const ENDPOINTS = {
     LIST_TICKETS: "Admin/Listar/Tickets",
     DELETE_USER: "Admin/Eliminar/Usuario",
     LIST_USERS: "Admin/Listar/Usuarios",
+    ACEPT_DRIVER: "Usuario/Aceptar",
+    REJECT_DRIVER: "Usuario/Rechazar",
+    LIST_ASPIRANTS: "Usuario/Listar/Aspirantes",
   }
 
 

@@ -27,12 +27,12 @@ export function parseUser(user: any): Usuario {
 
 export function parseUserFromRequest(user: any): Usuario {
     if (!user) throw new Error("Usuario inválido");
-    if (!user.id_Usuario) throw new Error("ID de usuario inválido");
+    if (!user.iD_Usuario) throw new Error("ID de usuario inválido");
     if (!user.nombre) throw new Error("Nombre de usuario inválido");
     if (!user.correoElectronico) throw new Error("Correo electrónico de usuario inválido");
     if (!user.teléfono) throw new Error("Número de teléfono de usuario inválido");
     return {
-        ID_Usuario: user.id_Usuario,
+        ID_Usuario: user.iD_Usuario,
         Nombre: user.nombre,
         CorreoElectronico: user.correoElectronico,
         Teléfono: user.teléfono,
