@@ -16,7 +16,7 @@ export default function Header() {
       if (user) {
         UseLogin(user)
         if (user.Rol === "admin") {
-          window.location.href = "/admin/dashboard"
+          window.location.href = "/admin"
         }
       }
     })
