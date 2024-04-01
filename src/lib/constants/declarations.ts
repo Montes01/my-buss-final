@@ -95,10 +95,10 @@ export interface Bus {
 export interface Conductor {
   ID_Conductor: number;
   ID_Usuario: number;
-  ID_Bus: number;
   LicenciaConducción?: string;
   FechaContrato?: Date;
   HorarioTrabajo?: string;
+  Estado?: boolean;
 }
 
 // Modelo de Ticket
