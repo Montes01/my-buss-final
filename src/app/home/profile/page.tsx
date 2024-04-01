@@ -155,6 +155,10 @@ export default function Profile() {
           </dialog>
         </div>
       </div>
+
+      <Link href="/work" className='button'>
+        Quieres trabajar como conductor?
+      </Link>
     </main>
   )
 }

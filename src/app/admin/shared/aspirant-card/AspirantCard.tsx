@@ -3,7 +3,7 @@ import Button from "@/system-design/atoms/Button";
 import "./aspirant-card.scss"
 import swal from "sweetalert";
 import { SERVER_URL, ENDPOINTS } from "@/lib/constants/constants";
-import {  UsePut } from "@/lib/hooks/fetchHook";
+import { UseDelete, UsePut } from "@/lib/hooks/fetchHook";
 type Props = {
     CorreoElectronico?: string,
     ID_Conductor?: number,
@@ -41,6 +41,27 @@ export default function AspirantCard({ CorreoElectronico, ID_Conductor, ID_Usuar
 
 
     const handleReject = async () => {
+        swal({
+            title: "¿Estás seguro?",
+            text: "¿Deseas rechazar a este aspirante?",
+            icon: "warning",
+            buttons: ["Cancelar", "Aceptar"],
+            dangerMode: true,
+        }).then(async (willReject) => {
+            if (willReject) {
+                //si el usuario acepta se envia una peticion al servidor para rechazar al aspirante
+                const token = localStorage.getItem("user-token")
+                try {
+                    await UsePut(SERVER_URL + ENDPOINTS.ADMIN.REJECT_DRIVER + "?ID_Conductor=" + ID_Conductor, {},
+                        { Authorization: `Bearer ${token}` })
+                    await swal("Aspirante rechazado", "El aspirante ha sido rechazado exitosamente", "success")
+                    location?.reload()
+                } catch (error) {
+                    console.error(await error)
+                    swal("Error", "No se pudo rechazar al aspirante", "error")
+                }
+            }
+        });
 
     }
 

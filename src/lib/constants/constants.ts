@@ -13,8 +13,8 @@ export const ENDPOINTS = {
     REGISTER: "Usuario/Registrar",
     UPDATE: "Usuario/Actualizar",
     WORK: {
-      REQUEST: "",
-      CANCEL: ""
+      REQUEST: "Usuario/Trabajo",
+      CANCEL: "Usuario/Cancelar"
     }
   },
   ROUTE: {
