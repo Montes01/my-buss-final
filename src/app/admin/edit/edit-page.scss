@@ -1,0 +1,92 @@
+// return (
+// <main className="edit-profile-main">
+//     <h1 className="edit-profile-title">Editar Perfil</h1>
+//     <section className="edit-profile-section">
+//         <form onSubmit={handleSubmit} className="edit-profile-form">
+//             <Input name="Nombre" label="Nombre" defaultValue={user?.Nombre} className="edit-profile-input" />
+//             <Input name="CorreoElectronico" readonly label="Correo Electrónico" defaultValue={user?.CorreoElectronico} className="edit-profile-input" />
+//             <Input name="Contraseña" label="Contraseña" type="password" className="edit-profile-input" />
+//             <picture className="profile-image-wrapper">
+//                 <img ref={imageRef} src={user?.FotoPerfil} alt={"Foto de Perfil de " + user?.Nombre} className="profile-image" />
+//                 <input type="file" name="FotoPerfil" onChange={onFileChange} className="edit-profile-file-input" />
+//             </picture>
+//             <Input name="Dirección" label="Dirección" defaultValue={user?.Dirección} className="edit-profile-input" />
+//             <Input name="Teléfono" label="Teléfono" defaultValue={user?.Teléfono} className="edit-profile-input" />
+
+//             <Button submit content="Guardar" className="edit-profile-button" />
+//         </form>
+//     </section>
+// </main>
+// )
+@import "../../../lib//style-helpers/colors";
+
+
+.edit-profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    height: 100%;
+
+    .edit-profile-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $primary;
+    }
+
+    .edit-profile-section {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: $base-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        gap: 1rem;
+
+        .edit-profile-form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 1rem;
+
+            .edit-profile-input {
+                width: 100%;
+            }
+
+            .profile-image-wrapper {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+                .profile-image {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .edit-profile-file-input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+
+            .edit-profile-button {
+                width: 100%;
+                height: 20px;
+            }
+        }
+    }
+}

@@ -11,6 +11,7 @@ export const ENDPOINTS = {
   USER: {
     LOGIN: "Usuario/Ingresar",
     REGISTER: "Usuario/Registrar",
+    UPDATE: "Usuario/Actualizar",
   },
   ROUTE: {
     ADD: "Ruta/Agregar",

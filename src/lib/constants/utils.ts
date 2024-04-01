@@ -166,3 +166,8 @@ export const parseSingleTicket = (ticket: any): Ticket => {
 export const parseTicketList = (tickets: any[]): Ticket[] => {
     return tickets.map(ticket => parseSingleTicket(ticket))
 }
+
+
+export const handleImageError = (e: any) => {
+    e.target.src = "/Images/user.png";
+}

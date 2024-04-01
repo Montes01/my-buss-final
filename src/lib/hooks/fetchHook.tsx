@@ -43,13 +43,15 @@ export async function UseGet(url: string, headers: object = {}): Promise<Respons
 }
 
 export async function UsePut(url: string, data: object, headers: object = {}): Promise<Response> {
+    const body = JSON.stringify(data);
+    console.log(body);
     const res = await fetch(url, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             ...headers
         },
-        body: JSON.stringify(data)
+        body
     });
     if (!res.ok) {
         const catchedError = await res.json();
