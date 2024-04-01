@@ -1,4 +1,4 @@
-import { Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
+import { Conductor, Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
@@ -25,6 +25,28 @@ export function parseUser(user: any): Usuario {
     }
 }
 
+export function parseUserFromRequest(user: any): Usuario {
+    if (!user) throw new Error("Usuario inválido");
+    if (!user.iD_Usuario) throw new Error("ID de usuario inválido");
+    if (!user.nombre) throw new Error("Nombre de usuario inválido");
+    if (!user.correoElectronico) throw new Error("Correo electrónico de usuario inválido");
+    if (!user.teléfono) throw new Error("Número de teléfono de usuario inválido");
+    return {
+        ID_Usuario: user.iD_Usuario,
+        Nombre: user.nombre,
+        CorreoElectronico: user.correoElectronico,
+        Teléfono: user.teléfono,
+        Contraseña: undefined,
+        FotoPerfil: user.fotoPerfil ? user.fotoPerfil : "empty",
+        Dirección: user.dirección ? user.dirección : "empty",
+        Rol: user.rol ? user.rol : "Usuario"
+
+    }
+}
+export function parseUserList(users: any[]): Usuario[] {
+    return users.map(user => parseUserFromRequest(user))
+}
+
 export function parseCompany(company: any): Empresa {
     if (!company) throw new Error("Empresa inválida");
     if (!company.iD_Empresa) throw new Error("ID de empresa inválido");
@@ -47,6 +69,26 @@ export function parseCompany(company: any): Empresa {
 
 export function parseCompanyList(companies: any[]): Empresa[] {
     return companies.map(company => parseCompany(company))
+}
+
+export const parseDriver = (driver: any): Conductor => {
+
+    if (!driver) throw new Error("Conductor inválido");
+    if (!driver.iD_Conductor) throw new Error("ID de conductor inválido");
+    if (!driver.iD_Usuario) throw new Error("ID de usuario inválido");
+
+    return {
+        ID_Conductor: driver.iD_Conductor,
+        ID_Usuario: driver.iD_Usuario,
+        Estado: driver.estado ? driver.estado : "empty",
+        LicenciaConducción: driver.fotoLicencia ? driver.fotoLicencia : "empty",
+        FechaContrato: driver.fechaContrato ? driver.fechaContrato : "empty",
+        HorarioTrabajo: driver.horarioTrabajo ? driver.horarioTrabajo : "empty"
+    }
+}
+
+export const parseDriverList = (drivers: any[]): Conductor[] => {
+    return drivers.map(driver => parseDriver(driver))
 }
 
 export function readToken(token: string): Usuario {
@@ -111,6 +153,8 @@ export const isUserAuthenticated = (callback: Function) => {
     const token = localStorage.getItem("user-token")
     if (token) {
         const user = decode(token)
+
+
         if (user) {
             callback(parseUser(user))
         }
@@ -141,4 +185,9 @@ export const parseSingleTicket = (ticket: any): Ticket => {
 
 export const parseTicketList = (tickets: any[]): Ticket[] => {
     return tickets.map(ticket => parseSingleTicket(ticket))
+}
+
+
+export const handleImageError = (e: any) => {
+    e.target.src = "/Images/user.png";
 }

@@ -13,7 +13,24 @@ export enum inputTypes {
   tel = "tel",
   file = "file",
   "date-time-local" = "date-time-local",
-  date = "date"
+  date = "date",
+  time = "time",
+  month = "month",
+  week = "week",
+  color = "color",
+  range = "range",
+  search = "search",
+  url = "url",
+  hidden = "hidden",
+  checkbox = "checkbox",
+  button = "button",
+  submit = "submit",
+  reset = "reset",
+  image = "image",
+  select = "select",
+  textarea = "textarea",
+  timeLocal = "time-local",
+  weekLocal = "week-local",
 }
 export type UserCard = {
   image: string;
@@ -78,10 +95,10 @@ export interface Bus {
 export interface Conductor {
   ID_Conductor: number;
   ID_Usuario: number;
-  ID_Bus: number;
   LicenciaConducción?: string;
   FechaContrato?: Date;
   HorarioTrabajo?: string;
+  Estado?: boolean;
 }
 
 // Modelo de Ticket

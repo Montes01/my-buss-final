@@ -1,4 +1,3 @@
-
 @import "../../../lib/style-helpers/colors";
 
 .profile-container {
@@ -129,4 +128,60 @@
     }
   }
 
+  .delete-account {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .delete-account-button {
+      padding: 10px;
+      width: fit-content;
+    }
+  }
+
+  .work-button {
+    width: fit-content;
+    padding: 1em;
+    color: black;
+    background-color: $base-color;
+    border: none;
+    border-radius: 10px;
+    align-self: flex-end;
+  }
+}
+
+
+// <dialog className='driver-dialog' ref={driverDialogRef}>
+// <form onSubmit={handleUseTicket} className="use-ticket">
+//   <Input name="ticketId" type="text" placeholder="ID del ticket" />
+//   <Button content="Usar ticket" submit />
+// </form>
+// </dialog>
+
+
+
+.driver-dialog {
+  &[open] {
+    display: flex;
+  }
+  margin: auto;
+
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: $base-color;
+  border-radius: 10px;
+  width: 300px;
+
+  .use-ticket {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
 }

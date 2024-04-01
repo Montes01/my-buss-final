@@ -8,12 +8,16 @@ import { useEffect } from "react";
 import { isUserAuthenticated } from "@/lib/constants/utils";
 import { Usuario } from "@/lib/constants/declarations";
 import { IconLogout, IconUser } from "@tabler/icons-react";
+
 export default function Header() {
   const { UseLogin, UseGetUser: user } = UserActions()
   useEffect(() => {
     isUserAuthenticated((user: Usuario) => {
       if (user) {
         UseLogin(user)
+        if (user.Rol === "admin") {
+          window.location.href = "/admin"
+        }
       }
     })
   }, [])

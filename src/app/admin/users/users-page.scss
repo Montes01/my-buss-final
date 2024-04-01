@@ -1,0 +1,46 @@
+// return (
+// <main className="users-main">
+//     <h1 className="users-title">Usuarios</h1>
+//     {isLoading ? (
+//         <div className="loading-bar">Loading...</div>
+//     ) : (
+//         <section className="users-section">
+//             {users.map((user) => (
+//                 <UserCard key={user.ID_Usuario} {...user} />
+//             ))}
+//         </section>
+//     )}
+// </main>
+// )
+
+
+.users-main{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    height: 100%;
+    background-color: #f5f5f5;
+
+    .users-title{
+        font-size: 2rem;
+        height: 20%;
+        margin-bottom: 1rem;
+    }
+
+    .loading-bar{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .users-section{
+        max-height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        gap: 15px;
+    }
+
+}
