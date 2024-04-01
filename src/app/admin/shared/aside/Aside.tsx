@@ -27,7 +27,7 @@ export default function Aside() {
     const handleLogout = () => {
         localStorage.removeItem("user-token")
         UseLogout()
-        redirect("/home/join/login")
+        location.href = "/home/join/login"
     }
     return (
         <aside className="admin-aside">

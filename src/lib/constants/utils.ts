@@ -25,6 +25,28 @@ export function parseUser(user: any): Usuario {
     }
 }
 
+export function parseUserFromRequest(user: any): Usuario {
+    if (!user) throw new Error("Usuario inválido");
+    if (!user.id_Usuario) throw new Error("ID de usuario inválido");
+    if (!user.nombre) throw new Error("Nombre de usuario inválido");
+    if (!user.correoElectronico) throw new Error("Correo electrónico de usuario inválido");
+    if (!user.teléfono) throw new Error("Número de teléfono de usuario inválido");
+    return {
+        ID_Usuario: user.id_Usuario,
+        Nombre: user.nombre,
+        CorreoElectronico: user.correoElectronico,
+        Teléfono: user.teléfono,
+        Contraseña: undefined,
+        FotoPerfil: user.fotoPerfil ? user.fotoPerfil : "empty",
+        Dirección: user.dirección ? user.dirección : "empty",
+        Rol: user.rol ? user.rol : "Usuario"
+
+    }
+}
+export function parseUserList(users: any[]): Usuario[] {
+    return users.map(user => parseUserFromRequest(user))
+}
+
 export function parseCompany(company: any): Empresa {
     if (!company) throw new Error("Empresa inválida");
     if (!company.iD_Empresa) throw new Error("ID de empresa inválido");
@@ -110,7 +132,7 @@ export const parseStopList = (stops: any[]): Paradero[] => {
 export const isUserAuthenticated = (callback: Function) => {
     const token = localStorage.getItem("user-token")
     if (token) {
-        const user = decode(token)     
+        const user = decode(token)
 
 
         if (user) {
@@ -143,4 +165,9 @@ export const parseSingleTicket = (ticket: any): Ticket => {
 
 export const parseTicketList = (tickets: any[]): Ticket[] => {
     return tickets.map(ticket => parseSingleTicket(ticket))
+}
+
+
+export const handleImageError = (e: any) => {
+    e.target.src = "/Images/user.png";
 }
