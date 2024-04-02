@@ -54,13 +54,25 @@ const StopPage = ({ params }: { params: Params }) => {
         <main className="single-stop-page">
   <h1>{paradero?.Nombre}</h1>
   <section className="stop-information">
-    <img
-      src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"
-      alt=""
-      className="stop-location"
-    />
-    <img src={paradero?.Foto} alt="" className="stop-image" />
-  </section>
+  <div className="image-container">
+    <div className="map-info">
+      <h2>Mapa del Paradero</h2>
+      <p>Descubre la ubicación del paradero en el mapa</p>
+      <img
+        src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"
+        alt=""
+        className="stop-location"
+      />
+    </div>
+    <div className="stop-info">
+      <h2>Foto del Paradero</h2>
+      <p>Visualiza una imagen del paradero</p>
+      <img src={paradero?.Foto} alt="" className="stop-image" />
+    </div>
+  </div>
+</section>
+
+
   <section className="routes">
     <h3>Rutas que pasan por aquí</h3>
     <section className="route-list">
