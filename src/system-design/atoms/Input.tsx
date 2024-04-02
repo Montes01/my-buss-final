@@ -9,13 +9,14 @@ interface Props {
   defaultValue?: string
   readonly?: boolean
   placeholder?: string
-  pattern?: string
+  pattern?: string,
+  change?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
-export default function Input({ pattern, placeholder, label, after, type, name, className, required, defaultValue, readonly }: Props) {
+export default function Input({ change,pattern, placeholder, label, after, type, name, className, required, defaultValue, readonly }: Props) {
   return (
     <label className="input-wrapper">
       {!after && <>{label}{required ? " *" : ""}</>}
-      <input pattern={pattern} readOnly={readonly} placeholder={placeholder} defaultValue={defaultValue} name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
+      <input onChange={change} pattern={pattern} readOnly={readonly} placeholder={placeholder} defaultValue={defaultValue} name={name} required={required ?? false} className={"input " + className} type={type ?? "text"} />
       {after && <>{label}{required ? " *" : ""}</>}
     </label>
   )

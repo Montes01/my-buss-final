@@ -8,9 +8,10 @@ import Button from '@/system-design/atoms/Button';
 import Input from '@/system-design/atoms/Input';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { useState, useRef, useEffect } from 'react';
-import { UseGet } from '@/lib/hooks/fetchHook';
+import { UseGet, UsePut } from '@/lib/hooks/fetchHook';
 import { ENDPOINTS, SERVER_URL } from '@/lib/constants/constants';
 import Link from 'next/link';
+import swal from 'sweetalert';
 
 export default function Profile() {
 
@@ -20,6 +21,32 @@ export default function Profile() {
   const { UseGetUser: user } = UserActions();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const driverDialogRef = useRef<HTMLDialogElement>(null);
+
+
+  const handleUseTicket = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("gola")
+    driverDialogRef.current?.close()
+    const ticketId = new FormData(e.currentTarget).get("ticketId") as string;
+    if (!ticketId) return;
+    try {
+
+      await UsePut(SERVER_URL + ENDPOINTS.TICKET.USE + "?ticketId=" + ticketId, {}, {
+        Authorization: `Bearer ${localStorage.getItem("user-token")}`
+      })
+      swal("Ticket usado", "El ticket fue usado con éxito", "success");
+    } catch (err) {
+      console.error(err);
+      swal("Error", "No se pudo usar el ticket", "error");
+    }
+
+  }
+
+
+  const handleUseTicketClick = () => {
+    driverDialogRef.current?.showModal();
+  }
 
   useEffect(() => {
     isUserAuthenticated((user: Usuario) => {
@@ -108,6 +135,7 @@ export default function Profile() {
           <ul className="ticket-list">
             {tickets.map((ticket) => (
               <Link href={`/buy/payment?IdTicket=${ticket.ID_Ticket}`} key={ticket.ID_Ticket} className="ticket-item">
+                <em>codigo: {ticket.ID_Ticket}</em>
                 <strong className='estado-y-precio' title={ticket.Estado}>
                   {
                     ticket.Estado?.toLocaleLowerCase() === "pendiente" && <>🟡</>
@@ -119,7 +147,7 @@ export default function Profile() {
                     ticket.Estado?.toLocaleLowerCase() === "activo" && <>🟢</>
                   }
                   {
-                    ticket.Estado?.toLocaleLowerCase() === "finalizado" && <>🔵</>
+                    ticket.Estado?.toLocaleLowerCase() === "usado" && <>🔵</>
                   }
 
                   <p className="ticket-title">{ticket.Precio}$</p>
@@ -155,6 +183,23 @@ export default function Profile() {
           </dialog>
         </div>
       </div>
+
+      {user.Rol === "cliente" && <Link href="/work" className='work-button'>
+        Quieres trabajar como conductor?
+      </Link>}
+      {
+        user.Rol === "conductor" &&
+        <>
+          <Button action={handleUseTicketClick} className='work-button' content="Usar ticket de un cliente" />
+          <dialog className='driver-dialog' ref={driverDialogRef}>
+            <form onSubmit={handleUseTicket} className="use-ticket">
+              <p>ingresa el codigo del ticket que aparece en el perfil del cliente</p>
+              <Input name="ticketId" type="text" placeholder="ID del ticket" />
+              <Button content="Usar ticket" submit />
+            </form>
+          </dialog>
+        </>
+      }
     </main>
   )
 }

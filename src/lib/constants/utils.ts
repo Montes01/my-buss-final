@@ -1,4 +1,4 @@
-import { Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
+import { Conductor, Empresa, Paradero, Ruta, Ticket, Usuario } from "./declarations"
 
 import { decode } from "jsonwebtoken";
 import { decodeTokenMock } from "./mocks";
@@ -27,12 +27,12 @@ export function parseUser(user: any): Usuario {
 
 export function parseUserFromRequest(user: any): Usuario {
     if (!user) throw new Error("Usuario inválido");
-    if (!user.id_Usuario) throw new Error("ID de usuario inválido");
+    if (!user.iD_Usuario) throw new Error("ID de usuario inválido");
     if (!user.nombre) throw new Error("Nombre de usuario inválido");
     if (!user.correoElectronico) throw new Error("Correo electrónico de usuario inválido");
     if (!user.teléfono) throw new Error("Número de teléfono de usuario inválido");
     return {
-        ID_Usuario: user.id_Usuario,
+        ID_Usuario: user.iD_Usuario,
         Nombre: user.nombre,
         CorreoElectronico: user.correoElectronico,
         Teléfono: user.teléfono,
@@ -69,6 +69,26 @@ export function parseCompany(company: any): Empresa {
 
 export function parseCompanyList(companies: any[]): Empresa[] {
     return companies.map(company => parseCompany(company))
+}
+
+export const parseDriver = (driver: any): Conductor => {
+
+    if (!driver) throw new Error("Conductor inválido");
+    if (!driver.iD_Conductor) throw new Error("ID de conductor inválido");
+    if (!driver.iD_Usuario) throw new Error("ID de usuario inválido");
+
+    return {
+        ID_Conductor: driver.iD_Conductor,
+        ID_Usuario: driver.iD_Usuario,
+        Estado: driver.estado ? driver.estado : "empty",
+        LicenciaConducción: driver.fotoLicencia ? driver.fotoLicencia : "empty",
+        FechaContrato: driver.fechaContrato ? driver.fechaContrato : "empty",
+        HorarioTrabajo: driver.horarioTrabajo ? driver.horarioTrabajo : "empty"
+    }
+}
+
+export const parseDriverList = (drivers: any[]): Conductor[] => {
+    return drivers.map(driver => parseDriver(driver))
 }
 
 export function readToken(token: string): Usuario {

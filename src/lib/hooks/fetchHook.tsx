@@ -29,6 +29,7 @@ export async function UseGet(url: string, headers: object = {}): Promise<Respons
             headers: { ...headers }
         }
         );
+        console.log(res)
         if (!res.ok) {
             const catchedError = await res.json();
             throw new Error(catchedError.data);

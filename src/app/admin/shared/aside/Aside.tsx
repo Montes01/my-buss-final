@@ -46,9 +46,15 @@ export default function Aside() {
                 <Link className="admin-dashboard-option" href="/admin/tickets">
                     Tickets
                 </Link>
+                <Link className="admin-dashboard-option" href="/admin/edit">
+                    Editar
+                </Link>
+                <Link className="admin-dashboard-option" href="/admin/aspirants">
+                    Aspirantes
+                </Link>
             </section>
             <section className="logout">
-                <Button className="logout-button" action={handleLogout} content="cerrar sesion"/>
+                <Button className="logout-button" action={handleLogout} content="cerrar sesion" />
             </section>
         </aside>
     )
