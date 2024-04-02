@@ -1,0 +1,63 @@
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+/*
+<article className="company-card">
+            <img className="company-logo" src={Logo} alt="company-logo" />
+            <h2>{Nombre}</h2>
+            <p>{Teléfono}</p>
+            <button className="delete-company" onClick={handleRemoveCompany}>
+                <IconTrash />
+            </button>
+        </article>
+
+*/
+
+.company-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: $base-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .company-logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .delete-company {
+        background-color: $base-color;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: darken($primary, 10%);
+
+            svg {
+                filter: invert(1);
+            }
+        }
+    }
+}

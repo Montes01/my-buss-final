@@ -1,0 +1,76 @@
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+
+.admin-aside {
+    background-color: $primary;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // gap: 40px;
+
+    .profile-info {
+        padding: $padding-base;
+
+        * {
+            color: white;
+            text-overflow: ellipsis;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            border: 2px solid;
+        }
+    }
+
+    .dashboard-options {
+        display: flex;
+        border-top: 1px solid rgba($base-color, 50%);
+        flex-direction: column;
+        gap: 10px;
+        padding: $padding-base 0;
+
+        .admin-dashboard-option {
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: start;
+
+            &:hover {
+                background-color: darken($primary, 10%);
+            }
+
+            &.active {
+                background-color: darken($primary, 20%);
+            }
+        }
+    }
+
+    .logout {
+        margin-top: auto;
+        padding: $padding-base;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logout-button 
+        {
+            background-color: rgba($base-color, 90%);
+            width: fit-content;
+            color: $primary;
+            padding: 10px;
+        }
+    }
+}

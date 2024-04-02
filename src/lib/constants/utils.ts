@@ -110,7 +110,9 @@ export const parseStopList = (stops: any[]): Paradero[] => {
 export const isUserAuthenticated = (callback: Function) => {
     const token = localStorage.getItem("user-token")
     if (token) {
-        const user = decode(token)
+        const user = decode(token)     
+
+
         if (user) {
             callback(parseUser(user))
         }
