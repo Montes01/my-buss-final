@@ -146,7 +146,12 @@ export default function Page({ params }: { params: Params }) {
                     </Link>
                 </section>
             </section>
-            <video src="/Images/RUTA4.mp4" autoPlay muted />
+            <div className="video-container">
+    <h3 className="video-title">Esta es la trayectoria de la ruta. Descubre los puntos de interés a lo largo del camino.</h3>
+    <video src="/Images/RUTA4.mp4" autoPlay muted className="video" />
+</div>
+
+
         </main >
     );
 }
