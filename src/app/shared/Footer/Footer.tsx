@@ -3,22 +3,25 @@ import "./Footer.scss";
 
 export default function Footer() {
   return (
-<section className="footer">
+
+    <section className="footer">
     <div className="box-container">
         <div className="box">
             <h3>Enlaces rápidos</h3>
-            <a href="#home">
-                <i className="fas fa-arrow-right"></i> Inicio
+            <a href="/home">
+            <i className="fas fa-arrow-right"></i> Inicio
+
             </a>
-            <a href="#menu">
+            <a href="/buy">
+                <i className="fas fa-arrow-right"></i> Compra tus Tickets
+            </a>
+            <a href="/about">
                 <i className="fas fa-arrow-right"></i> Nosotros
             </a>
-            <a href="#services">
-                <i className="fas fa-arrow-right"></i> Servicios
+            <a href="/">
+                <i className="fas fa-arrow-right"></i> Paraderos
             </a>
-            <a href="#contact">
-                <i className="fas fa-arrow-right"></i> Contacto
-            </a>
+         
         </div>
 
         <div className="box">
@@ -53,6 +56,8 @@ export default function Footer() {
         <p>Creado por <span>Montes & Maicol</span></p>
     </div>
 </section>
+
+
 
   );
 }

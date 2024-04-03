@@ -44,7 +44,13 @@ export default function Page({ params }: { params: Params }) {
         fetchStops();
     }, []);
     return (
+       
         <main className="route-main">
+          <div className="TituloP">
+    <h1 className="titulo-bienvenida">Bienvenido a nuestra plataforma de información de rutas</h1>
+    <p className="mensaje-bienvenida">Descubre todo lo que necesitas saber sobre tu ruta en un solo lugar.</p>
+</div>
+
     <section className="route-info">
         <section className="info-section">
             <strong>Nombre:</strong>
@@ -68,7 +74,6 @@ export default function Page({ params }: { params: Params }) {
                 <li>Parada 1</li>
                 <li>Parada 2</li>
                 <li>Parada 3</li>
-                {/* Agregar más paradas según sea necesario */}
             </ul>
         </section>
         <section className="info-section">
@@ -106,7 +111,7 @@ export default function Page({ params }: { params: Params }) {
     </section>
 
 
-            <section className="route-info">
+    <section className="route-info">
                 <section className="info-section">
                     <strong>Nombre:</strong>
                     <p>{Nombre}</p>
@@ -146,10 +151,17 @@ export default function Page({ params }: { params: Params }) {
                     </Link>
                 </section>
             </section>
+
             <div className="video-container">
-    <h3 className="video-title">Esta es la trayectoria de la ruta. Descubre los puntos de interés a lo largo del camino.</h3>
-    <video src="/Images/RUTA4.mp4" autoPlay muted className="video" />
+    <div className="video-text">
+        <h3 className="video-title">Esta es la trayectoria de la ruta. Descubre los puntos de interés a lo largo del camino.</h3>
+    </div>
+    <div className="video-content">
+        <video src="/Images/RUTA4.mp4" autoPlay muted className="video" />
+    </div>
 </div>
+
+
 
 
         </main >
