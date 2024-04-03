@@ -3,61 +3,169 @@
 @import "../../../../lib/style-helpers/mixins";
 
 
-/* Estilos generales */
+/* Estilos base */
 .route-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Grid de dos columnas */
-    grid-gap: 20px; /* Espacio entre columnas */
-    padding: 20px;
-  }
-  
-  .route-info {
-    background-color: #f9f9f9; /* Color de fondo para la sección de información */
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .stops-title {
-    grid-column: span 2; /* Ocupar las dos columnas */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.route-info {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+  margin-bottom: 15px;
+}
+
+.info-section strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.stops-title {
+  margin-top: 20px;
+}
+
+.stops-title h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.stops-part {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+.stops-timeline {
+  padding-right: 20px;
+}
+
+.stop-timeline-item {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #333;
+}
+
+.timeline-input {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.stop-image {
+  margin-top: 20px;
+}
+
+.stop-image-link {
+  display: block;
+  width: 100%;
+}
+
+.stop-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Media queries */
+@media screen and (max-width: 800px) {
+  .route-info,
   .stops-part {
-    display: flex;
-    align-items: flex-start; /* Alinear los elementos al inicio */
+      padding: 10px;
   }
-  
-  /* Estilos para la sección de información */
-  .info-section {
-    margin-bottom: 15px;
-  }
-  
-  .info-section strong {
-    font-weight: bold;
-  }
-  
-  /* Estilos para la lista de paradas */
+
   .stops-timeline {
-    flex: 1; /* Hacer que la lista de paradas ocupe el espacio disponible */
-    margin-right: 20px;
+      padding-right: 0;
   }
-  
+
   .stop-timeline-item {
-    display: block;
-    margin-bottom: 10px;
+      font-size: 0.9rem;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .info-section strong {
+      font-size: 0.9rem;
+  }
+
+  .stops-title h2 {
+      font-size: 1.2rem;
+  }
+}
+
+
+// /* Estilos generales */
+// .route-main {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr; /* Grid de dos columnas */
+//     grid-gap: 20px; /* Espacio entre columnas */
+//     padding: 20px;
+//   }
   
-  .timeline-input {
-    margin-right: 10px; /* Espacio entre el botón de radio y el texto */
-  }
+//   .route-info {
+//     background-color: #f9f9f9; /* Color de fondo para la sección de información */
+//     padding: 20px;
+//     border-radius: 10px;
+//   }
   
-  /* Estilos para la imagen del paradero */
-  .stop-image img {
-    max-width: 100%; /* Imagen del paradero al máximo del contenedor */
-    border-radius: 10px; /* Esquinas redondeadas */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  }
+//   .stops-title {
+//     grid-column: span 2; /* Ocupar las dos columnas */
+//     text-align: center;
+//     margin-bottom: 20px;
+//   }
+  
+//   .stops-part {
+//     display: flex;
+//     align-items: flex-start; /* Alinear los elementos al inicio */
+//   }
+  
+//   /* Estilos para la sección de información */
+//   .info-section {
+//     margin-bottom: 15px;
+//   }
+  
+//   .info-section strong {
+//     font-weight: bold;
+//   }
+  
+//   /* Estilos para la lista de paradas */
+//   .stops-timeline {
+//     flex: 1; /* Hacer que la lista de paradas ocupe el espacio disponible */
+//     margin-right: 20px;
+//   }
+  
+//   .stop-timeline-item {
+//     display: block;
+//     margin-bottom: 10px;
+//   }
+  
+//   .timeline-input {
+//     margin-right: 10px; /* Espacio entre el botón de radio y el texto */
+//   }
+  
+//   /* Estilos para la imagen del paradero */
+//   .stop-image img {
+//     max-width: 100%; /* Imagen del paradero al máximo del contenedor */
+//     border-radius: 10px; /* Esquinas redondeadas */
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+//   }
   
 // .route-main {
 //     display: flex;
