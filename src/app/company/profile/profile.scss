@@ -34,6 +34,12 @@
     .title {
         font-size: 2em;
     }
+    .description {
+        font-size: 1.2em;
+        text-align: center;
+        color: #000000; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
 
     .profile-edit-form {
         display: flex;
@@ -106,4 +112,11 @@
         }
     }
 
+}
+@media screen and (min-width: 450px) {
+    .form-section {
+        display: flex;
+        max-width: 100%; /* Ajustar el ancho máximo de las secciones */
+        flex-direction: column;
+    }
 }

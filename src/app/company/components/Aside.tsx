@@ -5,6 +5,8 @@ import NavButton from "@/system-design/atoms/NavButton"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { Empresa as companyT } from "@/lib/constants/declarations"
+import "./Aside.scss"
+
 export default function Aside() {
     const { UseGetCompany: company, UseSetCompany } = companyActions()
     const router = useRouter()

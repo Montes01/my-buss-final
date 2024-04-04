@@ -13,9 +13,15 @@
     height: 100%;
 
     .title {
-        font-size: 2em;
+        font-size: 2.5em;
     }
-
+    .description {
+        font-size: 1.2em;
+        color: #000000; /* Color de texto gris oscuro */
+        text-align: center; /* Alineación centrada del texto */
+        margin-bottom: 20px; /* Espacio inferior entre el título y el párrafo */
+      }
+      
 
 
     .add-route-form {
@@ -114,7 +120,6 @@
     width: 100%;
     height: 10%;
     padding: 10px;
-    background-color: darken($base-color, 10%);
     border-radius: $radius-base;
     transition: all ease .3s;
 

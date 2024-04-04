@@ -53,7 +53,7 @@ export default function Footer() {
 
     <div className="credit">
         <p>© {new Date().getFullYear()} MyBuss. Todos los derechos reservados.</p>
-        <p>Creado por <span>Montes & Maicol</span></p>
+        <p>Creado por <span>Team MyBuss</span></p>
     </div>
 </section>
 

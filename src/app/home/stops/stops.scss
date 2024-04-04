@@ -164,6 +164,42 @@
   margin-right: 20px; /* Espacio a la derecha de cada imagen */
 }
 
+
+
+@media screen and (max-width: 340px) {
+  .section-header {
+    grid-template-columns: 1fr; /* Cambia a una columna para el título y la imagen */
+    margin: 0 10px; /* Reduce el margen */
+  }
+
+  .image-container {
+    display: none; /* Oculta la imagen en pantallas más pequeñas */
+  }
+
+  .title-and-text {
+    text-align: center; /* Centra el texto */
+  }
+
+  .content {
+    text-align: center; /* Centra el contenido */
+  }
+
+  .stop {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 20px 0; /* Añade margen en la parte superior e inferior */
+  }
+
+  .logos-paraderos {
+    flex-wrap: wrap; /* Envuelve las imágenes en varias líneas */
+    justify-content: center; /* Centra las imágenes */
+  }
+
+  .logos-paraderos img {
+    margin: 10px; /* Añade espacio entre las imágenes */
+  }
+}
+
+
 @media screen and (max-width: 850px) {
 
   .section-header {
