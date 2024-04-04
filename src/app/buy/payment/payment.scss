@@ -1,5 +1,6 @@
 @import "../../../lib/style-helpers/colors";
 
+/* Estilos base */
 .Pagos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,7 +21,6 @@
   width: 50px;
   margin-right: 50px; /* Agrega espacio a la derecha de cada imagen */
 }
-
 
 .ticket-pay-form {
   max-width: 600px;
@@ -70,6 +70,44 @@
 .credit-card-info p {
   margin-bottom: 5px;
 }
+
+/* Media queries */
+/* Media query para ocultar las imágenes cuando el ancho de la pantalla esté entre 490px y 300px */
+/* Media query para dispositivos con pantalla entre 300px y 490px de ancho */
+@media screen and (max-width: 490px) and (min-width: 300px) {
+  .imagenesTickets {
+    display: none; /* Oculta el contenedor de las imágenes en este rango de tamaños de pantalla */
+  }
+  
+  .TexTicket {
+    margin-top: -30px;
+    font-size: 0.9em; /* Reducir el tamaño del texto */
+  }
+  .ticket-pay-form{
+    margin-top: 30px;
+  }
+  .ticket-pay-form img {
+    display: none; /* Oculta la imagen dentro del formulario de pago */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .Pagos {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en dispositivos más pequeños */
+    padding: 50px; /* Reduce el padding en dispositivos más pequeños */
+  }
+
+  .TexTicket {
+    margin-right: 0; /* Elimina el margen a la derecha en dispositivos más pequeños */
+  }
+
+  .imagenesTickets img {
+    margin-right: 20px; /* Reduce el espacio a la derecha de cada imagen en dispositivos más pequeños */
+  }
+}
+
+/* Agrega más media queries según sea necesario para otros tamaños de pantalla */
 
 
 // .ticket-payment-main {
