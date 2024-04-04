@@ -34,11 +34,12 @@
     .title {
         font-size: 2em;
     }
+
     .description {
         font-size: 1.2em;
         text-align: center;
-        color: #000000; /* Color del texto */
-        margin-bottom: 20px; /* Espacio inferior */
+        color: #000000;
+        margin-bottom: 20px;
     }
 
     .profile-edit-form {
@@ -113,6 +114,8 @@
     }
 
 }
+
+/* Media query para pantallas con un ancho mínimo de 450px */
 @media screen and (min-width: 450px) {
     .form-section {
         display: flex;
@@ -120,3 +123,105 @@
         flex-direction: column;
     }
 }
+
+
+// .profile-edit-main {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     padding: 20px 40px;
+//     align-items: center;
+//     flex: 1;
+//     justify-content: space-between;
+//     width: 100%;
+//     height: 100%;
+
+//     .title {
+//         font-size: 2em;
+//     }
+//     .description {
+//         font-size: 1.2em;
+//         text-align: center;
+//         color: #000000; /* Color del texto */
+//         margin-bottom: 20px; /* Espacio inferior */
+//     }
+
+//     .profile-edit-form {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 20px;
+//         width: 100%;
+//         height: 70%;
+//         justify-content: center;
+
+//         .form-sections {
+//             display: flex;
+//             justify-content: space-evenly;
+//             width: 100%;
+//             height: 100%;
+
+//             .form-section {
+//                 display: flex;
+//                 flex-direction: column;
+//                 justify-content: center;
+//                 gap: 10px;
+//                 height: 100%;
+//                 width: 40%;
+
+//                 .input-wrapper {
+//                     width: 100%;
+//                     flex-direction: column;
+//                     align-items: start;
+//                 }
+
+//                 .profile-input {
+//                     width: 100%;
+//                     padding: 10px;
+//                     border-radius: $radius-base;
+//                     border: none;
+//                     background-color: darken($base-color, 10%);
+//                 }
+//             }
+
+//             .photo-section {
+//                 width: 30%;
+//                 display: flex;
+//                 flex-direction: column;
+//                 align-items: center;
+//                 justify-content: center;
+//                 gap: 20px;
+//                 position: relative;
+
+//                 img {
+//                     width: 80%;
+//                     aspect-ratio: 1/1;
+//                     border-radius: $radius-base;
+//                 }
+
+//                 .change-photo {
+//                     position: relative;
+//                     width: fit-content;
+//                     padding: 10px 20px;
+//                     input {
+//                         position: absolute;
+//                         top: 0;
+//                         inset: 0;
+//                         width: 100%;
+//                         height: 100%;
+//                         opacity: 0;
+//                         z-index: 20;
+//                         cursor: pointer;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+// }
+// @media screen and (min-width: 450px) {
+//     .form-section {
+//         display: flex;
+//         max-width: 100%; /* Ajustar el ancho máximo de las secciones */
+//         flex-direction: column;
+//     }
+// }
