@@ -104,7 +104,7 @@ export default function PaymentPage() {
 
 <main className='Pagos'>
   <div className='TexTicket'>
-    <h1>Aquí podrás pagar tu ticket</h1>
+    <h1>¡Aquí podrás pagar tu ticket!</h1>
     <p className='ParrafoTicket'>
   Completa el pago de tu ticket de forma rápida y segura. Revisa los detalles del pago, ingresa la información de tu tarjeta de crédito y finaliza la transacción. Nuestro formulario garantiza la protección de tus datos personales y financieros. ¡Gracias por confiar en nosotros!
 </p>
