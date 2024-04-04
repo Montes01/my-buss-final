@@ -78,3 +78,50 @@
     
   }
 }
+
+@media (max-width: 991px) {
+  
+
+
+}
+
+/* Para resoluciones mayores a 768px */
+@media (max-width: 768px) {
+  
+}
+
+/* Para resoluciones mayores a 450px */
+
+
+@media (max-width: 450px) {
+  .about-title{
+    //text-4xl
+    font-size: 2.5rem;
+  }
+  .integrants{
+    //gap-5
+    width: 100%;
+  }
+  .home-header{
+    //flex flex-col items-center gap-5
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+    .change-join-type {
+      //flex-wrap: wrap;
+      //width: 10%;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .join-home {
+      //flex flex-col gap-5 items-center
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+    }
+  
+}

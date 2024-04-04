@@ -62,3 +62,36 @@
         color: darken($primary, 10%);
     }
 }
+
+@media (max-width: 450px) {
+    
+    
+    .join-home {
+      //flex flex-col gap-5 items-center
+   flex-wrap: wrap;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+  .form-sections{
+  width: 100%;
+  }
+  .login-form{
+ 
+      width: 100%;
+      display: flex;
+      padding: 3rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-radius: inherit;
+
+      .h3{
+          font-size: 1.5rem;
+      }
+  }
+ 
+  
+}
