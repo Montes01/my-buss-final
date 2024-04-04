@@ -34,6 +34,10 @@
             </section>
         </main>
 */
+
+
+
+
 @import "../../lib/style-helpers/colors";
 @import "../../lib/style-helpers/measurement";
 
@@ -74,8 +78,9 @@
     margin-bottom: 10px;
     color: rgb(255, 255, 255);
     background-color: black;
-    padding: 10px 20px; /* Ajusta el espacio alrededor del texto */
-    border-radius: 10px; /* Agrega un borde redondeado */
+    padding: 10px 20px;
+    border-radius: 10px; 
+    text-align: center;
 }
 
 
@@ -123,7 +128,7 @@
 }
 
 .buy-row .ticket {
-    width: 150px;
+    width: 60%;
     margin-right: 20px;
 }
 
@@ -185,11 +190,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px; /* Espacio arriba de la fila */
+    margin-top: 10px; 
+    
   }
   
   .ticket {
-    width: 150px; /* Ancho de la imagen */
+    width: 50%; /* Ancho de la imagen */
     margin-right: 20px; /* Espacio a la derecha de la imagen */
   }
   
@@ -215,3 +221,472 @@
   }
   
 
+  @media (max-width: 360px) {
+    .buy-page {
+      padding: 0px;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+    }
+    
+    .payment-text h3 {
+      padding-top: 10px;
+      font-size: 20px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background-color: black;
+      border-radius: 10px;
+      width: 100%; 
+      
+    }
+    
+    .container_T_I {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+    }
+    
+    .Tienda {
+      margin-top: 20px;
+      text-align: center; 
+    }
+   
+    .grid-container {
+      display: flex;
+      grid-template-columns: repeat(2, minmax(120px, 1fr)); 
+      gap: 10px; 
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 90%; 
+      padding-top: 30%;
+
+      p{
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+    
+      .card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-bottom: 20px;
+       
+      }
+
+    }
+    .pay-methods h4 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #000000;
+    }
+  
+   
+
+    .FormularioPago {
+
+      h2{
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: #000000;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ticket{
+        padding-bottom: 3%;
+        width: 30%;
+      }
+    }
+
+    .buy-row {
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+    }
+    .pay-methods h4 {
+      font-size: 25px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #000000;
+      text-align: center;
+    }
+  
+    .pay-methods-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .FormularioPago h2 {
+      font-size: 25px;
+      margin-bottom: 6%;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+    }
+  
+    .buy-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      flex-direction: column; 
+    }
+  
+    .buy-form {
+      width: 20%; 
+    }
+  
+    .company {
+      width: 100%; 
+      margin-bottom: 10px; 
+    }
+  
+    .input-wrapper {
+      margin-bottom: 10px; 
+    }
+  
+  
+
+
+
+
+@media (max-width: 767px) {
+ 
+}
+
+
+@media (max-width: 1024px) {
+ 
+}
+
+
+@media (min-width: 1025px) {
+
+}
+
+// @import "../../lib/style-helpers/colors";
+// @import "../../lib/style-helpers/measurement";
+
+// .buy-page {
+//     padding: 0 50px;
+// }
+
+// .container_T_I {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 10px;
+//     align-items: center;
+//     text-align: center;
+//     padding: 40px;
+//     background-color: rgb(255, 255, 255);
+//     height: 500px;
+// }
+
+
+// .container_T_I .payment-text {
+//     grid-column: 1; /* Colocamos el texto en la primera columna */
+//     text-align: left; /* Alineamos el texto a la izquierda */
+// }
+
+// .container_T_I .Tienda {
+//     grid-column: 2; /* Colocamos la imagen en la segunda columna */
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .container_T_I .Tienda img {
+//     width: 100%;
+//     max-width: 300px;
+// }
+
+// .payment-text h3 {
+//     font-size: 58px;
+//     margin-bottom: 10px;
+//     color: rgb(255, 255, 255);
+//     background-color: black;
+//     padding: 10px 20px; /* Ajusta el espacio alrededor del texto */
+//     border-radius: 10px; /* Agrega un borde redondeado */
+// }
+
+
+// .payment-text p {
+//     font-size: 16px;
+//     line-height: 1.5;
+//     color: rgb(0, 0, 0);
+// }
+// .pay-methods {
+//   text-align: center;
+//   margin-bottom: 30px;
+//   height: 300px;
+// }
+
+// .pay-methods h4 {
+//   font-size: 2.5rem; 
+//   margin-bottom: 20px;
+//   font-weight: bold; 
+//   color: #000000; 
+// }
+
+// .pay-methods-icons {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap; 
+//   gap: 20px; 
+// }
+
+// .pay-methods-icons img {
+//   width: 150px; 
+//   height: auto; 
+//   transition: transform 0.3s ease; 
+// }
+
+// .pay-methods-icons img:hover {
+//   transform: scale(1.1); 
+// }
+
+  
+
+// .buy-row {
+//     display: flex;
+//     align-items: center;
+// }
+
+// .buy-row .ticket {
+//     width: 150px;
+//     margin-right: 20px;
+// }
+
+// .buy-row .buy-form {
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .buy-row .buy-form .input-wrapper {
+//     margin-bottom: 10px;
+// }
+
+// .buy-row .buy-form select,
+// .buy-row .buy-form input[type="date"] {
+//     width: 100%;
+//     padding: 8px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     font-size: 16px;
+// }
+
+// .buy-row .buy-form .buy-button {
+//     margin-top: 10px;
+//     width: 100%;
+// }
+// .grid-container {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 20px;
+//     justify-content: center; /* Centrar horizontalmente */
+//     margin: 0 auto; /* Centrar el contenedor en la página */
+//     max-width: 1000px; /* Ancho máximo del contenedor */
+//   }
+  
+//   .card {
+//     background-color: #f9f9f9;
+//     border-radius: 10px;
+//     padding: 20px;
+//     text-align: center;
+//     width: 200px; /* Ancho de la carta */
+//     height: 180px; /* Altura de la carta */
+//   }
+  
+//   .card img {
+//     max-width: 100px;
+//     margin-bottom: 10px;
+//   }
+//   .FormularioPago {
+//     text-align: center;
+//     margin-bottom: 50px;
+//   }
+  
+//   .FormularioPago h2 {
+//     font-size: 32px; /* Tamaño de fuente del título */
+//     margin-bottom: 20px; /* Espacio debajo del título */
+//   }
+  
+//   .buy-row {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 30px; /* Espacio arriba de la fila */
+//   }
+  
+//   .ticket {
+//     width: 150px; /* Ancho de la imagen */
+//     margin-right: 20px; /* Espacio a la derecha de la imagen */
+//   }
+  
+//   .buy-form {
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .input-wrapper {
+//     margin-bottom: 20px; /* Espacio entre elementos */
+//   }
+  
+//   .company {
+//     width: 100%;
+//     padding: 8px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     font-size: 16px;
+//   }
+  
+//   .buy-button {
+//     width: 100%;
+//   }
+// @media (max-width: 360px) {
+//     .buy-page {
+//       padding: 0px;
+//       flex-wrap: wrap;
+//       display: flex;
+//       justify-content: center;
+//       padding-top: 5px;
+//     }
+    
+//     .payment-text h3 {
+//       padding-top: 10px;
+//       font-size: 20px;
+//       text-align: center;
+//       color: rgb(255, 255, 255);
+//       background-color: black;
+//       border-radius: 10px;
+//       width: 100%; 
+//     }
+    
+//     .container_T_I {
+//       display: flex;
+//       flex-direction: column; 
+//       align-items: center; 
+//     }
+    
+//     .Tienda {
+//       margin-top: 20px;
+//       text-align: center; 
+//     }
+   
+//     .grid-container {
+//       display: flex;
+//       grid-template-columns: repeat(2, minmax(120px, 1fr)); 
+//       gap: 10px; 
+//       justify-content: center;
+//       margin: 0 auto;
+//       max-width: 90%; 
+//       padding-top: 30%;
+
+//       p{
+//         font-size: 10px;
+//         text-align: center;
+//       }
+//     }
+    
+//       .card {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: center;
+//         align-items: center;
+//         width: 90%;
+//         margin-bottom: 20px;
+       
+//       }
+
+//     }
+//     .pay-methods h4 {
+//       font-size: 20px;
+//       margin-bottom: 20px;
+//       font-weight: bold;
+//       color: #000000;
+//     }
+  
+   
+
+//     .FormularioPago {
+
+//       h2{
+//         font-size: 18px;
+//         margin-bottom: 10px;
+//         text-align: center;
+//         font-weight: bold;
+//         color: #000000;
+//         justify-content: center;
+//         display: flex;
+//         flex-direction: column;
+//       }
+
+//       .ticket{
+//         padding-bottom: 15%;
+//       }
+//     }
+
+//     .buy-row {
+//       display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 30px;
+//     }
+//     .pay-methods h4 {
+//       font-size: 18px;
+//       margin-bottom: 10px;
+//       font-weight: bold;
+//       color: #000000;
+//       text-align: center;
+//     }
+  
+//     .pay-methods-icons {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: center;
+//       align-items: center;
+//       width: 90%;
+//       margin-bottom: 20px;
+//     }
+  
+//     .FormularioPago h2 {
+//       font-size: 18px;
+//       margin-bottom: 10px;
+//       text-align: center;
+//       font-weight: bold;
+//       color: #000000;
+//     }
+  
+//     .buy-row {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       margin-top: 20px;
+//       flex-direction: column; 
+//     }
+  
+//     .buy-form {
+//       width: 90%; 
+//     }
+  
+//     .company {
+//       width: 100%; 
+//       margin-bottom: 10px; 
+//     }
+  
+//     .input-wrapper {
+//       margin-bottom: 10px; 
+//     }

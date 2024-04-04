@@ -1,7 +1,6 @@
 @import "../../lib/style-helpers/colors";
 @import "../../lib/style-helpers/measurement";
 
-
 .company-dashboard {
     width: 100vw;
     height: 100vh;
@@ -26,10 +25,10 @@
         text-decoration: none;
         width: 100%;
         text-align: center;
+        transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: rgba(darken($primary, 35%), .8);
-            color: $base-color;
+            background-color: darken($primary, 20%);
         }
     }
 }
@@ -61,6 +60,7 @@
     flex-direction: column;
     gap: 10px;
     padding-top: 20px;
+    
 
     .dashboard-option {
         color: white;
@@ -68,9 +68,10 @@
         font-size: 1.2rem;
         padding: 10px;
         border-radius: 5px;
+        transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: rgba(darken($primary, 35%), .8);
+            background-color: darken($primary, 20%);
         }
     }
 }
@@ -107,3 +108,148 @@
     padding: 20px;
     width: 100%;
 }
+
+/* Pantallas de 368px en adelante */
+@media screen and (min-width: 368px) {
+    .company-dashboard {
+        flex-direction: row;
+    }
+    .nav-bar {
+        width: 250px;
+    }
+}
+
+/* Pantallas de 576px en adelante */
+@media screen and (min-width: 576px) {
+    .nav-bar {
+        padding: 40px;
+    }
+}
+
+/* Pantallas de 768px en adelante */
+@media screen and (min-width: 768px) {
+    .nav-bar {
+        gap: 30px;
+    }
+}
+
+/* Pantallas de 992px en adelante */
+@media screen and (min-width: 992px) {
+    .nav-bar {
+        padding: 50px;
+    }
+}
+
+/* Pantallas de 1200px en adelante */
+@media screen and (min-width: 1200px) {
+    .nav-bar {
+        gap: 40px;
+    }
+}
+
+
+// .company-dashboard {
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+// }
+
+// .nav-bar {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     width: 250px; 
+//     background-color: $primary;
+//     padding: 40px;
+//     overflow-y: auto; 
+
+//     .logout-button {
+//         color: $base-color;
+//         background-color: $primary;
+//         padding: 10px 20px;
+//         border: none;
+//         border-radius: 5px;
+//         text-decoration: none;
+//         width: 100%;
+//         text-align: center;
+
+//         &:hover {
+//             background-color: rgba(darken($primary, 35%), .8);
+//             color: $base-color;
+//         }
+//     }
+// }
+
+// .info {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 20px;
+//     padding: 20px;
+//     background-color: $primary;
+//     border-radius: 10px;
+
+//     img {
+//         width: 100px;
+//         height: 100px;
+//         border-radius: 50%;
+//     }
+
+//     h1 {
+//         font-size: 1.5rem;
+//         color: white;
+//         text-align: center;
+//     }
+// }
+
+// .options {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     padding-top: 20px;
+
+//     .dashboard-option {
+//         color: white;
+//         text-decoration: none;
+//         font-size: 1.2rem;
+//         padding: 10px;
+//         border-radius: 5px;
+
+//         &:hover {
+//             background-color: rgba(darken($primary, 35%), .8);
+//         }
+//     }
+// }
+
+// .dashboard-content {
+//     flex: 1;
+//     padding: 20px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .route-form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     padding: 20px;
+//     background-color: $base-color;
+//     border-radius: $radius-base;
+//     align-items: center;
+
+//     .input-wrapper {
+//         width: 100%;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: start;
+//     }
+// }
+
+// .routes {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     padding: 20px;
+//     width: 100%;
+// }

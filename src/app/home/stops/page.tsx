@@ -51,7 +51,7 @@ export default async function Stops() {
               <img src={Foto} alt={Nombre} className="map" />
             </div> */}
             <div className="content">
-              <h3>{Nombre}</h3>
+              <h3 className="Ti">{Nombre}</h3>
               <p><strong>Horarios:</strong> Lunes a Viernes: 7am - 10pm, Sábados y Domingos: 9am - 8pm</p>
               <p><strong>Servicios:</strong> Wi-Fi gratuito, Baños, Asientos cómodos</p>
               <div className="logos-servicios">

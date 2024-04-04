@@ -58,7 +58,9 @@ export default function Add() {
     return (
         <>
             <form className="add-route-main" onSubmit={handleSubmit}>
-                <h2 className="title">Agrega una ruta</h2>
+            <h2 className="title">Agrega una ruta</h2>
+<p className="description">Completa el formulario para agregar una nueva ruta. Ingresa el nombre, descripción, tarifa y tipo de ruta, además de las paradas principales.</p>
+
                 <section className="add-route-form">
                     <section className="form-sections">
                         <section className="form-section">

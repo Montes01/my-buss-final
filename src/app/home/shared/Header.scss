@@ -37,14 +37,14 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
 
   .header-button {
 
     width: fit-content;
     padding: 10px 20px;
-    border-radius: $radius-base;
-    background-color: #444;
+    // border-radius: $radius-base;
+    background-color: #44444400;
     color: white;
 
     &:hover {

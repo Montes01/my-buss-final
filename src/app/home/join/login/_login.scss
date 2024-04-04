@@ -2,8 +2,6 @@
 @import "../../../../lib/style-helpers/measurement";
 @import "../../../../lib/style-helpers/mixins";
 
-
-
 .login-form {
     width: 70%;
     display: flex;
@@ -12,9 +10,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-
     border-radius: inherit;
-
 
     .login-ways {
         padding: 0;
@@ -67,15 +63,172 @@
     }
 }
 
+/* Media query para tablet */
+@media screen and (max-width: 768px) {
+    .login-form {
+        width: 90%;
+        padding: 3rem;
+    }
+}
 
-@include responsive("tablet") {
+/* Media query para móvil */
+@media screen and (max-width: 480px) {
     .login-form {
         width: 100%;
-
-        .camps {
-            width: 100%;
-
-        }
+        padding: 2rem;
     }
-
 }
+
+// .login-form {
+//     width: 70%;
+//     display: flex;
+//     padding: 5rem 13rem;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 1rem;
+//     border-radius: inherit;
+
+//     .login-ways {
+//         padding: 0;
+//         margin: 0;
+//         display: flex;
+//         gap: 1rem;
+//         height: fit-content;
+
+//         .login-way {
+//             color: white;
+//         }
+//     }
+
+//     .camps {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1rem;
+//         width: 100%;
+
+//         .input-wrapper {
+//             flex-direction: column;
+//             align-items: start;
+//             width: 100%;
+
+//             .form-input {
+//                 width: 100%;
+//                 background-color: transparent;
+//                 border: none;
+//                 border-bottom: 1px solid white;
+//                 border-radius: 0;
+//             }
+//         }
+
+//         .final-step {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//         }
+//     }
+// }
+
+// .company-anchor {
+//     color: $secondary;
+//     font-weight: 900;
+//     text-decoration: none;
+//     transition: all 0.3s ease-in-out;
+
+//     &:hover {
+//         color: darken($primary, 10%);
+//     }
+// }
+
+// /* Media query para tablet */
+// @media screen and (max-width: 768px) {
+//     .login-form {
+//         width: 90%;
+//         padding: 3rem;
+//     }
+// }
+
+// /* Media query para móvil */
+// @media screen and (max-width: 480px) {
+//     .login-form {
+//         width: 100%;
+//         padding: 2rem;
+//     }
+// }
+
+
+// .login-form {
+//     width: 70%;
+//     display: flex;
+//     padding: 5rem 13rem;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 1rem;
+
+//     border-radius: inherit;
+
+
+//     .login-ways {
+//         padding: 0;
+//         margin: 0;
+//         display: flex;
+//         gap: 1rem;
+//         height: fit-content;
+
+//         .login-way {
+//             color: white;
+//         }
+//     }
+
+//     .camps {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1rem;
+//         width: 100%;
+
+//         .input-wrapper {
+//             flex-direction: column;
+//             align-items: start;
+//             width: 100%;
+
+//             .form-input {
+//                 width: 100%;
+//                 background-color: transparent;
+//                 border: none;
+//                 border-bottom: 1px solid white;
+//                 border-radius: 0;
+//             }
+//         }
+
+//         .final-step {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//         }
+//     }
+// }
+
+// .company-anchor {
+//     color: $secondary;
+//     font-weight: 900;
+//     text-decoration: none;
+//     transition: all 0.3s ease-in-out;
+
+//     &:hover {
+//         color: darken($primary, 10%);
+//     }
+// }
+
+
+// @include responsive("tablet") {
+//     .login-form {
+//         width: 100%;
+
+//         .camps {
+//             width: 100%;
+
+//         }
+//     }
+
+// }

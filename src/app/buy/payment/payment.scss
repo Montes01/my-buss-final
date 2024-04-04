@@ -1,50 +1,163 @@
 @import "../../../lib/style-helpers/colors";
 
-.ticket-payment-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Estilos base */
+.Pagos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px; /* Agrega un padding al contenedor principal */
+}
+
+.TexTicket {
+  margin-right: 10px; /* Margen a la derecha */
+  padding: 20px; /* Relleno interno */
+}
+.TexTicket h1{
+  font-size: 3.5rem;
+}
+
+.ParrafoTicket {
+  height: 120px; /* Altura fija para el párrafo */
+  margin-top: 15px;
+}
+
+.imagenesTickets img {
+  width: 50px;
+  margin-right: 50px; /* Agrega espacio a la derecha de cada imagen */
+}
+
+.ticket-pay-form {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .ticket-pay-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 70%;
-    max-width: 600px;
+.ticket-pay-form fieldset {
+  border: none;
+}
 
-    fieldset {
-      border-radius: 15px;
-      padding: 50px 20px;
-      background-color: $base-color;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+.ticket-pay-form legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-      .company-name{
-        align-self: center;
-      }
+.company-name {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
 
-      .credit-card {
-        background-color: darken($base-color, 10%);
-        padding: 10px;
-        border-radius: 15px;
-      }
+.pay-ticket-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-      .pay-ticket-image {
-        height: 220px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
+.pay-ticket-image img {
+  max-width: 100px;
+}
 
-        img {
-          border-radius: 50%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
+.payment-details,
+.credit-card-info {
+  margin-bottom: 20px;
+}
+
+.payment-details h3,
+.credit-card-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.payment-details p,
+.credit-card-info p {
+  margin-bottom: 5px;
+}
+
+/* Media queries */
+/* Media query para ocultar las imágenes cuando el ancho de la pantalla esté entre 490px y 300px */
+/* Media query para dispositivos con pantalla entre 300px y 490px de ancho */
+@media screen and (max-width: 490px) and (min-width: 300px) {
+  .imagenesTickets {
+    display: none; /* Oculta el contenedor de las imágenes en este rango de tamaños de pantalla */
+  }
+  
+  .TexTicket {
+    margin-top: -30px;
+    font-size: 0.9em; /* Reducir el tamaño del texto */
+  }
+  .ticket-pay-form{
+    margin-top: 30px;
+  }
+  .ticket-pay-form img {
+    display: none; /* Oculta la imagen dentro del formulario de pago */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .Pagos {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en dispositivos más pequeños */
+    padding: 50px; /* Reduce el padding en dispositivos más pequeños */
   }
 
+  .TexTicket {
+    margin-right: 0; /* Elimina el margen a la derecha en dispositivos más pequeños */
+  }
+
+  .imagenesTickets img {
+    margin-right: 20px; /* Reduce el espacio a la derecha de cada imagen en dispositivos más pequeños */
+  }
 }
+
+/* Agrega más media queries según sea necesario para otros tamaños de pantalla */
+
+
+// .ticket-payment-main {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 20px;
+
+//   .ticket-pay-form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     width: 70%;
+//     max-width: 600px;
+
+//     fieldset {
+//       border-radius: 15px;
+//       padding: 50px 20px;
+//       background-color: $base-color;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 30px;
+
+//       .company-name{
+//         align-self: center;
+//       }
+
+//       .credit-card {
+//         background-color: darken($base-color, 10%);
+//         padding: 10px;
+//         border-radius: 15px;
+//       }
+
+//       .pay-ticket-image {
+//         height: 220px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 50%;
+
+//         img {
+//           border-radius: 50%;
+//           height: 100%;
+//           object-fit: cover;
+//         }
+//       }
+//     }
+//   }
+
+// }

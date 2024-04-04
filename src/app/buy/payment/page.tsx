@@ -101,7 +101,42 @@ export default function PaymentPage() {
   }
 
   return (<>
-    <form onSubmit={handleSubmit} className="ticket-pay-form">
+
+<main className='Pagos'>
+  <div className='TexTicket'>
+    <h1>¡Aquí podrás pagar tu ticket!</h1>
+    <p className='ParrafoTicket'>
+  Completa el pago de tu ticket de forma rápida y segura. Revisa los detalles del pago, ingresa la información de tu tarjeta de crédito y finaliza la transacción. Nuestro formulario garantiza la protección de tus datos personales y financieros. ¡Gracias por confiar en nosotros!
+</p>
+<div className='imagenesTickets'>
+  <img src="https://cdn-icons-png.flaticon.com/128/3578/3578240.png" alt="" />
+  <img src="https://cdn-icons-png.flaticon.com/128/2623/2623506.png" alt="" />
+  <img src="https://cdn-icons-png.flaticon.com/128/1036/1036175.png" alt="" />
+  <img src="https://em-content.zobj.net/source/apple/391/ticket_1f3ab.png" alt="" />
+</div>
+  </div>
+  <form onSubmit={handleSubmit} className="ticket-pay-form">
+    <fieldset>
+      <legend>Paga tu ticket aquí</legend>
+      <h2 className='company-name'>{company.Nombre}</h2>
+      <section className="pay-ticket-image">
+        <img src={company?.Logo} alt="Logo de la empresa" />
+      </section>
+      <div className="payment-details">
+        <h3>Detalles del Pago</h3>
+        <p>Precio: {Ticket.Precio} $</p>
+      </div>
+      <div className="credit-card-info">
+        <h3>Información de la Tarjeta de Crédito</h3>
+        <CardElement className='credit-card' />
+      </div>
+      <Button submit content={`Pagar ${Ticket.Precio} $`} />
+    </fieldset>
+  </form>
+</main>
+
+
+    {/* <form onSubmit={handleSubmit} className="ticket-pay-form">
       <fieldset>
         <legend>Paga tu ticket aqui</legend>
         <h2 className='company-name'>{company.Nombre}</h2>
@@ -111,7 +146,7 @@ export default function PaymentPage() {
         <CardElement className='credit-card' />
       </fieldset>
       <Button submit content={Ticket.Precio + "$"} />
-    </form>
+    </form> */}
   </>
   );
 }
